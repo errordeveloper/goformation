@@ -7,32 +7,32 @@ type AWSElasticLoadBalancingLoadBalancer_Listeners struct {
 	// InstancePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport
-	InstancePort string `json:"InstancePort,omitempty"`
+	InstancePort *stringIntrinsic `json:"InstancePort,omitempty"`
 
 	// InstanceProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol
-	InstanceProtocol string `json:"InstanceProtocol,omitempty"`
+	InstanceProtocol *stringIntrinsic `json:"InstanceProtocol,omitempty"`
 
 	// LoadBalancerPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport
-	LoadBalancerPort string `json:"LoadBalancerPort,omitempty"`
+	LoadBalancerPort *stringIntrinsic `json:"LoadBalancerPort,omitempty"`
 
 	// PolicyNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames
-	PolicyNames []string `json:"PolicyNames,omitempty"`
+	PolicyNames []*stringIntrinsic `json:"PolicyNames,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol
-	Protocol string `json:"Protocol,omitempty"`
+	Protocol *stringIntrinsic `json:"Protocol,omitempty"`
 
 	// SSLCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid
-	SSLCertificateId string `json:"SSLCertificateId,omitempty"`
+	SSLCertificateId *stringIntrinsic `json:"SSLCertificateId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

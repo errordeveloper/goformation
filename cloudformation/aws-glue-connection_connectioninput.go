@@ -12,22 +12,22 @@ type AWSGlueConnection_ConnectionInput struct {
 	// ConnectionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectiontype
-	ConnectionType string `json:"ConnectionType,omitempty"`
+	ConnectionType *stringIntrinsic `json:"ConnectionType,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// MatchCriteria AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-matchcriteria
-	MatchCriteria []string `json:"MatchCriteria,omitempty"`
+	MatchCriteria []*stringIntrinsic `json:"MatchCriteria,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-name
-	Name string `json:"Name,omitempty"`
+	Name *stringIntrinsic `json:"Name,omitempty"`
 
 	// PhysicalConnectionRequirements AWS CloudFormation Property
 	// Required: false

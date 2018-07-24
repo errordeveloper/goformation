@@ -13,12 +13,12 @@ type AWSCloudWatchDashboard struct {
 	// DashboardBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody
-	DashboardBody string `json:"DashboardBody,omitempty"`
+	DashboardBody *stringIntrinsic `json:"DashboardBody,omitempty"`
 
 	// DashboardName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardname
-	DashboardName string `json:"DashboardName,omitempty"`
+	DashboardName *stringIntrinsic `json:"DashboardName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

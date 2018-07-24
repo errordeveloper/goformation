@@ -18,12 +18,12 @@ type AWSServiceDiscoveryInstance struct {
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceid
-	InstanceId string `json:"InstanceId,omitempty"`
+	InstanceId *stringIntrinsic `json:"InstanceId,omitempty"`
 
 	// ServiceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-serviceid
-	ServiceId string `json:"ServiceId,omitempty"`
+	ServiceId *stringIntrinsic `json:"ServiceId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

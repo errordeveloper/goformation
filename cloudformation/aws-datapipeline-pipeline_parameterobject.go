@@ -12,7 +12,7 @@ type AWSDataPipelinePipeline_ParameterObject struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-id
-	Id string `json:"Id,omitempty"`
+	Id *stringIntrinsic `json:"Id,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

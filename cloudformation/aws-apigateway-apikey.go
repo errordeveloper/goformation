@@ -13,12 +13,12 @@ type AWSApiGatewayApiKey struct {
 	// CustomerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid
-	CustomerId string `json:"CustomerId,omitempty"`
+	CustomerId *stringIntrinsic `json:"CustomerId,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSApiGatewayApiKey struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name
-	Name string `json:"Name,omitempty"`
+	Name *stringIntrinsic `json:"Name,omitempty"`
 
 	// StageKeys AWS CloudFormation Property
 	// Required: false

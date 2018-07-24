@@ -12,7 +12,7 @@ type AWSCodeBuildProject_Source struct {
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec
-	BuildSpec string `json:"BuildSpec,omitempty"`
+	BuildSpec *stringIntrinsic `json:"BuildSpec,omitempty"`
 
 	// GitCloneDepth AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,17 @@ type AWSCodeBuildProject_Source struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location
-	Location string `json:"Location,omitempty"`
+	Location *stringIntrinsic `json:"Location,omitempty"`
+
+	// ReportBuildStatus AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus
+	ReportBuildStatus bool `json:"ReportBuildStatus,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type
-	Type string `json:"Type,omitempty"`
+	Type *stringIntrinsic `json:"Type,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

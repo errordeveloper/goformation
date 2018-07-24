@@ -18,12 +18,12 @@ type AWSCognitoUserPool struct {
 	// AliasAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
-	AliasAttributes []string `json:"AliasAttributes,omitempty"`
+	AliasAttributes []*stringIntrinsic `json:"AliasAttributes,omitempty"`
 
 	// AutoVerifiedAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes
-	AutoVerifiedAttributes []string `json:"AutoVerifiedAttributes,omitempty"`
+	AutoVerifiedAttributes []*stringIntrinsic `json:"AutoVerifiedAttributes,omitempty"`
 
 	// DeviceConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSCognitoUserPool struct {
 	// EmailVerificationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
-	EmailVerificationMessage string `json:"EmailVerificationMessage,omitempty"`
+	EmailVerificationMessage *stringIntrinsic `json:"EmailVerificationMessage,omitempty"`
 
 	// EmailVerificationSubject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject
-	EmailVerificationSubject string `json:"EmailVerificationSubject,omitempty"`
+	EmailVerificationSubject *stringIntrinsic `json:"EmailVerificationSubject,omitempty"`
 
 	// LambdaConfig AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type AWSCognitoUserPool struct {
 	// MfaConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
-	MfaConfiguration string `json:"MfaConfiguration,omitempty"`
+	MfaConfiguration *stringIntrinsic `json:"MfaConfiguration,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type AWSCognitoUserPool struct {
 	// SmsAuthenticationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
-	SmsAuthenticationMessage string `json:"SmsAuthenticationMessage,omitempty"`
+	SmsAuthenticationMessage *stringIntrinsic `json:"SmsAuthenticationMessage,omitempty"`
 
 	// SmsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -78,12 +78,12 @@ type AWSCognitoUserPool struct {
 	// SmsVerificationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
-	SmsVerificationMessage string `json:"SmsVerificationMessage,omitempty"`
+	SmsVerificationMessage *stringIntrinsic `json:"SmsVerificationMessage,omitempty"`
 
 	// UserPoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname
-	UserPoolName string `json:"UserPoolName,omitempty"`
+	UserPoolName *stringIntrinsic `json:"UserPoolName,omitempty"`
 
 	// UserPoolTags AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type AWSCognitoUserPool struct {
 	// UsernameAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
-	UsernameAttributes []string `json:"UsernameAttributes,omitempty"`
+	UsernameAttributes []*stringIntrinsic `json:"UsernameAttributes,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

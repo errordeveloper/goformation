@@ -18,7 +18,7 @@ type AWSEC2LaunchTemplate struct {
 	// LaunchTemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename
-	LaunchTemplateName string `json:"LaunchTemplateName,omitempty"`
+	LaunchTemplateName *stringIntrinsic `json:"LaunchTemplateName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

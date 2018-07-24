@@ -12,7 +12,7 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 	// ChildHealthChecks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-childhealthchecks
-	ChildHealthChecks []string `json:"ChildHealthChecks,omitempty"`
+	ChildHealthChecks []*stringIntrinsic `json:"ChildHealthChecks,omitempty"`
 
 	// EnableSNI AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 	// FullyQualifiedDomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-fullyqualifieddomainname
-	FullyQualifiedDomainName string `json:"FullyQualifiedDomainName,omitempty"`
+	FullyQualifiedDomainName *stringIntrinsic `json:"FullyQualifiedDomainName,omitempty"`
 
 	// HealthThreshold AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 	// IPAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-ipaddress
-	IPAddress string `json:"IPAddress,omitempty"`
+	IPAddress *stringIntrinsic `json:"IPAddress,omitempty"`
 
 	// InsufficientDataHealthStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-insufficientdatahealthstatus
-	InsufficientDataHealthStatus string `json:"InsufficientDataHealthStatus,omitempty"`
+	InsufficientDataHealthStatus *stringIntrinsic `json:"InsufficientDataHealthStatus,omitempty"`
 
 	// Inverted AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 	// Regions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions
-	Regions []string `json:"Regions,omitempty"`
+	Regions []*stringIntrinsic `json:"Regions,omitempty"`
 
 	// RequestInterval AWS CloudFormation Property
 	// Required: false
@@ -72,17 +72,17 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-resourcepath
-	ResourcePath string `json:"ResourcePath,omitempty"`
+	ResourcePath *stringIntrinsic `json:"ResourcePath,omitempty"`
 
 	// SearchString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-searchstring
-	SearchString string `json:"SearchString,omitempty"`
+	SearchString *stringIntrinsic `json:"SearchString,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-type
-	Type string `json:"Type,omitempty"`
+	Type *stringIntrinsic `json:"Type,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

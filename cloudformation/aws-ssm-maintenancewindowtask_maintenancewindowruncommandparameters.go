@@ -7,17 +7,17 @@ type AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment
-	Comment string `json:"Comment,omitempty"`
+	Comment *stringIntrinsic `json:"Comment,omitempty"`
 
 	// DocumentHash AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash
-	DocumentHash string `json:"DocumentHash,omitempty"`
+	DocumentHash *stringIntrinsic `json:"DocumentHash,omitempty"`
 
 	// DocumentHashType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype
-	DocumentHashType string `json:"DocumentHashType,omitempty"`
+	DocumentHashType *stringIntrinsic `json:"DocumentHashType,omitempty"`
 
 	// NotificationConfig AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 	// OutputS3BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
-	OutputS3BucketName string `json:"OutputS3BucketName,omitempty"`
+	OutputS3BucketName *stringIntrinsic `json:"OutputS3BucketName,omitempty"`
 
 	// OutputS3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
-	OutputS3KeyPrefix string `json:"OutputS3KeyPrefix,omitempty"`
+	OutputS3KeyPrefix *stringIntrinsic `json:"OutputS3KeyPrefix,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-servicerolearn
-	ServiceRoleArn string `json:"ServiceRoleArn,omitempty"`
+	ServiceRoleArn *stringIntrinsic `json:"ServiceRoleArn,omitempty"`
 
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false

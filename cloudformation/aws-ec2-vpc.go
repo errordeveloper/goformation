@@ -13,7 +13,7 @@ type AWSEC2VPC struct {
 	// CidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock
-	CidrBlock string `json:"CidrBlock,omitempty"`
+	CidrBlock *stringIntrinsic `json:"CidrBlock,omitempty"`
 
 	// EnableDnsHostnames AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSEC2VPC struct {
 	// InstanceTenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
-	InstanceTenancy string `json:"InstanceTenancy,omitempty"`
+	InstanceTenancy *stringIntrinsic `json:"InstanceTenancy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

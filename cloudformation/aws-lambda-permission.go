@@ -13,32 +13,32 @@ type AWSLambdaPermission struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
-	Action string `json:"Action,omitempty"`
+	Action *stringIntrinsic `json:"Action,omitempty"`
 
 	// EventSourceToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
-	EventSourceToken string `json:"EventSourceToken,omitempty"`
+	EventSourceToken *stringIntrinsic `json:"EventSourceToken,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
-	FunctionName string `json:"FunctionName,omitempty"`
+	FunctionName *stringIntrinsic `json:"FunctionName,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
-	Principal string `json:"Principal,omitempty"`
+	Principal *stringIntrinsic `json:"Principal,omitempty"`
 
 	// SourceAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
-	SourceAccount string `json:"SourceAccount,omitempty"`
+	SourceAccount *stringIntrinsic `json:"SourceAccount,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
-	SourceArn string `json:"SourceArn,omitempty"`
+	SourceArn *stringIntrinsic `json:"SourceArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

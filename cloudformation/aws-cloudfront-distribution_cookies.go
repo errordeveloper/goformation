@@ -7,12 +7,12 @@ type AWSCloudFrontDistribution_Cookies struct {
 	// Forward AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html#cfn-cloudfront-distribution-cookies-forward
-	Forward string `json:"Forward,omitempty"`
+	Forward *stringIntrinsic `json:"Forward,omitempty"`
 
 	// WhitelistedNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html#cfn-cloudfront-distribution-cookies-whitelistednames
-	WhitelistedNames []string `json:"WhitelistedNames,omitempty"`
+	WhitelistedNames []*stringIntrinsic `json:"WhitelistedNames,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

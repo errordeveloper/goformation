@@ -7,7 +7,7 @@ type AWSRoute53RecordSet_AliasTarget struct {
 	// DNSName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-dnshostname
-	DNSName string `json:"DNSName,omitempty"`
+	DNSName *stringIntrinsic `json:"DNSName,omitempty"`
 
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSRoute53RecordSet_AliasTarget struct {
 	// HostedZoneId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid
-	HostedZoneId string `json:"HostedZoneId,omitempty"`
+	HostedZoneId *stringIntrinsic `json:"HostedZoneId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

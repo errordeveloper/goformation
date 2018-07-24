@@ -18,17 +18,17 @@ type AWSEC2NetworkInterfaceAttachment struct {
 	// DeviceIndex AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex
-	DeviceIndex string `json:"DeviceIndex,omitempty"`
+	DeviceIndex *stringIntrinsic `json:"DeviceIndex,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid
-	InstanceId string `json:"InstanceId,omitempty"`
+	InstanceId *stringIntrinsic `json:"InstanceId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid
-	NetworkInterfaceId string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *stringIntrinsic `json:"NetworkInterfaceId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

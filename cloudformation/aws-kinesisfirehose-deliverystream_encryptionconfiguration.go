@@ -12,7 +12,7 @@ type AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration struct {
 	// NoEncryptionConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-noencryptionconfig
-	NoEncryptionConfig string `json:"NoEncryptionConfig,omitempty"`
+	NoEncryptionConfig *stringIntrinsic `json:"NoEncryptionConfig,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

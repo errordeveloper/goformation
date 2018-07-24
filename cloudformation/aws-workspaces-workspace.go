@@ -13,12 +13,12 @@ type AWSWorkSpacesWorkspace struct {
 	// BundleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
-	BundleId string `json:"BundleId,omitempty"`
+	BundleId *stringIntrinsic `json:"BundleId,omitempty"`
 
 	// DirectoryId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
-	DirectoryId string `json:"DirectoryId,omitempty"`
+	DirectoryId *stringIntrinsic `json:"DirectoryId,omitempty"`
 
 	// RootVolumeEncryptionEnabled AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSWorkSpacesWorkspace struct {
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
-	UserName string `json:"UserName,omitempty"`
+	UserName *stringIntrinsic `json:"UserName,omitempty"`
 
 	// UserVolumeEncryptionEnabled AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type AWSWorkSpacesWorkspace struct {
 	// VolumeEncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
-	VolumeEncryptionKey string `json:"VolumeEncryptionKey,omitempty"`
+	VolumeEncryptionKey *stringIntrinsic `json:"VolumeEncryptionKey,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

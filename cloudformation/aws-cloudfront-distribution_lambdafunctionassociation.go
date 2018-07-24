@@ -7,12 +7,12 @@ type AWSCloudFrontDistribution_LambdaFunctionAssociation struct {
 	// EventType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-eventtype
-	EventType string `json:"EventType,omitempty"`
+	EventType *stringIntrinsic `json:"EventType,omitempty"`
 
 	// LambdaFunctionARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-lambdafunctionarn
-	LambdaFunctionARN string `json:"LambdaFunctionARN,omitempty"`
+	LambdaFunctionARN *stringIntrinsic `json:"LambdaFunctionARN,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -23,7 +23,7 @@ type AWSCodePipelinePipeline struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name
-	Name string `json:"Name,omitempty"`
+	Name *stringIntrinsic `json:"Name,omitempty"`
 
 	// RestartExecutionOnUpdate AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSCodePipelinePipeline struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn
-	RoleArn string `json:"RoleArn,omitempty"`
+	RoleArn *stringIntrinsic `json:"RoleArn,omitempty"`
 
 	// Stages AWS CloudFormation Property
 	// Required: true

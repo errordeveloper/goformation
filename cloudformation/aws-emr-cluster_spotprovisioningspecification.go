@@ -12,7 +12,7 @@ type AWSEMRCluster_SpotProvisioningSpecification struct {
 	// TimeoutAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-timeoutaction
-	TimeoutAction string `json:"TimeoutAction,omitempty"`
+	TimeoutAction *stringIntrinsic `json:"TimeoutAction,omitempty"`
 
 	// TimeoutDurationMinutes AWS CloudFormation Property
 	// Required: true

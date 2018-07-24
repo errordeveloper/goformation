@@ -13,7 +13,7 @@ type AWSKMSKey struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// EnableKeyRotation AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSKMSKey struct {
 	// KeyUsage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyusage
-	KeyUsage string `json:"KeyUsage,omitempty"`
+	KeyUsage *stringIntrinsic `json:"KeyUsage,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

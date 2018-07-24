@@ -7,12 +7,12 @@ type AWSKinesisAnalyticsApplication_CSVMappingParameters struct {
 	// RecordColumnDelimiter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordcolumndelimiter
-	RecordColumnDelimiter string `json:"RecordColumnDelimiter,omitempty"`
+	RecordColumnDelimiter *stringIntrinsic `json:"RecordColumnDelimiter,omitempty"`
 
 	// RecordRowDelimiter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordrowdelimiter
-	RecordRowDelimiter string `json:"RecordRowDelimiter,omitempty"`
+	RecordRowDelimiter *stringIntrinsic `json:"RecordRowDelimiter,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

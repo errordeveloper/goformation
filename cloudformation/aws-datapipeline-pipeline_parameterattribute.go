@@ -7,12 +7,12 @@ type AWSDataPipelinePipeline_ParameterAttribute struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-key
-	Key string `json:"Key,omitempty"`
+	Key *stringIntrinsic `json:"Key,omitempty"`
 
 	// StringValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-stringvalue
-	StringValue string `json:"StringValue,omitempty"`
+	StringValue *stringIntrinsic `json:"StringValue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

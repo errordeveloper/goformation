@@ -17,27 +17,27 @@ type AWSS3Bucket_InventoryConfiguration struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-id
-	Id string `json:"Id,omitempty"`
+	Id *stringIntrinsic `json:"Id,omitempty"`
 
 	// IncludedObjectVersions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-includedobjectversions
-	IncludedObjectVersions string `json:"IncludedObjectVersions,omitempty"`
+	IncludedObjectVersions *stringIntrinsic `json:"IncludedObjectVersions,omitempty"`
 
 	// OptionalFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-optionalfields
-	OptionalFields []string `json:"OptionalFields,omitempty"`
+	OptionalFields []*stringIntrinsic `json:"OptionalFields,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-prefix
-	Prefix string `json:"Prefix,omitempty"`
+	Prefix *stringIntrinsic `json:"Prefix,omitempty"`
 
 	// ScheduleFrequency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency
-	ScheduleFrequency string `json:"ScheduleFrequency,omitempty"`
+	ScheduleFrequency *stringIntrinsic `json:"ScheduleFrequency,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

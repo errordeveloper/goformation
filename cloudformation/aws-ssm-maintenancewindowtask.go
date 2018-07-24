@@ -13,7 +13,7 @@ type AWSSSMMaintenanceWindowTask struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// LoggingInfo AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type AWSSSMMaintenanceWindowTask struct {
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency
-	MaxConcurrency string `json:"MaxConcurrency,omitempty"`
+	MaxConcurrency *stringIntrinsic `json:"MaxConcurrency,omitempty"`
 
 	// MaxErrors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors
-	MaxErrors string `json:"MaxErrors,omitempty"`
+	MaxErrors *stringIntrinsic `json:"MaxErrors,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name
-	Name string `json:"Name,omitempty"`
+	Name *stringIntrinsic `json:"Name,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type AWSSSMMaintenanceWindowTask struct {
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn
-	ServiceRoleArn string `json:"ServiceRoleArn,omitempty"`
+	ServiceRoleArn *stringIntrinsic `json:"ServiceRoleArn,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type AWSSSMMaintenanceWindowTask struct {
 	// TaskArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
-	TaskArn string `json:"TaskArn,omitempty"`
+	TaskArn *stringIntrinsic `json:"TaskArn,omitempty"`
 
 	// TaskInvocationParameters AWS CloudFormation Property
 	// Required: false
@@ -68,12 +68,12 @@ type AWSSSMMaintenanceWindowTask struct {
 	// TaskType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
-	TaskType string `json:"TaskType,omitempty"`
+	TaskType *stringIntrinsic `json:"TaskType,omitempty"`
 
 	// WindowId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
-	WindowId string `json:"WindowId,omitempty"`
+	WindowId *stringIntrinsic `json:"WindowId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

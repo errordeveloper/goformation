@@ -13,27 +13,27 @@ type AWSApiGatewayGatewayResponse struct {
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters
-	ResponseParameters map[string]string `json:"ResponseParameters,omitempty"`
+	ResponseParameters map[string]*stringIntrinsic `json:"ResponseParameters,omitempty"`
 
 	// ResponseTemplates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates
-	ResponseTemplates map[string]string `json:"ResponseTemplates,omitempty"`
+	ResponseTemplates map[string]*stringIntrinsic `json:"ResponseTemplates,omitempty"`
 
 	// ResponseType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype
-	ResponseType string `json:"ResponseType,omitempty"`
+	ResponseType *stringIntrinsic `json:"ResponseType,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid
-	RestApiId string `json:"RestApiId,omitempty"`
+	RestApiId *stringIntrinsic `json:"RestApiId,omitempty"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode
-	StatusCode string `json:"StatusCode,omitempty"`
+	StatusCode *stringIntrinsic `json:"StatusCode,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

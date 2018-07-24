@@ -12,7 +12,7 @@ type AWSIAMRole_Policy struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname
-	PolicyName string `json:"PolicyName,omitempty"`
+	PolicyName *stringIntrinsic `json:"PolicyName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

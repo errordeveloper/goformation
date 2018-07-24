@@ -13,17 +13,17 @@ type AWSGuardDutyMaster struct {
 	// DetectorId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-detectorid
-	DetectorId string `json:"DetectorId,omitempty"`
+	DetectorId *stringIntrinsic `json:"DetectorId,omitempty"`
 
 	// InvitationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid
-	InvitationId string `json:"InvitationId,omitempty"`
+	InvitationId *stringIntrinsic `json:"InvitationId,omitempty"`
 
 	// MasterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid
-	MasterId string `json:"MasterId,omitempty"`
+	MasterId *stringIntrinsic `json:"MasterId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

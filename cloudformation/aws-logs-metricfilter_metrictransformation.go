@@ -12,17 +12,17 @@ type AWSLogsMetricFilter_MetricTransformation struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname
-	MetricName string `json:"MetricName,omitempty"`
+	MetricName *stringIntrinsic `json:"MetricName,omitempty"`
 
 	// MetricNamespace AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricnamespace
-	MetricNamespace string `json:"MetricNamespace,omitempty"`
+	MetricNamespace *stringIntrinsic `json:"MetricNamespace,omitempty"`
 
 	// MetricValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricvalue
-	MetricValue string `json:"MetricValue,omitempty"`
+	MetricValue *stringIntrinsic `json:"MetricValue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

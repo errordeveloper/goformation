@@ -7,7 +7,7 @@ type AWSCloudFrontCloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityC
 	// Comment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig-comment
-	Comment string `json:"Comment,omitempty"`
+	Comment *stringIntrinsic `json:"Comment,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

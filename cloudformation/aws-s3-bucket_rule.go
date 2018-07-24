@@ -22,7 +22,7 @@ type AWSS3Bucket_Rule struct {
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-id
-	Id string `json:"Id,omitempty"`
+	Id *stringIntrinsic `json:"Id,omitempty"`
 
 	// NoncurrentVersionExpirationInDays AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type AWSS3Bucket_Rule struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-prefix
-	Prefix string `json:"Prefix,omitempty"`
+	Prefix *stringIntrinsic `json:"Prefix,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-status
-	Status string `json:"Status,omitempty"`
+	Status *stringIntrinsic `json:"Status,omitempty"`
 
 	// TagFilters AWS CloudFormation Property
 	// Required: false

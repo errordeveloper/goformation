@@ -7,12 +7,12 @@ type AWSSESReceiptFilter_IpFilter struct {
 	// Cidr AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-cidr
-	Cidr string `json:"Cidr,omitempty"`
+	Cidr *stringIntrinsic `json:"Cidr,omitempty"`
 
 	// Policy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-policy
-	Policy string `json:"Policy,omitempty"`
+	Policy *stringIntrinsic `json:"Policy,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

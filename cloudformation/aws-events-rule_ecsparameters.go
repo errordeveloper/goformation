@@ -12,7 +12,7 @@ type AWSEventsRule_EcsParameters struct {
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn
-	TaskDefinitionArn string `json:"TaskDefinitionArn,omitempty"`
+	TaskDefinitionArn *stringIntrinsic `json:"TaskDefinitionArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

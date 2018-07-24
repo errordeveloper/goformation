@@ -7,17 +7,17 @@ type AWSGlueTable_TableInput struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name
-	Name string `json:"Name,omitempty"`
+	Name *stringIntrinsic `json:"Name,omitempty"`
 
 	// Owner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-owner
-	Owner string `json:"Owner,omitempty"`
+	Owner *stringIntrinsic `json:"Owner,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -42,17 +42,17 @@ type AWSGlueTable_TableInput struct {
 	// TableType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype
-	TableType string `json:"TableType,omitempty"`
+	TableType *stringIntrinsic `json:"TableType,omitempty"`
 
 	// ViewExpandedText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-viewexpandedtext
-	ViewExpandedText string `json:"ViewExpandedText,omitempty"`
+	ViewExpandedText *stringIntrinsic `json:"ViewExpandedText,omitempty"`
 
 	// ViewOriginalText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-vieworiginaltext
-	ViewOriginalText string `json:"ViewOriginalText,omitempty"`
+	ViewOriginalText *stringIntrinsic `json:"ViewOriginalText,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,7 +13,7 @@ type AWSLogsLogGroup struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname
-	LogGroupName string `json:"LogGroupName,omitempty"`
+	LogGroupName *stringIntrinsic `json:"LogGroupName,omitempty"`
 
 	// RetentionInDays AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type AWSInspectorAssessmentTarget struct {
 	// AssessmentTargetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname
-	AssessmentTargetName string `json:"AssessmentTargetName,omitempty"`
+	AssessmentTargetName *stringIntrinsic `json:"AssessmentTargetName,omitempty"`
 
 	// ResourceGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
-	ResourceGroupArn string `json:"ResourceGroupArn,omitempty"`
+	ResourceGroupArn *stringIntrinsic `json:"ResourceGroupArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

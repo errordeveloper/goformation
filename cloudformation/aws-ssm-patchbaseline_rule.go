@@ -12,7 +12,7 @@ type AWSSSMPatchBaseline_Rule struct {
 	// ComplianceLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel
-	ComplianceLevel string `json:"ComplianceLevel,omitempty"`
+	ComplianceLevel *stringIntrinsic `json:"ComplianceLevel,omitempty"`
 
 	// EnableNonSecurity AWS CloudFormation Property
 	// Required: false

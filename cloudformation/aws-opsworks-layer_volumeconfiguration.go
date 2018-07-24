@@ -12,7 +12,7 @@ type AWSOpsWorksLayer_VolumeConfiguration struct {
 	// MountPoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-mountpoint
-	MountPoint string `json:"MountPoint,omitempty"`
+	MountPoint *stringIntrinsic `json:"MountPoint,omitempty"`
 
 	// NumberOfDisks AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type AWSOpsWorksLayer_VolumeConfiguration struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype
-	VolumeType string `json:"VolumeType,omitempty"`
+	VolumeType *stringIntrinsic `json:"VolumeType,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

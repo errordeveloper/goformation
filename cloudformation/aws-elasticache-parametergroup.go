@@ -13,17 +13,17 @@ type AWSElastiCacheParameterGroup struct {
 	// CacheParameterGroupFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
-	CacheParameterGroupFamily string `json:"CacheParameterGroupFamily,omitempty"`
+	CacheParameterGroupFamily *stringIntrinsic `json:"CacheParameterGroupFamily,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description
-	Description string `json:"Description,omitempty"`
+	Description *stringIntrinsic `json:"Description,omitempty"`
 
 	// Properties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties
-	Properties map[string]string `json:"Properties,omitempty"`
+	Properties map[string]*stringIntrinsic `json:"Properties,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

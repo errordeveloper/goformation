@@ -7,17 +7,17 @@ type AWSCognitoUserPool_InviteMessageTemplate struct {
 	// EmailMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html#cfn-cognito-userpool-invitemessagetemplate-emailmessage
-	EmailMessage string `json:"EmailMessage,omitempty"`
+	EmailMessage *stringIntrinsic `json:"EmailMessage,omitempty"`
 
 	// EmailSubject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html#cfn-cognito-userpool-invitemessagetemplate-emailsubject
-	EmailSubject string `json:"EmailSubject,omitempty"`
+	EmailSubject *stringIntrinsic `json:"EmailSubject,omitempty"`
 
 	// SMSMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html#cfn-cognito-userpool-invitemessagetemplate-smsmessage
-	SMSMessage string `json:"SMSMessage,omitempty"`
+	SMSMessage *stringIntrinsic `json:"SMSMessage,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

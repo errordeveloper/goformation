@@ -12,7 +12,7 @@ type AWSCodeDeployDeploymentGroup_RevisionLocation struct {
 	// RevisionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype
-	RevisionType string `json:"RevisionType,omitempty"`
+	RevisionType *stringIntrinsic `json:"RevisionType,omitempty"`
 
 	// S3Location AWS CloudFormation Property
 	// Required: false

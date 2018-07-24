@@ -7,7 +7,7 @@ type AWSECSTaskDefinition_HostVolumeProperties struct {
 	// SourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes-host.html#cfn-ecs-taskdefinition-volumes-host-sourcepath
-	SourcePath string `json:"SourcePath,omitempty"`
+	SourcePath *stringIntrinsic `json:"SourcePath,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

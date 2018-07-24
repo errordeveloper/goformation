@@ -13,7 +13,7 @@ type AWSAutoScalingScheduledAction struct {
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname
-	AutoScalingGroupName string `json:"AutoScalingGroupName,omitempty"`
+	AutoScalingGroupName *stringIntrinsic `json:"AutoScalingGroupName,omitempty"`
 
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type AWSAutoScalingScheduledAction struct {
 	// EndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime
-	EndTime string `json:"EndTime,omitempty"`
+	EndTime *stringIntrinsic `json:"EndTime,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSAutoScalingScheduledAction struct {
 	// Recurrence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence
-	Recurrence string `json:"Recurrence,omitempty"`
+	Recurrence *stringIntrinsic `json:"Recurrence,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime
-	StartTime string `json:"StartTime,omitempty"`
+	StartTime *stringIntrinsic `json:"StartTime,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,7 +7,7 @@ type AWSECSService_LoadBalancer struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancers.html#cfn-ecs-service-loadbalancers-containername
-	ContainerName string `json:"ContainerName,omitempty"`
+	ContainerName *stringIntrinsic `json:"ContainerName,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: true
@@ -17,12 +17,12 @@ type AWSECSService_LoadBalancer struct {
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancers.html#cfn-ecs-service-loadbalancers-loadbalancername
-	LoadBalancerName string `json:"LoadBalancerName,omitempty"`
+	LoadBalancerName *stringIntrinsic `json:"LoadBalancerName,omitempty"`
 
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancers.html#cfn-ecs-service-loadbalancers-targetgrouparn
-	TargetGroupArn string `json:"TargetGroupArn,omitempty"`
+	TargetGroupArn *stringIntrinsic `json:"TargetGroupArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

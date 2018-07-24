@@ -12,12 +12,12 @@ type AWSGameLiftFleet_IpPermission struct {
 	// IpRange AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-iprange
-	IpRange string `json:"IpRange,omitempty"`
+	IpRange *stringIntrinsic `json:"IpRange,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-protocol
-	Protocol string `json:"Protocol,omitempty"`
+	Protocol *stringIntrinsic `json:"Protocol,omitempty"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: true

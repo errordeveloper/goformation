@@ -18,7 +18,7 @@ type AWSBatchJobQueue struct {
 	// JobQueueName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuename
-	JobQueueName string `json:"JobQueueName,omitempty"`
+	JobQueueName *stringIntrinsic `json:"JobQueueName,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AWSBatchJobQueue struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-state
-	State string `json:"State,omitempty"`
+	State *stringIntrinsic `json:"State,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

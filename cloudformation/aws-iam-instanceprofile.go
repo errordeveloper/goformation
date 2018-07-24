@@ -13,17 +13,17 @@ type AWSIAMInstanceProfile struct {
 	// InstanceProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename
-	InstanceProfileName string `json:"InstanceProfileName,omitempty"`
+	InstanceProfileName *stringIntrinsic `json:"InstanceProfileName,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path
-	Path string `json:"Path,omitempty"`
+	Path *stringIntrinsic `json:"Path,omitempty"`
 
 	// Roles AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
-	Roles []string `json:"Roles,omitempty"`
+	Roles []*stringIntrinsic `json:"Roles,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
