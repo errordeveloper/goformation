@@ -7,22 +7,22 @@ type AWSSESReceiptRule_S3Action struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-bucketname
-	BucketName *stringIntrinsic `json:"BucketName,omitempty"`
+	BucketName *StringIntrinsic `json:"BucketName,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-kmskeyarn
-	KmsKeyArn *stringIntrinsic `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *StringIntrinsic `json:"KmsKeyArn,omitempty"`
 
 	// ObjectKeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-objectkeyprefix
-	ObjectKeyPrefix *stringIntrinsic `json:"ObjectKeyPrefix,omitempty"`
+	ObjectKeyPrefix *StringIntrinsic `json:"ObjectKeyPrefix,omitempty"`
 
 	// TopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-topicarn
-	TopicArn *stringIntrinsic `json:"TopicArn,omitempty"`
+	TopicArn *StringIntrinsic `json:"TopicArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

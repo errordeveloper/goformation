@@ -12,22 +12,22 @@ type AWSElasticLoadBalancingLoadBalancer_Policies struct {
 	// InstancePorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-instanceports
-	InstancePorts []*stringIntrinsic `json:"InstancePorts,omitempty"`
+	InstancePorts []*StringIntrinsic `json:"InstancePorts,omitempty"`
 
 	// LoadBalancerPorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-loadbalancerports
-	LoadBalancerPorts []*stringIntrinsic `json:"LoadBalancerPorts,omitempty"`
+	LoadBalancerPorts []*StringIntrinsic `json:"LoadBalancerPorts,omitempty"`
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policyname
-	PolicyName *stringIntrinsic `json:"PolicyName,omitempty"`
+	PolicyName *StringIntrinsic `json:"PolicyName,omitempty"`
 
 	// PolicyType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policytype
-	PolicyType *stringIntrinsic `json:"PolicyType,omitempty"`
+	PolicyType *StringIntrinsic `json:"PolicyType,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

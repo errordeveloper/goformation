@@ -13,7 +13,7 @@ type AWSKinesisStream struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// RetentionPeriodHours AWS CloudFormation Property
 	// Required: false

@@ -7,12 +7,12 @@ type AWSCodePipelinePipeline_StageTransition struct {
 	// Reason AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason
-	Reason *stringIntrinsic `json:"Reason,omitempty"`
+	Reason *StringIntrinsic `json:"Reason,omitempty"`
 
 	// StageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename
-	StageName *stringIntrinsic `json:"StageName,omitempty"`
+	StageName *StringIntrinsic `json:"StageName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,17 +13,17 @@ type AWSAppSyncGraphQLSchema struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
-	ApiId *stringIntrinsic `json:"ApiId,omitempty"`
+	ApiId *StringIntrinsic `json:"ApiId,omitempty"`
 
 	// Definition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
-	Definition *stringIntrinsic `json:"Definition,omitempty"`
+	Definition *StringIntrinsic `json:"Definition,omitempty"`
 
 	// DefinitionS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
-	DefinitionS3Location *stringIntrinsic `json:"DefinitionS3Location,omitempty"`
+	DefinitionS3Location *StringIntrinsic `json:"DefinitionS3Location,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

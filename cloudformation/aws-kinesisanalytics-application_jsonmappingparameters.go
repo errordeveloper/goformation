@@ -7,7 +7,7 @@ type AWSKinesisAnalyticsApplication_JSONMappingParameters struct {
 	// RecordRowPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-jsonmappingparameters.html#cfn-kinesisanalytics-application-jsonmappingparameters-recordrowpath
-	RecordRowPath *stringIntrinsic `json:"RecordRowPath,omitempty"`
+	RecordRowPath *StringIntrinsic `json:"RecordRowPath,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

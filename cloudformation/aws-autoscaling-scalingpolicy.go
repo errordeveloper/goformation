@@ -13,17 +13,17 @@ type AWSAutoScalingScalingPolicy struct {
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype
-	AdjustmentType *stringIntrinsic `json:"AdjustmentType,omitempty"`
+	AdjustmentType *StringIntrinsic `json:"AdjustmentType,omitempty"`
 
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-autoscalinggroupname
-	AutoScalingGroupName *stringIntrinsic `json:"AutoScalingGroupName,omitempty"`
+	AutoScalingGroupName *StringIntrinsic `json:"AutoScalingGroupName,omitempty"`
 
 	// Cooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-cooldown
-	Cooldown *stringIntrinsic `json:"Cooldown,omitempty"`
+	Cooldown *StringIntrinsic `json:"Cooldown,omitempty"`
 
 	// EstimatedInstanceWarmup AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSAutoScalingScalingPolicy struct {
 	// MetricAggregationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-metricaggregationtype
-	MetricAggregationType *stringIntrinsic `json:"MetricAggregationType,omitempty"`
+	MetricAggregationType *StringIntrinsic `json:"MetricAggregationType,omitempty"`
 
 	// MinAdjustmentMagnitude AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSAutoScalingScalingPolicy struct {
 	// PolicyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype
-	PolicyType *stringIntrinsic `json:"PolicyType,omitempty"`
+	PolicyType *StringIntrinsic `json:"PolicyType,omitempty"`
 
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: false

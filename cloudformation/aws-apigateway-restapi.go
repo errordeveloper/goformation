@@ -13,12 +13,12 @@ type AWSApiGatewayRestApi struct {
 	// ApiKeySourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-apikeysourcetype
-	ApiKeySourceType *stringIntrinsic `json:"ApiKeySourceType,omitempty"`
+	ApiKeySourceType *StringIntrinsic `json:"ApiKeySourceType,omitempty"`
 
 	// BinaryMediaTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes
-	BinaryMediaTypes []*stringIntrinsic `json:"BinaryMediaTypes,omitempty"`
+	BinaryMediaTypes []*StringIntrinsic `json:"BinaryMediaTypes,omitempty"`
 
 	// Body AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type AWSApiGatewayRestApi struct {
 	// CloneFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-clonefrom
-	CloneFrom *stringIntrinsic `json:"CloneFrom,omitempty"`
+	CloneFrom *StringIntrinsic `json:"CloneFrom,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type AWSApiGatewayRestApi struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters
-	Parameters map[string]*stringIntrinsic `json:"Parameters,omitempty"`
+	Parameters map[string]*StringIntrinsic `json:"Parameters,omitempty"`
 
 	// Policy AWS CloudFormation Property
 	// Required: false

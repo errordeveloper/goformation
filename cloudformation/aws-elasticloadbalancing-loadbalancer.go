@@ -23,7 +23,7 @@ type AWSElasticLoadBalancingLoadBalancer struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones
-	AvailabilityZones []*stringIntrinsic `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []*StringIntrinsic `json:"AvailabilityZones,omitempty"`
 
 	// ConnectionDrainingPolicy AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type AWSElasticLoadBalancingLoadBalancer struct {
 	// Instances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances
-	Instances []*stringIntrinsic `json:"Instances,omitempty"`
+	Instances []*StringIntrinsic `json:"Instances,omitempty"`
 
 	// LBCookieStickinessPolicy AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type AWSElasticLoadBalancingLoadBalancer struct {
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname
-	LoadBalancerName *stringIntrinsic `json:"LoadBalancerName,omitempty"`
+	LoadBalancerName *StringIntrinsic `json:"LoadBalancerName,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -73,17 +73,17 @@ type AWSElasticLoadBalancingLoadBalancer struct {
 	// Scheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme
-	Scheme *stringIntrinsic `json:"Scheme,omitempty"`
+	Scheme *StringIntrinsic `json:"Scheme,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups
-	SecurityGroups []*stringIntrinsic `json:"SecurityGroups,omitempty"`
+	SecurityGroups []*StringIntrinsic `json:"SecurityGroups,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets
-	Subnets []*stringIntrinsic `json:"Subnets,omitempty"`
+	Subnets []*StringIntrinsic `json:"Subnets,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

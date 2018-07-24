@@ -12,12 +12,12 @@ type AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname
-	LogGroupName *stringIntrinsic `json:"LogGroupName,omitempty"`
+	LogGroupName *StringIntrinsic `json:"LogGroupName,omitempty"`
 
 	// LogStreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
-	LogStreamName *stringIntrinsic `json:"LogStreamName,omitempty"`
+	LogStreamName *StringIntrinsic `json:"LogStreamName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

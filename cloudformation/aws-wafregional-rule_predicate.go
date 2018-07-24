@@ -7,7 +7,7 @@ type AWSWAFRegionalRule_Predicate struct {
 	// DataId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-dataid
-	DataId *stringIntrinsic `json:"DataId,omitempty"`
+	DataId *StringIntrinsic `json:"DataId,omitempty"`
 
 	// Negated AWS CloudFormation Property
 	// Required: true
@@ -17,7 +17,7 @@ type AWSWAFRegionalRule_Predicate struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-type
-	Type *stringIntrinsic `json:"Type,omitempty"`
+	Type *StringIntrinsic `json:"Type,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

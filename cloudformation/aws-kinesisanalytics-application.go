@@ -13,17 +13,17 @@ type AWSKinesisAnalyticsApplication struct {
 	// ApplicationCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode
-	ApplicationCode *stringIntrinsic `json:"ApplicationCode,omitempty"`
+	ApplicationCode *StringIntrinsic `json:"ApplicationCode,omitempty"`
 
 	// ApplicationDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationdescription
-	ApplicationDescription *stringIntrinsic `json:"ApplicationDescription,omitempty"`
+	ApplicationDescription *StringIntrinsic `json:"ApplicationDescription,omitempty"`
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname
-	ApplicationName *stringIntrinsic `json:"ApplicationName,omitempty"`
+	ApplicationName *StringIntrinsic `json:"ApplicationName,omitempty"`
 
 	// Inputs AWS CloudFormation Property
 	// Required: true

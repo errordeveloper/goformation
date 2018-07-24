@@ -7,7 +7,7 @@ type AWSEC2Instance_BlockDeviceMapping struct {
 	// DeviceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html#cfn-ec2-blockdev-mapping-devicename
-	DeviceName *stringIntrinsic `json:"DeviceName,omitempty"`
+	DeviceName *StringIntrinsic `json:"DeviceName,omitempty"`
 
 	// Ebs AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type AWSEC2Instance_BlockDeviceMapping struct {
 	// VirtualName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html#cfn-ec2-blockdev-mapping-virtualname
-	VirtualName *stringIntrinsic `json:"VirtualName,omitempty"`
+	VirtualName *StringIntrinsic `json:"VirtualName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,17 +7,17 @@ type AWSRoute53RecordSetGroup_GeoLocation struct {
 	// ContinentCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordsetgroup-geolocation-continentcode
-	ContinentCode *stringIntrinsic `json:"ContinentCode,omitempty"`
+	ContinentCode *StringIntrinsic `json:"ContinentCode,omitempty"`
 
 	// CountryCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-countrycode
-	CountryCode *stringIntrinsic `json:"CountryCode,omitempty"`
+	CountryCode *StringIntrinsic `json:"CountryCode,omitempty"`
 
 	// SubdivisionCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-subdivisioncode
-	SubdivisionCode *stringIntrinsic `json:"SubdivisionCode,omitempty"`
+	SubdivisionCode *StringIntrinsic `json:"SubdivisionCode,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

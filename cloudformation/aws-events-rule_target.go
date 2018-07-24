@@ -7,7 +7,7 @@ type AWSEventsRule_Target struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-arn
-	Arn *stringIntrinsic `json:"Arn,omitempty"`
+	Arn *StringIntrinsic `json:"Arn,omitempty"`
 
 	// EcsParameters AWS CloudFormation Property
 	// Required: false
@@ -17,17 +17,17 @@ type AWSEventsRule_Target struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id
-	Id *stringIntrinsic `json:"Id,omitempty"`
+	Id *StringIntrinsic `json:"Id,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-input
-	Input *stringIntrinsic `json:"Input,omitempty"`
+	Input *StringIntrinsic `json:"Input,omitempty"`
 
 	// InputPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputpath
-	InputPath *stringIntrinsic `json:"InputPath,omitempty"`
+	InputPath *StringIntrinsic `json:"InputPath,omitempty"`
 
 	// InputTransformer AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type AWSEventsRule_Target struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn
-	RoleArn *stringIntrinsic `json:"RoleArn,omitempty"`
+	RoleArn *StringIntrinsic `json:"RoleArn,omitempty"`
 
 	// RunCommandParameters AWS CloudFormation Property
 	// Required: false

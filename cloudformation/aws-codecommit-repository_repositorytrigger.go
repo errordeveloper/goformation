@@ -7,27 +7,27 @@ type AWSCodeCommitRepository_RepositoryTrigger struct {
 	// Branches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-branches
-	Branches []*stringIntrinsic `json:"Branches,omitempty"`
+	Branches []*StringIntrinsic `json:"Branches,omitempty"`
 
 	// CustomData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-customdata
-	CustomData *stringIntrinsic `json:"CustomData,omitempty"`
+	CustomData *StringIntrinsic `json:"CustomData,omitempty"`
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-destinationarn
-	DestinationArn *stringIntrinsic `json:"DestinationArn,omitempty"`
+	DestinationArn *StringIntrinsic `json:"DestinationArn,omitempty"`
 
 	// Events AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-events
-	Events []*stringIntrinsic `json:"Events,omitempty"`
+	Events []*StringIntrinsic `json:"Events,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,22 +13,22 @@ type AWSElasticBeanstalkEnvironment struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-applicationname
-	ApplicationName *stringIntrinsic `json:"ApplicationName,omitempty"`
+	ApplicationName *StringIntrinsic `json:"ApplicationName,omitempty"`
 
 	// CNAMEPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-cnameprefix
-	CNAMEPrefix *stringIntrinsic `json:"CNAMEPrefix,omitempty"`
+	CNAMEPrefix *StringIntrinsic `json:"CNAMEPrefix,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-name
-	EnvironmentName *stringIntrinsic `json:"EnvironmentName,omitempty"`
+	EnvironmentName *StringIntrinsic `json:"EnvironmentName,omitempty"`
 
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSElasticBeanstalkEnvironment struct {
 	// PlatformArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn
-	PlatformArn *stringIntrinsic `json:"PlatformArn,omitempty"`
+	PlatformArn *StringIntrinsic `json:"PlatformArn,omitempty"`
 
 	// SolutionStackName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-solutionstackname
-	SolutionStackName *stringIntrinsic `json:"SolutionStackName,omitempty"`
+	SolutionStackName *StringIntrinsic `json:"SolutionStackName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type AWSElasticBeanstalkEnvironment struct {
 	// TemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-templatename
-	TemplateName *stringIntrinsic `json:"TemplateName,omitempty"`
+	TemplateName *StringIntrinsic `json:"TemplateName,omitempty"`
 
 	// Tier AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type AWSElasticBeanstalkEnvironment struct {
 	// VersionLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-versionlabel
-	VersionLabel *stringIntrinsic `json:"VersionLabel,omitempty"`
+	VersionLabel *StringIntrinsic `json:"VersionLabel,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,37 +7,37 @@ type AWSOpsWorksInstance_TimeBasedAutoScaling struct {
 	// Friday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-friday
-	Friday map[string]*stringIntrinsic `json:"Friday,omitempty"`
+	Friday map[string]*StringIntrinsic `json:"Friday,omitempty"`
 
 	// Monday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-monday
-	Monday map[string]*stringIntrinsic `json:"Monday,omitempty"`
+	Monday map[string]*StringIntrinsic `json:"Monday,omitempty"`
 
 	// Saturday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-saturday
-	Saturday map[string]*stringIntrinsic `json:"Saturday,omitempty"`
+	Saturday map[string]*StringIntrinsic `json:"Saturday,omitempty"`
 
 	// Sunday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-sunday
-	Sunday map[string]*stringIntrinsic `json:"Sunday,omitempty"`
+	Sunday map[string]*StringIntrinsic `json:"Sunday,omitempty"`
 
 	// Thursday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-thursday
-	Thursday map[string]*stringIntrinsic `json:"Thursday,omitempty"`
+	Thursday map[string]*StringIntrinsic `json:"Thursday,omitempty"`
 
 	// Tuesday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-tuesday
-	Tuesday map[string]*stringIntrinsic `json:"Tuesday,omitempty"`
+	Tuesday map[string]*StringIntrinsic `json:"Tuesday,omitempty"`
 
 	// Wednesday AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday
-	Wednesday map[string]*stringIntrinsic `json:"Wednesday,omitempty"`
+	Wednesday map[string]*StringIntrinsic `json:"Wednesday,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

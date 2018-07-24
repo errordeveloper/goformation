@@ -18,7 +18,7 @@ type AWSS3Bucket struct {
 	// AccessControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol
-	AccessControl *stringIntrinsic `json:"AccessControl,omitempty"`
+	AccessControl *StringIntrinsic `json:"AccessControl,omitempty"`
 
 	// AnalyticsConfigurations AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSS3Bucket struct {
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name
-	BucketName *stringIntrinsic `json:"BucketName,omitempty"`
+	BucketName *StringIntrinsic `json:"BucketName,omitempty"`
 
 	// CorsConfiguration AWS CloudFormation Property
 	// Required: false

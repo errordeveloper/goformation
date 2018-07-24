@@ -7,17 +7,17 @@ type AWSSESConfigurationSetEventDestination_DimensionConfiguration struct {
 	// DefaultDimensionValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue
-	DefaultDimensionValue *stringIntrinsic `json:"DefaultDimensionValue,omitempty"`
+	DefaultDimensionValue *StringIntrinsic `json:"DefaultDimensionValue,omitempty"`
 
 	// DimensionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionname
-	DimensionName *stringIntrinsic `json:"DimensionName,omitempty"`
+	DimensionName *StringIntrinsic `json:"DimensionName,omitempty"`
 
 	// DimensionValueSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource
-	DimensionValueSource *stringIntrinsic `json:"DimensionValueSource,omitempty"`
+	DimensionValueSource *StringIntrinsic `json:"DimensionValueSource,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

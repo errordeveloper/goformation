@@ -13,42 +13,42 @@ type AWSAppSyncResolver struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
-	ApiId *stringIntrinsic `json:"ApiId,omitempty"`
+	ApiId *StringIntrinsic `json:"ApiId,omitempty"`
 
 	// DataSourceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
-	DataSourceName *stringIntrinsic `json:"DataSourceName,omitempty"`
+	DataSourceName *StringIntrinsic `json:"DataSourceName,omitempty"`
 
 	// FieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
-	FieldName *stringIntrinsic `json:"FieldName,omitempty"`
+	FieldName *StringIntrinsic `json:"FieldName,omitempty"`
 
 	// RequestMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
-	RequestMappingTemplate *stringIntrinsic `json:"RequestMappingTemplate,omitempty"`
+	RequestMappingTemplate *StringIntrinsic `json:"RequestMappingTemplate,omitempty"`
 
 	// RequestMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
-	RequestMappingTemplateS3Location *stringIntrinsic `json:"RequestMappingTemplateS3Location,omitempty"`
+	RequestMappingTemplateS3Location *StringIntrinsic `json:"RequestMappingTemplateS3Location,omitempty"`
 
 	// ResponseMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
-	ResponseMappingTemplate *stringIntrinsic `json:"ResponseMappingTemplate,omitempty"`
+	ResponseMappingTemplate *StringIntrinsic `json:"ResponseMappingTemplate,omitempty"`
 
 	// ResponseMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
-	ResponseMappingTemplateS3Location *stringIntrinsic `json:"ResponseMappingTemplateS3Location,omitempty"`
+	ResponseMappingTemplateS3Location *StringIntrinsic `json:"ResponseMappingTemplateS3Location,omitempty"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
-	TypeName *stringIntrinsic `json:"TypeName,omitempty"`
+	TypeName *StringIntrinsic `json:"TypeName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

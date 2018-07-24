@@ -12,7 +12,7 @@ type AWSWAFRegionalSqlInjectionMatchSet_SqlInjectionMatchTuple struct {
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple-texttransformation
-	TextTransformation *stringIntrinsic `json:"TextTransformation,omitempty"`
+	TextTransformation *StringIntrinsic `json:"TextTransformation,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

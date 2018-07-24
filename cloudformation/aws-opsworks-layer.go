@@ -13,7 +13,7 @@ type AWSOpsWorksLayer struct {
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes
-	Attributes map[string]*stringIntrinsic `json:"Attributes,omitempty"`
+	Attributes map[string]*StringIntrinsic `json:"Attributes,omitempty"`
 
 	// AutoAssignElasticIps AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type AWSOpsWorksLayer struct {
 	// CustomInstanceProfileArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn
-	CustomInstanceProfileArn *stringIntrinsic `json:"CustomInstanceProfileArn,omitempty"`
+	CustomInstanceProfileArn *StringIntrinsic `json:"CustomInstanceProfileArn,omitempty"`
 
 	// CustomJson AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSOpsWorksLayer struct {
 	// CustomSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids
-	CustomSecurityGroupIds []*stringIntrinsic `json:"CustomSecurityGroupIds,omitempty"`
+	CustomSecurityGroupIds []*StringIntrinsic `json:"CustomSecurityGroupIds,omitempty"`
 
 	// EnableAutoHealing AWS CloudFormation Property
 	// Required: true
@@ -68,22 +68,22 @@ type AWSOpsWorksLayer struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// Packages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
-	Packages []*stringIntrinsic `json:"Packages,omitempty"`
+	Packages []*StringIntrinsic `json:"Packages,omitempty"`
 
 	// Shortname AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
-	Shortname *stringIntrinsic `json:"Shortname,omitempty"`
+	Shortname *StringIntrinsic `json:"Shortname,omitempty"`
 
 	// StackId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
-	StackId *stringIntrinsic `json:"StackId,omitempty"`
+	StackId *StringIntrinsic `json:"StackId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type AWSOpsWorksLayer struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
-	Type *stringIntrinsic `json:"Type,omitempty"`
+	Type *StringIntrinsic `json:"Type,omitempty"`
 
 	// UseEbsOptimizedInstances AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type AWSEC2VPNConnectionRoute struct {
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock
-	DestinationCidrBlock *stringIntrinsic `json:"DestinationCidrBlock,omitempty"`
+	DestinationCidrBlock *StringIntrinsic `json:"DestinationCidrBlock,omitempty"`
 
 	// VpnConnectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid
-	VpnConnectionId *stringIntrinsic `json:"VpnConnectionId,omitempty"`
+	VpnConnectionId *StringIntrinsic `json:"VpnConnectionId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

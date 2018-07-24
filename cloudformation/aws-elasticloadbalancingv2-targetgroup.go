@@ -18,17 +18,17 @@ type AWSElasticLoadBalancingV2TargetGroup struct {
 	// HealthCheckPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath
-	HealthCheckPath *stringIntrinsic `json:"HealthCheckPath,omitempty"`
+	HealthCheckPath *StringIntrinsic `json:"HealthCheckPath,omitempty"`
 
 	// HealthCheckPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckport
-	HealthCheckPort *stringIntrinsic `json:"HealthCheckPort,omitempty"`
+	HealthCheckPort *StringIntrinsic `json:"HealthCheckPort,omitempty"`
 
 	// HealthCheckProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol
-	HealthCheckProtocol *stringIntrinsic `json:"HealthCheckProtocol,omitempty"`
+	HealthCheckProtocol *StringIntrinsic `json:"HealthCheckProtocol,omitempty"`
 
 	// HealthCheckTimeoutSeconds AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type AWSElasticLoadBalancingV2TargetGroup struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: true
@@ -58,7 +58,7 @@ type AWSElasticLoadBalancingV2TargetGroup struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol
-	Protocol *stringIntrinsic `json:"Protocol,omitempty"`
+	Protocol *StringIntrinsic `json:"Protocol,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type AWSElasticLoadBalancingV2TargetGroup struct {
 	// TargetType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype
-	TargetType *stringIntrinsic `json:"TargetType,omitempty"`
+	TargetType *StringIntrinsic `json:"TargetType,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type AWSElasticLoadBalancingV2TargetGroup struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid
-	VpcId *stringIntrinsic `json:"VpcId,omitempty"`
+	VpcId *StringIntrinsic `json:"VpcId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -17,17 +17,17 @@ type AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration stru
 	// DomainARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-domainarn
-	DomainARN *stringIntrinsic `json:"DomainARN,omitempty"`
+	DomainARN *StringIntrinsic `json:"DomainARN,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexname
-	IndexName *stringIntrinsic `json:"IndexName,omitempty"`
+	IndexName *StringIntrinsic `json:"IndexName,omitempty"`
 
 	// IndexRotationPeriod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod
-	IndexRotationPeriod *stringIntrinsic `json:"IndexRotationPeriod,omitempty"`
+	IndexRotationPeriod *StringIntrinsic `json:"IndexRotationPeriod,omitempty"`
 
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration stru
 	// RoleARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn
-	RoleARN *stringIntrinsic `json:"RoleARN,omitempty"`
+	RoleARN *StringIntrinsic `json:"RoleARN,omitempty"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3backupmode
-	S3BackupMode *stringIntrinsic `json:"S3BackupMode,omitempty"`
+	S3BackupMode *StringIntrinsic `json:"S3BackupMode,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
@@ -57,7 +57,7 @@ type AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration stru
 	// TypeName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename
-	TypeName *stringIntrinsic `json:"TypeName,omitempty"`
+	TypeName *StringIntrinsic `json:"TypeName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

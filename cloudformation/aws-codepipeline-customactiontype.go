@@ -13,7 +13,7 @@ type AWSCodePipelineCustomActionType struct {
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
-	Category *stringIntrinsic `json:"Category,omitempty"`
+	Category *StringIntrinsic `json:"Category,omitempty"`
 
 	// ConfigurationProperties AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSCodePipelineCustomActionType struct {
 	// Provider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
-	Provider *stringIntrinsic `json:"Provider,omitempty"`
+	Provider *StringIntrinsic `json:"Provider,omitempty"`
 
 	// Settings AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSCodePipelineCustomActionType struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
-	Version *stringIntrinsic `json:"Version,omitempty"`
+	Version *StringIntrinsic `json:"Version,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,7 +7,7 @@ type AWSCloudFrontStreamingDistribution_TrustedSigners struct {
 	// AwsAccountNumbers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
-	AwsAccountNumbers []*stringIntrinsic `json:"AwsAccountNumbers,omitempty"`
+	AwsAccountNumbers []*StringIntrinsic `json:"AwsAccountNumbers,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true

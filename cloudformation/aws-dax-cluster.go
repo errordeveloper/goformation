@@ -13,42 +13,42 @@ type AWSDAXCluster struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones
-	AvailabilityZones []*stringIntrinsic `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []*StringIntrinsic `json:"AvailabilityZones,omitempty"`
 
 	// ClusterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername
-	ClusterName *stringIntrinsic `json:"ClusterName,omitempty"`
+	ClusterName *StringIntrinsic `json:"ClusterName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// IAMRoleARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
-	IAMRoleARN *stringIntrinsic `json:"IAMRoleARN,omitempty"`
+	IAMRoleARN *StringIntrinsic `json:"IAMRoleARN,omitempty"`
 
 	// NodeType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
-	NodeType *stringIntrinsic `json:"NodeType,omitempty"`
+	NodeType *StringIntrinsic `json:"NodeType,omitempty"`
 
 	// NotificationTopicARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn
-	NotificationTopicARN *stringIntrinsic `json:"NotificationTopicARN,omitempty"`
+	NotificationTopicARN *StringIntrinsic `json:"NotificationTopicARN,omitempty"`
 
 	// ParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname
-	ParameterGroupName *stringIntrinsic `json:"ParameterGroupName,omitempty"`
+	ParameterGroupName *StringIntrinsic `json:"ParameterGroupName,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow *stringIntrinsic `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *StringIntrinsic `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// ReplicationFactor AWS CloudFormation Property
 	// Required: true
@@ -58,12 +58,12 @@ type AWSDAXCluster struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids
-	SecurityGroupIds []*stringIntrinsic `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []*StringIntrinsic `json:"SecurityGroupIds,omitempty"`
 
 	// SubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname
-	SubnetGroupName *stringIntrinsic `json:"SubnetGroupName,omitempty"`
+	SubnetGroupName *StringIntrinsic `json:"SubnetGroupName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -33,7 +33,7 @@ type AWSSQSQueue struct {
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsmasterkeyid
-	KmsMasterKeyId *stringIntrinsic `json:"KmsMasterKeyId,omitempty"`
+	KmsMasterKeyId *StringIntrinsic `json:"KmsMasterKeyId,omitempty"`
 
 	// MaximumMessageSize AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type AWSSQSQueue struct {
 	// QueueName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-name
-	QueueName *stringIntrinsic `json:"QueueName,omitempty"`
+	QueueName *StringIntrinsic `json:"QueueName,omitempty"`
 
 	// ReceiveMessageWaitTimeSeconds AWS CloudFormation Property
 	// Required: false

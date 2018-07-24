@@ -7,42 +7,42 @@ type AWSDMSEndpoint_MongoDbSettings struct {
 	// AuthMechanism AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-authmechanism
-	AuthMechanism *stringIntrinsic `json:"AuthMechanism,omitempty"`
+	AuthMechanism *StringIntrinsic `json:"AuthMechanism,omitempty"`
 
 	// AuthSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-authsource
-	AuthSource *stringIntrinsic `json:"AuthSource,omitempty"`
+	AuthSource *StringIntrinsic `json:"AuthSource,omitempty"`
 
 	// AuthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-authtype
-	AuthType *stringIntrinsic `json:"AuthType,omitempty"`
+	AuthType *StringIntrinsic `json:"AuthType,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-databasename
-	DatabaseName *stringIntrinsic `json:"DatabaseName,omitempty"`
+	DatabaseName *StringIntrinsic `json:"DatabaseName,omitempty"`
 
 	// DocsToInvestigate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-docstoinvestigate
-	DocsToInvestigate *stringIntrinsic `json:"DocsToInvestigate,omitempty"`
+	DocsToInvestigate *StringIntrinsic `json:"DocsToInvestigate,omitempty"`
 
 	// ExtractDocId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-extractdocid
-	ExtractDocId *stringIntrinsic `json:"ExtractDocId,omitempty"`
+	ExtractDocId *StringIntrinsic `json:"ExtractDocId,omitempty"`
 
 	// NestingLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-nestinglevel
-	NestingLevel *stringIntrinsic `json:"NestingLevel,omitempty"`
+	NestingLevel *StringIntrinsic `json:"NestingLevel,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-password
-	Password *stringIntrinsic `json:"Password,omitempty"`
+	Password *StringIntrinsic `json:"Password,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type AWSDMSEndpoint_MongoDbSettings struct {
 	// ServerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-servername
-	ServerName *stringIntrinsic `json:"ServerName,omitempty"`
+	ServerName *StringIntrinsic `json:"ServerName,omitempty"`
 
 	// Username AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-username
-	Username *stringIntrinsic `json:"Username,omitempty"`
+	Username *StringIntrinsic `json:"Username,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

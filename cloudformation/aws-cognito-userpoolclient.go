@@ -13,12 +13,12 @@ type AWSCognitoUserPoolClient struct {
 	// ClientName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname
-	ClientName *stringIntrinsic `json:"ClientName,omitempty"`
+	ClientName *StringIntrinsic `json:"ClientName,omitempty"`
 
 	// ExplicitAuthFlows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows
-	ExplicitAuthFlows []*stringIntrinsic `json:"ExplicitAuthFlows,omitempty"`
+	ExplicitAuthFlows []*StringIntrinsic `json:"ExplicitAuthFlows,omitempty"`
 
 	// GenerateSecret AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSCognitoUserPoolClient struct {
 	// ReadAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes
-	ReadAttributes []*stringIntrinsic `json:"ReadAttributes,omitempty"`
+	ReadAttributes []*StringIntrinsic `json:"ReadAttributes,omitempty"`
 
 	// RefreshTokenValidity AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSCognitoUserPoolClient struct {
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid
-	UserPoolId *stringIntrinsic `json:"UserPoolId,omitempty"`
+	UserPoolId *StringIntrinsic `json:"UserPoolId,omitempty"`
 
 	// WriteAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes
-	WriteAttributes []*stringIntrinsic `json:"WriteAttributes,omitempty"`
+	WriteAttributes []*StringIntrinsic `json:"WriteAttributes,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

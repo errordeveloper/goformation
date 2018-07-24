@@ -7,12 +7,12 @@ type AWSCloudFrontDistribution_OriginCustomHeader struct {
 	// HeaderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headername
-	HeaderName *stringIntrinsic `json:"HeaderName,omitempty"`
+	HeaderName *StringIntrinsic `json:"HeaderName,omitempty"`
 
 	// HeaderValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headervalue
-	HeaderValue *stringIntrinsic `json:"HeaderValue,omitempty"`
+	HeaderValue *StringIntrinsic `json:"HeaderValue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

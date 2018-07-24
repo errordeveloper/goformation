@@ -12,12 +12,12 @@ type AWSCloudFrontDistribution_Origin struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname
-	DomainName *stringIntrinsic `json:"DomainName,omitempty"`
+	DomainName *StringIntrinsic `json:"DomainName,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id
-	Id *stringIntrinsic `json:"Id,omitempty"`
+	Id *StringIntrinsic `json:"Id,omitempty"`
 
 	// OriginCustomHeaders AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type AWSCloudFrontDistribution_Origin struct {
 	// OriginPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath
-	OriginPath *stringIntrinsic `json:"OriginPath,omitempty"`
+	OriginPath *StringIntrinsic `json:"OriginPath,omitempty"`
 
 	// S3OriginConfig AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type AWSEC2NetworkAclEntry struct {
 	// CidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock
-	CidrBlock *stringIntrinsic `json:"CidrBlock,omitempty"`
+	CidrBlock *StringIntrinsic `json:"CidrBlock,omitempty"`
 
 	// Egress AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type AWSEC2NetworkAclEntry struct {
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock
-	Ipv6CidrBlock *stringIntrinsic `json:"Ipv6CidrBlock,omitempty"`
+	Ipv6CidrBlock *StringIntrinsic `json:"Ipv6CidrBlock,omitempty"`
 
 	// NetworkAclId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid
-	NetworkAclId *stringIntrinsic `json:"NetworkAclId,omitempty"`
+	NetworkAclId *StringIntrinsic `json:"NetworkAclId,omitempty"`
 
 	// PortRange AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type AWSEC2NetworkAclEntry struct {
 	// RuleAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction
-	RuleAction *stringIntrinsic `json:"RuleAction,omitempty"`
+	RuleAction *StringIntrinsic `json:"RuleAction,omitempty"`
 
 	// RuleNumber AWS CloudFormation Property
 	// Required: true

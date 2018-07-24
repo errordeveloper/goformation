@@ -17,7 +17,7 @@ type AWSWAFWebACL_ActivatedRule struct {
 	// RuleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-ruleid
-	RuleId *stringIntrinsic `json:"RuleId,omitempty"`
+	RuleId *StringIntrinsic `json:"RuleId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

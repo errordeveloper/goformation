@@ -7,12 +7,12 @@ type AWSEC2VPNConnection_VpnTunnelOptionsSpecification struct {
 	// PreSharedKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-presharedkey
-	PreSharedKey *stringIntrinsic `json:"PreSharedKey,omitempty"`
+	PreSharedKey *StringIntrinsic `json:"PreSharedKey,omitempty"`
 
 	// TunnelInsideCidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
-	TunnelInsideCidr *stringIntrinsic `json:"TunnelInsideCidr,omitempty"`
+	TunnelInsideCidr *StringIntrinsic `json:"TunnelInsideCidr,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

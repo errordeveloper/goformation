@@ -7,27 +7,27 @@ type AWSApiGatewayMethod_Integration struct {
 	// CacheKeyParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachekeyparameters
-	CacheKeyParameters []*stringIntrinsic `json:"CacheKeyParameters,omitempty"`
+	CacheKeyParameters []*StringIntrinsic `json:"CacheKeyParameters,omitempty"`
 
 	// CacheNamespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachenamespace
-	CacheNamespace *stringIntrinsic `json:"CacheNamespace,omitempty"`
+	CacheNamespace *StringIntrinsic `json:"CacheNamespace,omitempty"`
 
 	// ContentHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-contenthandling
-	ContentHandling *stringIntrinsic `json:"ContentHandling,omitempty"`
+	ContentHandling *StringIntrinsic `json:"ContentHandling,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-credentials
-	Credentials *stringIntrinsic `json:"Credentials,omitempty"`
+	Credentials *StringIntrinsic `json:"Credentials,omitempty"`
 
 	// IntegrationHttpMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationhttpmethod
-	IntegrationHttpMethod *stringIntrinsic `json:"IntegrationHttpMethod,omitempty"`
+	IntegrationHttpMethod *StringIntrinsic `json:"IntegrationHttpMethod,omitempty"`
 
 	// IntegrationResponses AWS CloudFormation Property
 	// Required: false
@@ -37,27 +37,27 @@ type AWSApiGatewayMethod_Integration struct {
 	// PassthroughBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-passthroughbehavior
-	PassthroughBehavior *stringIntrinsic `json:"PassthroughBehavior,omitempty"`
+	PassthroughBehavior *StringIntrinsic `json:"PassthroughBehavior,omitempty"`
 
 	// RequestParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requestparameters
-	RequestParameters map[string]*stringIntrinsic `json:"RequestParameters,omitempty"`
+	RequestParameters map[string]*StringIntrinsic `json:"RequestParameters,omitempty"`
 
 	// RequestTemplates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requesttemplates
-	RequestTemplates map[string]*stringIntrinsic `json:"RequestTemplates,omitempty"`
+	RequestTemplates map[string]*StringIntrinsic `json:"RequestTemplates,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-type
-	Type *stringIntrinsic `json:"Type,omitempty"`
+	Type *StringIntrinsic `json:"Type,omitempty"`
 
 	// Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-uri
-	Uri *stringIntrinsic `json:"Uri,omitempty"`
+	Uri *StringIntrinsic `json:"Uri,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

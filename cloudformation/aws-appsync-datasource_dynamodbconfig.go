@@ -7,12 +7,12 @@ type AWSAppSyncDataSource_DynamoDBConfig struct {
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion
-	AwsRegion *stringIntrinsic `json:"AwsRegion,omitempty"`
+	AwsRegion *StringIntrinsic `json:"AwsRegion,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename
-	TableName *stringIntrinsic `json:"TableName,omitempty"`
+	TableName *StringIntrinsic `json:"TableName,omitempty"`
 
 	// UseCallerCredentials AWS CloudFormation Property
 	// Required: false

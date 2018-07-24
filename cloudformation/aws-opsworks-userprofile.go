@@ -18,17 +18,17 @@ type AWSOpsWorksUserProfile struct {
 	// IamUserArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
-	IamUserArn *stringIntrinsic `json:"IamUserArn,omitempty"`
+	IamUserArn *StringIntrinsic `json:"IamUserArn,omitempty"`
 
 	// SshPublicKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
-	SshPublicKey *stringIntrinsic `json:"SshPublicKey,omitempty"`
+	SshPublicKey *StringIntrinsic `json:"SshPublicKey,omitempty"`
 
 	// SshUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
-	SshUsername *stringIntrinsic `json:"SshUsername,omitempty"`
+	SshUsername *StringIntrinsic `json:"SshUsername,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

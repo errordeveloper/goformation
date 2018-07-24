@@ -13,17 +13,17 @@ type AWSRoute53RecordSetGroup struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment
-	Comment *stringIntrinsic `json:"Comment,omitempty"`
+	Comment *StringIntrinsic `json:"Comment,omitempty"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
-	HostedZoneId *stringIntrinsic `json:"HostedZoneId,omitempty"`
+	HostedZoneId *StringIntrinsic `json:"HostedZoneId,omitempty"`
 
 	// HostedZoneName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
-	HostedZoneName *stringIntrinsic `json:"HostedZoneName,omitempty"`
+	HostedZoneName *StringIntrinsic `json:"HostedZoneName,omitempty"`
 
 	// RecordSets AWS CloudFormation Property
 	// Required: false

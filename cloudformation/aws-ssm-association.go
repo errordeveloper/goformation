@@ -13,22 +13,22 @@ type AWSSSMAssociation struct {
 	// AssociationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
-	AssociationName *stringIntrinsic `json:"AssociationName,omitempty"`
+	AssociationName *StringIntrinsic `json:"AssociationName,omitempty"`
 
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
-	DocumentVersion *stringIntrinsic `json:"DocumentVersion,omitempty"`
+	DocumentVersion *StringIntrinsic `json:"DocumentVersion,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
-	InstanceId *stringIntrinsic `json:"InstanceId,omitempty"`
+	InstanceId *StringIntrinsic `json:"InstanceId,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSSSMAssociation struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
-	ScheduleExpression *stringIntrinsic `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *StringIntrinsic `json:"ScheduleExpression,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false

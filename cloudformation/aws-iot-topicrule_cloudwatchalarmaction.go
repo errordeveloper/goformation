@@ -7,22 +7,22 @@ type AWSIoTTopicRule_CloudwatchAlarmAction struct {
 	// AlarmName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-alarmname
-	AlarmName *stringIntrinsic `json:"AlarmName,omitempty"`
+	AlarmName *StringIntrinsic `json:"AlarmName,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-rolearn
-	RoleArn *stringIntrinsic `json:"RoleArn,omitempty"`
+	RoleArn *StringIntrinsic `json:"RoleArn,omitempty"`
 
 	// StateReason AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statereason
-	StateReason *stringIntrinsic `json:"StateReason,omitempty"`
+	StateReason *StringIntrinsic `json:"StateReason,omitempty"`
 
 	// StateValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statevalue
-	StateValue *stringIntrinsic `json:"StateValue,omitempty"`
+	StateValue *StringIntrinsic `json:"StateValue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

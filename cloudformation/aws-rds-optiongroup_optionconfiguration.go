@@ -7,12 +7,12 @@ type AWSRDSOptionGroup_OptionConfiguration struct {
 	// DBSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships
-	DBSecurityGroupMemberships []*stringIntrinsic `json:"DBSecurityGroupMemberships,omitempty"`
+	DBSecurityGroupMemberships []*StringIntrinsic `json:"DBSecurityGroupMemberships,omitempty"`
 
 	// OptionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionname
-	OptionName *stringIntrinsic `json:"OptionName,omitempty"`
+	OptionName *StringIntrinsic `json:"OptionName,omitempty"`
 
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
@@ -22,7 +22,7 @@ type AWSRDSOptionGroup_OptionConfiguration struct {
 	// OptionVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfiguration-optionversion
-	OptionVersion *stringIntrinsic `json:"OptionVersion,omitempty"`
+	OptionVersion *StringIntrinsic `json:"OptionVersion,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type AWSRDSOptionGroup_OptionConfiguration struct {
 	// VpcSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-vpcsecuritygroupmemberships
-	VpcSecurityGroupMemberships []*stringIntrinsic `json:"VpcSecurityGroupMemberships,omitempty"`
+	VpcSecurityGroupMemberships []*StringIntrinsic `json:"VpcSecurityGroupMemberships,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

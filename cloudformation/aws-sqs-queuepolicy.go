@@ -18,7 +18,7 @@ type AWSSQSQueuePolicy struct {
 	// Queues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-queues
-	Queues []*stringIntrinsic `json:"Queues,omitempty"`
+	Queues []*StringIntrinsic `json:"Queues,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,12 +13,12 @@ type AWSCloudFormationStack struct {
 	// NotificationARNs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-notificationarns
-	NotificationARNs []*stringIntrinsic `json:"NotificationARNs,omitempty"`
+	NotificationARNs []*StringIntrinsic `json:"NotificationARNs,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-parameters
-	Parameters map[string]*stringIntrinsic `json:"Parameters,omitempty"`
+	Parameters map[string]*StringIntrinsic `json:"Parameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSCloudFormationStack struct {
 	// TemplateURL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
-	TemplateURL *stringIntrinsic `json:"TemplateURL,omitempty"`
+	TemplateURL *StringIntrinsic `json:"TemplateURL,omitempty"`
 
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: false

@@ -23,17 +23,17 @@ type AWSLambdaEventSourceMapping struct {
 	// EventSourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn
-	EventSourceArn *stringIntrinsic `json:"EventSourceArn,omitempty"`
+	EventSourceArn *StringIntrinsic `json:"EventSourceArn,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname
-	FunctionName *stringIntrinsic `json:"FunctionName,omitempty"`
+	FunctionName *StringIntrinsic `json:"FunctionName,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
-	StartingPosition *stringIntrinsic `json:"StartingPosition,omitempty"`
+	StartingPosition *StringIntrinsic `json:"StartingPosition,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

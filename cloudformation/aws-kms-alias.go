@@ -13,12 +13,12 @@ type AWSKMSAlias struct {
 	// AliasName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-aliasname
-	AliasName *stringIntrinsic `json:"AliasName,omitempty"`
+	AliasName *StringIntrinsic `json:"AliasName,omitempty"`
 
 	// TargetKeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-targetkeyid
-	TargetKeyId *stringIntrinsic `json:"TargetKeyId,omitempty"`
+	TargetKeyId *StringIntrinsic `json:"TargetKeyId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

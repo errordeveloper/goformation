@@ -7,7 +7,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// Aliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-aliases
-	Aliases []*stringIntrinsic `json:"Aliases,omitempty"`
+	Aliases []*StringIntrinsic `json:"Aliases,omitempty"`
 
 	// CacheBehaviors AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment
-	Comment *stringIntrinsic `json:"Comment,omitempty"`
+	Comment *StringIntrinsic `json:"Comment,omitempty"`
 
 	// CustomErrorResponses AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// DefaultRootObject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultrootobject
-	DefaultRootObject *stringIntrinsic `json:"DefaultRootObject,omitempty"`
+	DefaultRootObject *StringIntrinsic `json:"DefaultRootObject,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// HttpVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion
-	HttpVersion *stringIntrinsic `json:"HttpVersion,omitempty"`
+	HttpVersion *StringIntrinsic `json:"HttpVersion,omitempty"`
 
 	// IPV6Enabled AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// PriceClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
-	PriceClass *stringIntrinsic `json:"PriceClass,omitempty"`
+	PriceClass *StringIntrinsic `json:"PriceClass,omitempty"`
 
 	// Restrictions AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 	// WebACLId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid
-	WebACLId *stringIntrinsic `json:"WebACLId,omitempty"`
+	WebACLId *StringIntrinsic `json:"WebACLId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

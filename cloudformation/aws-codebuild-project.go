@@ -28,12 +28,12 @@ type AWSCodeBuildProject struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey
-	EncryptionKey *stringIntrinsic `json:"EncryptionKey,omitempty"`
+	EncryptionKey *StringIntrinsic `json:"EncryptionKey,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: true
@@ -43,12 +43,12 @@ type AWSCodeBuildProject struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
-	ServiceRole *stringIntrinsic `json:"ServiceRole,omitempty"`
+	ServiceRole *StringIntrinsic `json:"ServiceRole,omitempty"`
 
 	// Source AWS CloudFormation Property
 	// Required: true

@@ -18,7 +18,7 @@ type AWSIoTThing struct {
 	// ThingName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
-	ThingName *stringIntrinsic `json:"ThingName,omitempty"`
+	ThingName *StringIntrinsic `json:"ThingName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

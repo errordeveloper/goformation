@@ -13,12 +13,12 @@ type AWSCodeCommitRepository struct {
 	// RepositoryDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription
-	RepositoryDescription *stringIntrinsic `json:"RepositoryDescription,omitempty"`
+	RepositoryDescription *StringIntrinsic `json:"RepositoryDescription,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname
-	RepositoryName *stringIntrinsic `json:"RepositoryName,omitempty"`
+	RepositoryName *StringIntrinsic `json:"RepositoryName,omitempty"`
 
 	// Triggers AWS CloudFormation Property
 	// Required: false

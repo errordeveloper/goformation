@@ -7,17 +7,17 @@ type AWSEC2SpotFleet_SpotFleetRequestConfigData struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-allocationstrategy
-	AllocationStrategy *stringIntrinsic `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *StringIntrinsic `json:"AllocationStrategy,omitempty"`
 
 	// ExcessCapacityTerminationPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-excesscapacityterminationpolicy
-	ExcessCapacityTerminationPolicy *stringIntrinsic `json:"ExcessCapacityTerminationPolicy,omitempty"`
+	ExcessCapacityTerminationPolicy *StringIntrinsic `json:"ExcessCapacityTerminationPolicy,omitempty"`
 
 	// IamFleetRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-iamfleetrole
-	IamFleetRole *stringIntrinsic `json:"IamFleetRole,omitempty"`
+	IamFleetRole *StringIntrinsic `json:"IamFleetRole,omitempty"`
 
 	// LaunchSpecifications AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type AWSEC2SpotFleet_SpotFleetRequestConfigData struct {
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice
-	SpotPrice *stringIntrinsic `json:"SpotPrice,omitempty"`
+	SpotPrice *StringIntrinsic `json:"SpotPrice,omitempty"`
 
 	// TargetCapacity AWS CloudFormation Property
 	// Required: true
@@ -47,17 +47,17 @@ type AWSEC2SpotFleet_SpotFleetRequestConfigData struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type
-	Type *stringIntrinsic `json:"Type,omitempty"`
+	Type *StringIntrinsic `json:"Type,omitempty"`
 
 	// ValidFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validfrom
-	ValidFrom *stringIntrinsic `json:"ValidFrom,omitempty"`
+	ValidFrom *StringIntrinsic `json:"ValidFrom,omitempty"`
 
 	// ValidUntil AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validuntil
-	ValidUntil *stringIntrinsic `json:"ValidUntil,omitempty"`
+	ValidUntil *StringIntrinsic `json:"ValidUntil,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

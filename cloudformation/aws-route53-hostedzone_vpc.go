@@ -7,12 +7,12 @@ type AWSRoute53HostedZone_VPC struct {
 	// VPCId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcid
-	VPCId *stringIntrinsic `json:"VPCId,omitempty"`
+	VPCId *StringIntrinsic `json:"VPCId,omitempty"`
 
 	// VPCRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcregion
-	VPCRegion *stringIntrinsic `json:"VPCRegion,omitempty"`
+	VPCRegion *StringIntrinsic `json:"VPCRegion,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

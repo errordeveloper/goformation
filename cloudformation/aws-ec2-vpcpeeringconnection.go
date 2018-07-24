@@ -13,17 +13,17 @@ type AWSEC2VPCPeeringConnection struct {
 	// PeerOwnerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid
-	PeerOwnerId *stringIntrinsic `json:"PeerOwnerId,omitempty"`
+	PeerOwnerId *StringIntrinsic `json:"PeerOwnerId,omitempty"`
 
 	// PeerRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn
-	PeerRoleArn *stringIntrinsic `json:"PeerRoleArn,omitempty"`
+	PeerRoleArn *StringIntrinsic `json:"PeerRoleArn,omitempty"`
 
 	// PeerVpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid
-	PeerVpcId *stringIntrinsic `json:"PeerVpcId,omitempty"`
+	PeerVpcId *StringIntrinsic `json:"PeerVpcId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSEC2VPCPeeringConnection struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid
-	VpcId *stringIntrinsic `json:"VpcId,omitempty"`
+	VpcId *StringIntrinsic `json:"VpcId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

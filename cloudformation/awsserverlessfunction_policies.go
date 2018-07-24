@@ -10,9 +10,9 @@ import (
 
 // AWSServerlessFunction_Policies is a helper struct that can hold either a String, String, IAMPolicyDocument, or IAMPolicyDocument value
 type AWSServerlessFunction_Policies struct {
-	String **stringIntrinsic
+	String **StringIntrinsic
 
-	StringArray *[]*stringIntrinsic
+	StringArray *[]*StringIntrinsic
 
 	IAMPolicyDocument *AWSServerlessFunction_IAMPolicyDocument
 
@@ -60,10 +60,10 @@ func (r *AWSServerlessFunction_Policies) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case *stringIntrinsic:
+	case *StringIntrinsic:
 		r.String = &val
 
-	case []*stringIntrinsic:
+	case []*StringIntrinsic:
 		r.StringArray = &val
 
 	case map[string]interface{}:

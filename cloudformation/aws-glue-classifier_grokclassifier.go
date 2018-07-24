@@ -7,22 +7,22 @@ type AWSGlueClassifier_GrokClassifier struct {
 	// Classification AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-classification
-	Classification *stringIntrinsic `json:"Classification,omitempty"`
+	Classification *StringIntrinsic `json:"Classification,omitempty"`
 
 	// CustomPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-custompatterns
-	CustomPatterns *stringIntrinsic `json:"CustomPatterns,omitempty"`
+	CustomPatterns *StringIntrinsic `json:"CustomPatterns,omitempty"`
 
 	// GrokPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-grokpattern
-	GrokPattern *stringIntrinsic `json:"GrokPattern,omitempty"`
+	GrokPattern *StringIntrinsic `json:"GrokPattern,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,7 +7,7 @@ type AWSGluePartition_SerdeInfo struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSGluePartition_SerdeInfo struct {
 	// SerializationLibrary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary
-	SerializationLibrary *stringIntrinsic `json:"SerializationLibrary,omitempty"`
+	SerializationLibrary *StringIntrinsic `json:"SerializationLibrary,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

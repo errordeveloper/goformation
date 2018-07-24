@@ -12,22 +12,22 @@ type AWSWAFRegionalByteMatchSet_ByteMatchTuple struct {
 	// PositionalConstraint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-positionalconstraint
-	PositionalConstraint *stringIntrinsic `json:"PositionalConstraint,omitempty"`
+	PositionalConstraint *StringIntrinsic `json:"PositionalConstraint,omitempty"`
 
 	// TargetString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstring
-	TargetString *stringIntrinsic `json:"TargetString,omitempty"`
+	TargetString *StringIntrinsic `json:"TargetString,omitempty"`
 
 	// TargetStringBase64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstringbase64
-	TargetStringBase64 *stringIntrinsic `json:"TargetStringBase64,omitempty"`
+	TargetStringBase64 *StringIntrinsic `json:"TargetStringBase64,omitempty"`
 
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-texttransformation
-	TextTransformation *stringIntrinsic `json:"TextTransformation,omitempty"`
+	TextTransformation *StringIntrinsic `json:"TextTransformation,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

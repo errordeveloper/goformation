@@ -7,7 +7,7 @@ type AWSECSTaskDefinition_MountPoint struct {
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-containerpath
-	ContainerPath *stringIntrinsic `json:"ContainerPath,omitempty"`
+	ContainerPath *StringIntrinsic `json:"ContainerPath,omitempty"`
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSECSTaskDefinition_MountPoint struct {
 	// SourceVolume AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-sourcevolume
-	SourceVolume *stringIntrinsic `json:"SourceVolume,omitempty"`
+	SourceVolume *StringIntrinsic `json:"SourceVolume,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

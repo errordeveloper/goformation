@@ -12,7 +12,7 @@ type AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceSchema struct {
 	// RecordEncoding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalytics-applicationreferencedatasource-referenceschema-recordencoding
-	RecordEncoding *stringIntrinsic `json:"RecordEncoding,omitempty"`
+	RecordEncoding *StringIntrinsic `json:"RecordEncoding,omitempty"`
 
 	// RecordFormat AWS CloudFormation Property
 	// Required: true

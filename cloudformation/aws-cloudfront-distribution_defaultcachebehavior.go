@@ -7,12 +7,12 @@ type AWSCloudFrontDistribution_DefaultCacheBehavior struct {
 	// AllowedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-allowedmethods
-	AllowedMethods []*stringIntrinsic `json:"AllowedMethods,omitempty"`
+	AllowedMethods []*StringIntrinsic `json:"AllowedMethods,omitempty"`
 
 	// CachedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-cachedmethods
-	CachedMethods []*stringIntrinsic `json:"CachedMethods,omitempty"`
+	CachedMethods []*StringIntrinsic `json:"CachedMethods,omitempty"`
 
 	// Compress AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type AWSCloudFrontDistribution_DefaultCacheBehavior struct {
 	// FieldLevelEncryptionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-fieldlevelencryptionid
-	FieldLevelEncryptionId *stringIntrinsic `json:"FieldLevelEncryptionId,omitempty"`
+	FieldLevelEncryptionId *StringIntrinsic `json:"FieldLevelEncryptionId,omitempty"`
 
 	// ForwardedValues AWS CloudFormation Property
 	// Required: true
@@ -57,17 +57,17 @@ type AWSCloudFrontDistribution_DefaultCacheBehavior struct {
 	// TargetOriginId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-targetoriginid
-	TargetOriginId *stringIntrinsic `json:"TargetOriginId,omitempty"`
+	TargetOriginId *StringIntrinsic `json:"TargetOriginId,omitempty"`
 
 	// TrustedSigners AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners
-	TrustedSigners []*stringIntrinsic `json:"TrustedSigners,omitempty"`
+	TrustedSigners []*StringIntrinsic `json:"TrustedSigners,omitempty"`
 
 	// ViewerProtocolPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-viewerprotocolpolicy
-	ViewerProtocolPolicy *stringIntrinsic `json:"ViewerProtocolPolicy,omitempty"`
+	ViewerProtocolPolicy *StringIntrinsic `json:"ViewerProtocolPolicy,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

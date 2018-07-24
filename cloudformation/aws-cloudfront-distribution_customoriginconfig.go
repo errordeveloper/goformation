@@ -22,7 +22,7 @@ type AWSCloudFrontDistribution_CustomOriginConfig struct {
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy
-	OriginProtocolPolicy *stringIntrinsic `json:"OriginProtocolPolicy,omitempty"`
+	OriginProtocolPolicy *StringIntrinsic `json:"OriginProtocolPolicy,omitempty"`
 
 	// OriginReadTimeout AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type AWSCloudFrontDistribution_CustomOriginConfig struct {
 	// OriginSSLProtocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols
-	OriginSSLProtocols []*stringIntrinsic `json:"OriginSSLProtocols,omitempty"`
+	OriginSSLProtocols []*StringIntrinsic `json:"OriginSSLProtocols,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

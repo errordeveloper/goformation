@@ -7,7 +7,7 @@ type AWSS3Bucket_QueueConfiguration struct {
 	// Event AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-event
-	Event *stringIntrinsic `json:"Event,omitempty"`
+	Event *StringIntrinsic `json:"Event,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSS3Bucket_QueueConfiguration struct {
 	// Queue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-queue
-	Queue *stringIntrinsic `json:"Queue,omitempty"`
+	Queue *StringIntrinsic `json:"Queue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -12,7 +12,7 @@ type AWSS3Bucket_DataExport struct {
 	// OutputSchemaVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion
-	OutputSchemaVersion *stringIntrinsic `json:"OutputSchemaVersion,omitempty"`
+	OutputSchemaVersion *StringIntrinsic `json:"OutputSchemaVersion,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

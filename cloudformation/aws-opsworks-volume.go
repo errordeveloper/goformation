@@ -13,22 +13,22 @@ type AWSOpsWorksVolume struct {
 	// Ec2VolumeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-ec2volumeid
-	Ec2VolumeId *stringIntrinsic `json:"Ec2VolumeId,omitempty"`
+	Ec2VolumeId *StringIntrinsic `json:"Ec2VolumeId,omitempty"`
 
 	// MountPoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-mountpoint
-	MountPoint *stringIntrinsic `json:"MountPoint,omitempty"`
+	MountPoint *StringIntrinsic `json:"MountPoint,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// StackId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid
-	StackId *stringIntrinsic `json:"StackId,omitempty"`
+	StackId *StringIntrinsic `json:"StackId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

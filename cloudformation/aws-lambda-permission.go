@@ -13,32 +13,32 @@ type AWSLambdaPermission struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
-	Action *stringIntrinsic `json:"Action,omitempty"`
+	Action *StringIntrinsic `json:"Action,omitempty"`
 
 	// EventSourceToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
-	EventSourceToken *stringIntrinsic `json:"EventSourceToken,omitempty"`
+	EventSourceToken *StringIntrinsic `json:"EventSourceToken,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
-	FunctionName *stringIntrinsic `json:"FunctionName,omitempty"`
+	FunctionName *StringIntrinsic `json:"FunctionName,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
-	Principal *stringIntrinsic `json:"Principal,omitempty"`
+	Principal *StringIntrinsic `json:"Principal,omitempty"`
 
 	// SourceAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
-	SourceAccount *stringIntrinsic `json:"SourceAccount,omitempty"`
+	SourceAccount *StringIntrinsic `json:"SourceAccount,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
-	SourceArn *stringIntrinsic `json:"SourceArn,omitempty"`
+	SourceArn *StringIntrinsic `json:"SourceArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

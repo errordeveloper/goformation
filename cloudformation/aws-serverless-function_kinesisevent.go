@@ -12,12 +12,12 @@ type AWSServerlessFunction_KinesisEvent struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	StartingPosition *stringIntrinsic `json:"StartingPosition,omitempty"`
+	StartingPosition *StringIntrinsic `json:"StartingPosition,omitempty"`
 
 	// Stream AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	Stream *stringIntrinsic `json:"Stream,omitempty"`
+	Stream *StringIntrinsic `json:"Stream,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -23,12 +23,12 @@ type AWSEFSFileSystem struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid
-	KmsKeyId *stringIntrinsic `json:"KmsKeyId,omitempty"`
+	KmsKeyId *StringIntrinsic `json:"KmsKeyId,omitempty"`
 
 	// PerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode
-	PerformanceMode *stringIntrinsic `json:"PerformanceMode,omitempty"`
+	PerformanceMode *StringIntrinsic `json:"PerformanceMode,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

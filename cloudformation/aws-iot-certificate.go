@@ -13,12 +13,12 @@ type AWSIoTCertificate struct {
 	// CertificateSigningRequest AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
-	CertificateSigningRequest *stringIntrinsic `json:"CertificateSigningRequest,omitempty"`
+	CertificateSigningRequest *StringIntrinsic `json:"CertificateSigningRequest,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
-	Status *stringIntrinsic `json:"Status,omitempty"`
+	Status *StringIntrinsic `json:"Status,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

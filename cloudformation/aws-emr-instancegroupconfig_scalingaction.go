@@ -7,7 +7,7 @@ type AWSEMRInstanceGroupConfig_ScalingAction struct {
 	// Market AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market
-	Market *stringIntrinsic `json:"Market,omitempty"`
+	Market *StringIntrinsic `json:"Market,omitempty"`
 
 	// SimpleScalingPolicyConfiguration AWS CloudFormation Property
 	// Required: true

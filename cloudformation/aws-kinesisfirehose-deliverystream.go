@@ -13,12 +13,12 @@ type AWSKinesisFirehoseDeliveryStream struct {
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname
-	DeliveryStreamName *stringIntrinsic `json:"DeliveryStreamName,omitempty"`
+	DeliveryStreamName *StringIntrinsic `json:"DeliveryStreamName,omitempty"`
 
 	// DeliveryStreamType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype
-	DeliveryStreamType *stringIntrinsic `json:"DeliveryStreamType,omitempty"`
+	DeliveryStreamType *StringIntrinsic `json:"DeliveryStreamType,omitempty"`
 
 	// ElasticsearchDestinationConfiguration AWS CloudFormation Property
 	// Required: false

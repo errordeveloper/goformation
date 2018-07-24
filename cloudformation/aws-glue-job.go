@@ -33,7 +33,7 @@ type AWSGlueJob struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// ExecutionProperty AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSGlueJob struct {
 	// LogUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri
-	LogUri *stringIntrinsic `json:"LogUri,omitempty"`
+	LogUri *StringIntrinsic `json:"LogUri,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type AWSGlueJob struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role
-	Role *stringIntrinsic `json:"Role,omitempty"`
+	Role *StringIntrinsic `json:"Role,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

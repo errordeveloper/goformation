@@ -18,17 +18,17 @@ type AWSApiGatewayMethod struct {
 	// AuthorizationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
-	AuthorizationType *stringIntrinsic `json:"AuthorizationType,omitempty"`
+	AuthorizationType *StringIntrinsic `json:"AuthorizationType,omitempty"`
 
 	// AuthorizerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid
-	AuthorizerId *stringIntrinsic `json:"AuthorizerId,omitempty"`
+	AuthorizerId *StringIntrinsic `json:"AuthorizerId,omitempty"`
 
 	// HttpMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
-	HttpMethod *stringIntrinsic `json:"HttpMethod,omitempty"`
+	HttpMethod *StringIntrinsic `json:"HttpMethod,omitempty"`
 
 	// Integration AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type AWSApiGatewayMethod struct {
 	// OperationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname
-	OperationName *stringIntrinsic `json:"OperationName,omitempty"`
+	OperationName *StringIntrinsic `json:"OperationName,omitempty"`
 
 	// RequestModels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
-	RequestModels map[string]*stringIntrinsic `json:"RequestModels,omitempty"`
+	RequestModels map[string]*StringIntrinsic `json:"RequestModels,omitempty"`
 
 	// RequestParameters AWS CloudFormation Property
 	// Required: false
@@ -58,17 +58,17 @@ type AWSApiGatewayMethod struct {
 	// RequestValidatorId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid
-	RequestValidatorId *stringIntrinsic `json:"RequestValidatorId,omitempty"`
+	RequestValidatorId *StringIntrinsic `json:"RequestValidatorId,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
-	ResourceId *stringIntrinsic `json:"ResourceId,omitempty"`
+	ResourceId *StringIntrinsic `json:"ResourceId,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
-	RestApiId *stringIntrinsic `json:"RestApiId,omitempty"`
+	RestApiId *StringIntrinsic `json:"RestApiId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

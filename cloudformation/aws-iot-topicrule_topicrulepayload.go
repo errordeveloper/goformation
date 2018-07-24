@@ -12,12 +12,12 @@ type AWSIoTTopicRule_TopicRulePayload struct {
 	// AwsIotSqlVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion
-	AwsIotSqlVersion *stringIntrinsic `json:"AwsIotSqlVersion,omitempty"`
+	AwsIotSqlVersion *StringIntrinsic `json:"AwsIotSqlVersion,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// RuleDisabled AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type AWSIoTTopicRule_TopicRulePayload struct {
 	// Sql AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql
-	Sql *stringIntrinsic `json:"Sql,omitempty"`
+	Sql *StringIntrinsic `json:"Sql,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

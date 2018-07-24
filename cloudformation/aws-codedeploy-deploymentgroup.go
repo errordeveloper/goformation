@@ -18,7 +18,7 @@ type AWSCodeDeployDeploymentGroup struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname
-	ApplicationName *stringIntrinsic `json:"ApplicationName,omitempty"`
+	ApplicationName *StringIntrinsic `json:"ApplicationName,omitempty"`
 
 	// AutoRollbackConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSCodeDeployDeploymentGroup struct {
 	// AutoScalingGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
-	AutoScalingGroups []*stringIntrinsic `json:"AutoScalingGroups,omitempty"`
+	AutoScalingGroups []*StringIntrinsic `json:"AutoScalingGroups,omitempty"`
 
 	// Deployment AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSCodeDeployDeploymentGroup struct {
 	// DeploymentConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname
-	DeploymentConfigName *stringIntrinsic `json:"DeploymentConfigName,omitempty"`
+	DeploymentConfigName *StringIntrinsic `json:"DeploymentConfigName,omitempty"`
 
 	// DeploymentGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname
-	DeploymentGroupName *stringIntrinsic `json:"DeploymentGroupName,omitempty"`
+	DeploymentGroupName *StringIntrinsic `json:"DeploymentGroupName,omitempty"`
 
 	// DeploymentStyle AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type AWSCodeDeployDeploymentGroup struct {
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
-	ServiceRoleArn *stringIntrinsic `json:"ServiceRoleArn,omitempty"`
+	ServiceRoleArn *StringIntrinsic `json:"ServiceRoleArn,omitempty"`
 
 	// TriggerConfigurations AWS CloudFormation Property
 	// Required: false

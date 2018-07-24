@@ -7,17 +7,17 @@ type AWSOpsWorksStack_RdsDbInstance struct {
 	// DbPassword AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
-	DbPassword *stringIntrinsic `json:"DbPassword,omitempty"`
+	DbPassword *StringIntrinsic `json:"DbPassword,omitempty"`
 
 	// DbUser AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
-	DbUser *stringIntrinsic `json:"DbUser,omitempty"`
+	DbUser *StringIntrinsic `json:"DbUser,omitempty"`
 
 	// RdsDbInstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
-	RdsDbInstanceArn *stringIntrinsic `json:"RdsDbInstanceArn,omitempty"`
+	RdsDbInstanceArn *StringIntrinsic `json:"RdsDbInstanceArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

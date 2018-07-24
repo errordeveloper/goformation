@@ -18,7 +18,7 @@ type AWSApiGatewayUsagePlan struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// Quota AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSApiGatewayUsagePlan struct {
 	// UsagePlanName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
-	UsagePlanName *stringIntrinsic `json:"UsagePlanName,omitempty"`
+	UsagePlanName *StringIntrinsic `json:"UsagePlanName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

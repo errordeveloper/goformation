@@ -13,7 +13,7 @@ type AWSEMRStep struct {
 	// ActionOnFailure AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure
-	ActionOnFailure *stringIntrinsic `json:"ActionOnFailure,omitempty"`
+	ActionOnFailure *StringIntrinsic `json:"ActionOnFailure,omitempty"`
 
 	// HadoopJarStep AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type AWSEMRStep struct {
 	// JobFlowId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-jobflowid
-	JobFlowId *stringIntrinsic `json:"JobFlowId,omitempty"`
+	JobFlowId *StringIntrinsic `json:"JobFlowId,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

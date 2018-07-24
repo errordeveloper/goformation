@@ -13,12 +13,12 @@ type AWSDAXParameterGroup struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// ParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname
-	ParameterGroupName *stringIntrinsic `json:"ParameterGroupName,omitempty"`
+	ParameterGroupName *StringIntrinsic `json:"ParameterGroupName,omitempty"`
 
 	// ParameterNameValues AWS CloudFormation Property
 	// Required: false

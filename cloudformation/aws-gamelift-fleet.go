@@ -13,12 +13,12 @@ type AWSGameLiftFleet struct {
 	// BuildId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
-	BuildId *stringIntrinsic `json:"BuildId,omitempty"`
+	BuildId *StringIntrinsic `json:"BuildId,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type AWSGameLiftFleet struct {
 	// EC2InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
-	EC2InstanceType *stringIntrinsic `json:"EC2InstanceType,omitempty"`
+	EC2InstanceType *StringIntrinsic `json:"EC2InstanceType,omitempty"`
 
 	// LogPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths
-	LogPaths []*stringIntrinsic `json:"LogPaths,omitempty"`
+	LogPaths []*StringIntrinsic `json:"LogPaths,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type AWSGameLiftFleet struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
-	Name *stringIntrinsic `json:"Name,omitempty"`
+	Name *StringIntrinsic `json:"Name,omitempty"`
 
 	// ServerLaunchParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters
-	ServerLaunchParameters *stringIntrinsic `json:"ServerLaunchParameters,omitempty"`
+	ServerLaunchParameters *StringIntrinsic `json:"ServerLaunchParameters,omitempty"`
 
 	// ServerLaunchPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath
-	ServerLaunchPath *stringIntrinsic `json:"ServerLaunchPath,omitempty"`
+	ServerLaunchPath *StringIntrinsic `json:"ServerLaunchPath,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

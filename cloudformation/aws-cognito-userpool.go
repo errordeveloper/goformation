@@ -18,12 +18,12 @@ type AWSCognitoUserPool struct {
 	// AliasAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
-	AliasAttributes []*stringIntrinsic `json:"AliasAttributes,omitempty"`
+	AliasAttributes []*StringIntrinsic `json:"AliasAttributes,omitempty"`
 
 	// AutoVerifiedAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes
-	AutoVerifiedAttributes []*stringIntrinsic `json:"AutoVerifiedAttributes,omitempty"`
+	AutoVerifiedAttributes []*StringIntrinsic `json:"AutoVerifiedAttributes,omitempty"`
 
 	// DeviceConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSCognitoUserPool struct {
 	// EmailVerificationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
-	EmailVerificationMessage *stringIntrinsic `json:"EmailVerificationMessage,omitempty"`
+	EmailVerificationMessage *StringIntrinsic `json:"EmailVerificationMessage,omitempty"`
 
 	// EmailVerificationSubject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject
-	EmailVerificationSubject *stringIntrinsic `json:"EmailVerificationSubject,omitempty"`
+	EmailVerificationSubject *StringIntrinsic `json:"EmailVerificationSubject,omitempty"`
 
 	// LambdaConfig AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type AWSCognitoUserPool struct {
 	// MfaConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
-	MfaConfiguration *stringIntrinsic `json:"MfaConfiguration,omitempty"`
+	MfaConfiguration *StringIntrinsic `json:"MfaConfiguration,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type AWSCognitoUserPool struct {
 	// SmsAuthenticationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
-	SmsAuthenticationMessage *stringIntrinsic `json:"SmsAuthenticationMessage,omitempty"`
+	SmsAuthenticationMessage *StringIntrinsic `json:"SmsAuthenticationMessage,omitempty"`
 
 	// SmsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -78,12 +78,12 @@ type AWSCognitoUserPool struct {
 	// SmsVerificationMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
-	SmsVerificationMessage *stringIntrinsic `json:"SmsVerificationMessage,omitempty"`
+	SmsVerificationMessage *StringIntrinsic `json:"SmsVerificationMessage,omitempty"`
 
 	// UserPoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname
-	UserPoolName *stringIntrinsic `json:"UserPoolName,omitempty"`
+	UserPoolName *StringIntrinsic `json:"UserPoolName,omitempty"`
 
 	// UserPoolTags AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type AWSCognitoUserPool struct {
 	// UsernameAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
-	UsernameAttributes []*stringIntrinsic `json:"UsernameAttributes,omitempty"`
+	UsernameAttributes []*StringIntrinsic `json:"UsernameAttributes,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

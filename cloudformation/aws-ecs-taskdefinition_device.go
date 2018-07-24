@@ -7,17 +7,17 @@ type AWSECSTaskDefinition_Device struct {
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-containerpath
-	ContainerPath *stringIntrinsic `json:"ContainerPath,omitempty"`
+	ContainerPath *StringIntrinsic `json:"ContainerPath,omitempty"`
 
 	// HostPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-hostpath
-	HostPath *stringIntrinsic `json:"HostPath,omitempty"`
+	HostPath *StringIntrinsic `json:"HostPath,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions
-	Permissions []*stringIntrinsic `json:"Permissions,omitempty"`
+	Permissions []*StringIntrinsic `json:"Permissions,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

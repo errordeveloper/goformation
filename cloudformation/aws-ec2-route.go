@@ -13,47 +13,47 @@ type AWSEC2Route struct {
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock
-	DestinationCidrBlock *stringIntrinsic `json:"DestinationCidrBlock,omitempty"`
+	DestinationCidrBlock *StringIntrinsic `json:"DestinationCidrBlock,omitempty"`
 
 	// DestinationIpv6CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock
-	DestinationIpv6CidrBlock *stringIntrinsic `json:"DestinationIpv6CidrBlock,omitempty"`
+	DestinationIpv6CidrBlock *StringIntrinsic `json:"DestinationIpv6CidrBlock,omitempty"`
 
 	// EgressOnlyInternetGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid
-	EgressOnlyInternetGatewayId *stringIntrinsic `json:"EgressOnlyInternetGatewayId,omitempty"`
+	EgressOnlyInternetGatewayId *StringIntrinsic `json:"EgressOnlyInternetGatewayId,omitempty"`
 
 	// GatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid
-	GatewayId *stringIntrinsic `json:"GatewayId,omitempty"`
+	GatewayId *StringIntrinsic `json:"GatewayId,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid
-	InstanceId *stringIntrinsic `json:"InstanceId,omitempty"`
+	InstanceId *StringIntrinsic `json:"InstanceId,omitempty"`
 
 	// NatGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid
-	NatGatewayId *stringIntrinsic `json:"NatGatewayId,omitempty"`
+	NatGatewayId *StringIntrinsic `json:"NatGatewayId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid
-	NetworkInterfaceId *stringIntrinsic `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *StringIntrinsic `json:"NetworkInterfaceId,omitempty"`
 
 	// RouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid
-	RouteTableId *stringIntrinsic `json:"RouteTableId,omitempty"`
+	RouteTableId *StringIntrinsic `json:"RouteTableId,omitempty"`
 
 	// VpcPeeringConnectionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid
-	VpcPeeringConnectionId *stringIntrinsic `json:"VpcPeeringConnectionId,omitempty"`
+	VpcPeeringConnectionId *StringIntrinsic `json:"VpcPeeringConnectionId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

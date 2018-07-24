@@ -7,17 +7,17 @@ type AWSIoTTopicRule_KinesisAction struct {
 	// PartitionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey
-	PartitionKey *stringIntrinsic `json:"PartitionKey,omitempty"`
+	PartitionKey *StringIntrinsic `json:"PartitionKey,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-rolearn
-	RoleArn *stringIntrinsic `json:"RoleArn,omitempty"`
+	RoleArn *StringIntrinsic `json:"RoleArn,omitempty"`
 
 	// StreamName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-streamname
-	StreamName *stringIntrinsic `json:"StreamName,omitempty"`
+	StreamName *StringIntrinsic `json:"StreamName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -18,27 +18,27 @@ type AWSECSTaskDefinition struct {
 	// Cpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu
-	Cpu *stringIntrinsic `json:"Cpu,omitempty"`
+	Cpu *StringIntrinsic `json:"Cpu,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-executionrolearn
-	ExecutionRoleArn *stringIntrinsic `json:"ExecutionRoleArn,omitempty"`
+	ExecutionRoleArn *StringIntrinsic `json:"ExecutionRoleArn,omitempty"`
 
 	// Family AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family
-	Family *stringIntrinsic `json:"Family,omitempty"`
+	Family *StringIntrinsic `json:"Family,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
-	Memory *stringIntrinsic `json:"Memory,omitempty"`
+	Memory *StringIntrinsic `json:"Memory,omitempty"`
 
 	// NetworkMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-networkmode
-	NetworkMode *stringIntrinsic `json:"NetworkMode,omitempty"`
+	NetworkMode *StringIntrinsic `json:"NetworkMode,omitempty"`
 
 	// PlacementConstraints AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type AWSECSTaskDefinition struct {
 	// RequiresCompatibilities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-requirescompatibilities
-	RequiresCompatibilities []*stringIntrinsic `json:"RequiresCompatibilities,omitempty"`
+	RequiresCompatibilities []*StringIntrinsic `json:"RequiresCompatibilities,omitempty"`
 
 	// TaskRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn
-	TaskRoleArn *stringIntrinsic `json:"TaskRoleArn,omitempty"`
+	TaskRoleArn *StringIntrinsic `json:"TaskRoleArn,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false

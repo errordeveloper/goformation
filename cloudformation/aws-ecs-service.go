@@ -13,7 +13,7 @@ type AWSECSService struct {
 	// Cluster AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster
-	Cluster *stringIntrinsic `json:"Cluster,omitempty"`
+	Cluster *StringIntrinsic `json:"Cluster,omitempty"`
 
 	// DeploymentConfiguration AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type AWSECSService struct {
 	// LaunchType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
-	LaunchType *stringIntrinsic `json:"LaunchType,omitempty"`
+	LaunchType *StringIntrinsic `json:"LaunchType,omitempty"`
 
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
@@ -58,17 +58,17 @@ type AWSECSService struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion
-	PlatformVersion *stringIntrinsic `json:"PlatformVersion,omitempty"`
+	PlatformVersion *StringIntrinsic `json:"PlatformVersion,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
-	Role *stringIntrinsic `json:"Role,omitempty"`
+	Role *StringIntrinsic `json:"Role,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename
-	ServiceName *stringIntrinsic `json:"ServiceName,omitempty"`
+	ServiceName *StringIntrinsic `json:"ServiceName,omitempty"`
 
 	// ServiceRegistries AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type AWSECSService struct {
 	// TaskDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
-	TaskDefinition *stringIntrinsic `json:"TaskDefinition,omitempty"`
+	TaskDefinition *StringIntrinsic `json:"TaskDefinition,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

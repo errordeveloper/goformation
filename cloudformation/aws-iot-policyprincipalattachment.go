@@ -13,12 +13,12 @@ type AWSIoTPolicyPrincipalAttachment struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-policyname
-	PolicyName *stringIntrinsic `json:"PolicyName,omitempty"`
+	PolicyName *StringIntrinsic `json:"PolicyName,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-principal
-	Principal *stringIntrinsic `json:"Principal,omitempty"`
+	Principal *StringIntrinsic `json:"Principal,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

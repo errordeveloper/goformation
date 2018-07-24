@@ -7,7 +7,7 @@ type AWSCloudFrontDistribution_ViewerCertificate struct {
 	// AcmCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn
-	AcmCertificateArn *stringIntrinsic `json:"AcmCertificateArn,omitempty"`
+	AcmCertificateArn *StringIntrinsic `json:"AcmCertificateArn,omitempty"`
 
 	// CloudFrontDefaultCertificate AWS CloudFormation Property
 	// Required: false
@@ -17,17 +17,17 @@ type AWSCloudFrontDistribution_ViewerCertificate struct {
 	// IamCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid
-	IamCertificateId *stringIntrinsic `json:"IamCertificateId,omitempty"`
+	IamCertificateId *StringIntrinsic `json:"IamCertificateId,omitempty"`
 
 	// MinimumProtocolVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion
-	MinimumProtocolVersion *stringIntrinsic `json:"MinimumProtocolVersion,omitempty"`
+	MinimumProtocolVersion *StringIntrinsic `json:"MinimumProtocolVersion,omitempty"`
 
 	// SslSupportMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod
-	SslSupportMethod *stringIntrinsic `json:"SslSupportMethod,omitempty"`
+	SslSupportMethod *StringIntrinsic `json:"SslSupportMethod,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

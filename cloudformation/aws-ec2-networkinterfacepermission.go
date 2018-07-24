@@ -13,17 +13,17 @@ type AWSEC2NetworkInterfacePermission struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
-	AwsAccountId *stringIntrinsic `json:"AwsAccountId,omitempty"`
+	AwsAccountId *StringIntrinsic `json:"AwsAccountId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
-	NetworkInterfaceId *stringIntrinsic `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *StringIntrinsic `json:"NetworkInterfaceId,omitempty"`
 
 	// Permission AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
-	Permission *stringIntrinsic `json:"Permission,omitempty"`
+	Permission *StringIntrinsic `json:"Permission,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -12,12 +12,12 @@ type AWSServiceDiscoveryService_DnsConfig struct {
 	// NamespaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-namespaceid
-	NamespaceId *stringIntrinsic `json:"NamespaceId,omitempty"`
+	NamespaceId *StringIntrinsic `json:"NamespaceId,omitempty"`
 
 	// RoutingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-routingpolicy
-	RoutingPolicy *stringIntrinsic `json:"RoutingPolicy,omitempty"`
+	RoutingPolicy *StringIntrinsic `json:"RoutingPolicy,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

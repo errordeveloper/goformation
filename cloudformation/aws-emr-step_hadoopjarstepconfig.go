@@ -7,17 +7,17 @@ type AWSEMRStep_HadoopJarStepConfig struct {
 	// Args AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-args
-	Args []*stringIntrinsic `json:"Args,omitempty"`
+	Args []*StringIntrinsic `json:"Args,omitempty"`
 
 	// Jar AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-jar
-	Jar *stringIntrinsic `json:"Jar,omitempty"`
+	Jar *StringIntrinsic `json:"Jar,omitempty"`
 
 	// MainClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-mainclass
-	MainClass *stringIntrinsic `json:"MainClass,omitempty"`
+	MainClass *StringIntrinsic `json:"MainClass,omitempty"`
 
 	// StepProperties AWS CloudFormation Property
 	// Required: false

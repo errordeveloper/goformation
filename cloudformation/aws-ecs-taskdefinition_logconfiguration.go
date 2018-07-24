@@ -7,12 +7,12 @@ type AWSECSTaskDefinition_LogConfiguration struct {
 	// LogDriver AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-logdriver
-	LogDriver *stringIntrinsic `json:"LogDriver,omitempty"`
+	LogDriver *StringIntrinsic `json:"LogDriver,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-options
-	Options map[string]*stringIntrinsic `json:"Options,omitempty"`
+	Options map[string]*StringIntrinsic `json:"Options,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

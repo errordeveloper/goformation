@@ -13,12 +13,12 @@ type AWSRedshiftClusterParameterGroup struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
-	Description *stringIntrinsic `json:"Description,omitempty"`
+	Description *StringIntrinsic `json:"Description,omitempty"`
 
 	// ParameterGroupFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
-	ParameterGroupFamily *stringIntrinsic `json:"ParameterGroupFamily,omitempty"`
+	ParameterGroupFamily *StringIntrinsic `json:"ParameterGroupFamily,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

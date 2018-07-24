@@ -13,12 +13,12 @@ type AWSCodeDeployApplication struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
-	ApplicationName *stringIntrinsic `json:"ApplicationName,omitempty"`
+	ApplicationName *StringIntrinsic `json:"ApplicationName,omitempty"`
 
 	// ComputePlatform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
-	ComputePlatform *stringIntrinsic `json:"ComputePlatform,omitempty"`
+	ComputePlatform *StringIntrinsic `json:"ComputePlatform,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

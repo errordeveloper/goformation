@@ -7,12 +7,12 @@ type AWSServerlessFunction_CloudWatchEventEvent struct {
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
-	Input *stringIntrinsic `json:"Input,omitempty"`
+	Input *StringIntrinsic `json:"Input,omitempty"`
 
 	// InputPath AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
-	InputPath *stringIntrinsic `json:"InputPath,omitempty"`
+	InputPath *StringIntrinsic `json:"InputPath,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true

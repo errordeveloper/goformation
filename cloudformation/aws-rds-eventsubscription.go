@@ -18,22 +18,22 @@ type AWSRDSEventSubscription struct {
 	// EventCategories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories
-	EventCategories []*stringIntrinsic `json:"EventCategories,omitempty"`
+	EventCategories []*StringIntrinsic `json:"EventCategories,omitempty"`
 
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
-	SnsTopicArn *stringIntrinsic `json:"SnsTopicArn,omitempty"`
+	SnsTopicArn *StringIntrinsic `json:"SnsTopicArn,omitempty"`
 
 	// SourceIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids
-	SourceIds []*stringIntrinsic `json:"SourceIds,omitempty"`
+	SourceIds []*StringIntrinsic `json:"SourceIds,omitempty"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
-	SourceType *stringIntrinsic `json:"SourceType,omitempty"`
+	SourceType *StringIntrinsic `json:"SourceType,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

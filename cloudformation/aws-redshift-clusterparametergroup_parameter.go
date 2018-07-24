@@ -7,12 +7,12 @@ type AWSRedshiftClusterParameterGroup_Parameter struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html#cfn-redshift-clusterparametergroup-parameter-parametername
-	ParameterName *stringIntrinsic `json:"ParameterName,omitempty"`
+	ParameterName *StringIntrinsic `json:"ParameterName,omitempty"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html#cfn-redshift-clusterparametergroup-parameter-parametervalue
-	ParameterValue *stringIntrinsic `json:"ParameterValue,omitempty"`
+	ParameterValue *StringIntrinsic `json:"ParameterValue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
