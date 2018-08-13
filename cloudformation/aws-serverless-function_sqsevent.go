@@ -7,12 +7,12 @@ type AWSServerlessFunction_SQSEvent struct {
 	// BatchSize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-	BatchSize int `json:"BatchSize,omitempty"`
+	BatchSize Value `json:"BatchSize,omitempty"`
 
 	// Queue AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-	Queue string `json:"Queue,omitempty"`
+	Queue Value `json:"Queue,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

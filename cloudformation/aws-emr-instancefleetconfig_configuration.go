@@ -7,12 +7,12 @@ type AWSEMRInstanceFleetConfig_Configuration struct {
 	// Classification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification
-	Classification string `json:"Classification,omitempty"`
+	Classification Value `json:"Classification,omitempty"`
 
 	// ConfigurationProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties
-	ConfigurationProperties map[string]string `json:"ConfigurationProperties,omitempty"`
+	ConfigurationProperties map[string]Value `json:"ConfigurationProperties,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false

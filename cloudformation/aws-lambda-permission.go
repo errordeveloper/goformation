@@ -13,32 +13,32 @@ type AWSLambdaPermission struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
-	Action string `json:"Action,omitempty"`
+	Action Value `json:"Action,omitempty"`
 
 	// EventSourceToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
-	EventSourceToken string `json:"EventSourceToken,omitempty"`
+	EventSourceToken Value `json:"EventSourceToken,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
-	FunctionName string `json:"FunctionName,omitempty"`
+	FunctionName Value `json:"FunctionName,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
-	Principal string `json:"Principal,omitempty"`
+	Principal Value `json:"Principal,omitempty"`
 
 	// SourceAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
-	SourceAccount string `json:"SourceAccount,omitempty"`
+	SourceAccount Value `json:"SourceAccount,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
-	SourceArn string `json:"SourceArn,omitempty"`
+	SourceArn Value `json:"SourceArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

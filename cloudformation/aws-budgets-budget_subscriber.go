@@ -7,12 +7,12 @@ type AWSBudgetsBudget_Subscriber struct {
 	// Address AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address
-	Address string `json:"Address,omitempty"`
+	Address Value `json:"Address,omitempty"`
 
 	// SubscriptionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype
-	SubscriptionType string `json:"SubscriptionType,omitempty"`
+	SubscriptionType Value `json:"SubscriptionType,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
