@@ -7,27 +7,27 @@ type AWSSESReceiptRule_BounceAction struct {
 	// Message AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-message
-	Message string `json:"Message,omitempty"`
+	Message Value `json:"Message,omitempty"`
 
 	// Sender AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-sender
-	Sender string `json:"Sender,omitempty"`
+	Sender Value `json:"Sender,omitempty"`
 
 	// SmtpReplyCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-smtpreplycode
-	SmtpReplyCode string `json:"SmtpReplyCode,omitempty"`
+	SmtpReplyCode Value `json:"SmtpReplyCode,omitempty"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-statuscode
-	StatusCode string `json:"StatusCode,omitempty"`
+	StatusCode Value `json:"StatusCode,omitempty"`
 
 	// TopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-topicarn
-	TopicArn string `json:"TopicArn,omitempty"`
+	TopicArn Value `json:"TopicArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

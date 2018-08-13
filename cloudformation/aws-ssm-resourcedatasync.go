@@ -13,32 +13,32 @@ type AWSSSMResourceDataSync struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
-	BucketName string `json:"BucketName,omitempty"`
+	BucketName Value `json:"BucketName,omitempty"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix
-	BucketPrefix string `json:"BucketPrefix,omitempty"`
+	BucketPrefix Value `json:"BucketPrefix,omitempty"`
 
 	// BucketRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
-	BucketRegion string `json:"BucketRegion,omitempty"`
+	BucketRegion Value `json:"BucketRegion,omitempty"`
 
 	// KMSKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
-	KMSKeyArn string `json:"KMSKeyArn,omitempty"`
+	KMSKeyArn Value `json:"KMSKeyArn,omitempty"`
 
 	// SyncFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat
-	SyncFormat string `json:"SyncFormat,omitempty"`
+	SyncFormat Value `json:"SyncFormat,omitempty"`
 
 	// SyncName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
-	SyncName string `json:"SyncName,omitempty"`
+	SyncName Value `json:"SyncName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

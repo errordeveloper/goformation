@@ -13,12 +13,12 @@ type AWSCloudFormationStack struct {
 	// NotificationARNs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-notificationarns
-	NotificationARNs []string `json:"NotificationARNs,omitempty"`
+	NotificationARNs []Value `json:"NotificationARNs,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-parameters
-	Parameters map[string]string `json:"Parameters,omitempty"`
+	Parameters map[string]Value `json:"Parameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type AWSCloudFormationStack struct {
 	// TemplateURL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
-	TemplateURL string `json:"TemplateURL,omitempty"`
+	TemplateURL Value `json:"TemplateURL,omitempty"`
 
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
-	TimeoutInMinutes int `json:"TimeoutInMinutes,omitempty"`
+	TimeoutInMinutes Value `json:"TimeoutInMinutes,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

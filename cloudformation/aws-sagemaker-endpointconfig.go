@@ -13,12 +13,12 @@ type AWSSageMakerEndpointConfig struct {
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-endpointconfigname
-	EndpointConfigName string `json:"EndpointConfigName,omitempty"`
+	EndpointConfigName Value `json:"EndpointConfigName,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid
-	KmsKeyId string `json:"KmsKeyId,omitempty"`
+	KmsKeyId Value `json:"KmsKeyId,omitempty"`
 
 	// ProductionVariants AWS CloudFormation Property
 	// Required: true
