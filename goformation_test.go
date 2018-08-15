@@ -31,12 +31,12 @@ var _ = Describe("Goformation", func() {
 
 		It("should correctly parse all of the function properties", func() {
 
-			Expect(f.Handler).To(Equal(cloudformation.NewString("file.method")))
-			Expect(f.Runtime).To(Equal(cloudformation.NewString("nodejs")))
-			Expect(f.FunctionName).To(Equal(cloudformation.NewString("functionname")))
-			Expect(f.Description).To(Equal(cloudformation.NewString("description")))
-			Expect(f.MemorySize).To(Equal(cloudformation.NewDouble(128)))
-			Expect(f.Timeout).To(Equal(cloudformation.NewDouble(30)))
+			Expect(f.Handler.String()).To(Equal("file.method"))
+			Expect(f.Runtime.String()).To(Equal("nodejs"))
+			Expect(f.FunctionName.String()).To(Equal("functionname"))
+			Expect(f.Description.String()).To(Equal("description"))
+			Expect(f.MemorySize.String()).To(Equal("128"))
+			Expect(f.Timeout.String()).To(Equal("30"))
 			Expect(f.Role).To(Equal(cloudformation.NewString("aws::arn::123456789012::some/role")))
 			Expect(f.Policies.StringArray).To(PointTo(ContainElement("AmazonDynamoDBFullAccess")))
 			Expect(f.Environment).ToNot(BeNil())
@@ -272,19 +272,19 @@ var _ = Describe("Goformation", func() {
 
 		f1 := functions["CodeUriWithS3LocationSpecifiedAsString"]
 		It("should parse a CodeUri property with an S3 location specified as a string", func() {
-			Expect(f1.CodeUri).To(PointTo(Equal("s3://testbucket/testkey.zip")))
+			Expect(f1.CodeUri.String()).To(Equal("s3://testbucket/testkey.zip"))
 		})
 
-		// f2 := functions["CodeUriWithS3LocationSpecifiedAsObject"]
-		// It("should parse a CodeUri property with an S3 location specified as an object", func() {
-		// 	x := f2.CodeUri.(*cloudformation.AWSServerlessFunction_S3Location)
-		// 	Expect(x.Key).To(Equal("testkey.zip"))
-		// 	Expect(x.Version).To(Equal(5))
-		// })
+		f2 := functions["CodeUriWithS3LocationSpecifiedAsObject"]
+		It("should parse a CodeUri property with an S3 location specified as an object", func() {
+			x := f2.CodeUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
+			Expect(x.Key).To(Equal("testkey.zip"))
+			Expect(x.Version).To(Equal(5))
+		})
 
 		f3 := functions["CodeUriWithString"]
 		It("should parse a CodeUri property with a string", func() {
-			Expect(f3.CodeUri).To(PointTo(Equal("./testfolder")))
+			Expect(f3.CodeUri.String()).To(Equal("./testfolder"))
 		})
 
 	})
@@ -327,7 +327,7 @@ var _ = Describe("Goformation", func() {
 		// 				CodeUri: &cloudformation.AWSServerlessFunction_S3Location{
 		// 					Bucket:  cloudformation.NewString("test-bucket"),
 		// 					Key:     cloudformation.NewString("test-key"),
-		// 					Version: cloudformation.Integer(100),
+		// 					Version: cloudformation.NewInteger(100),
 		// 				},
 		// 			},
 		// 		},
@@ -340,7 +340,7 @@ var _ = Describe("Goformation", func() {
 		// 	})
 
 		// 	It("should have the correct S3 bucket/key/version", func() {
-		// 		x := function.CodeUri.(cloudformation.AWSServerlessFunction_S3Location)
+		// 		x := function.CodeUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
 		// 		Expect(x.Bucket).To(Equal("test-bucket"))
 		// 		Expect(x.Key).To(Equal("test-key"))
 		// 		Expect(x.Version).To(Equal(100))
@@ -348,29 +348,29 @@ var _ = Describe("Goformation", func() {
 
 		// })
 
-		// Context("that has a CodeUri property set as a string", func() {
+		Context("that has a CodeUri property set as a string", func() {
 
-		// 	codeuri := cloudformation.NewString("./some-folder")
-		// 	template := &cloudformation.Template{
-		// 		Resources: map[string]interface{}{
-		// 			"MySAMFunction": cloudformation.AWSServerlessFunction{
-		// 				Handler: cloudformation.NewString("nodejs6.10"),
-		// 				CodeUri: codeuri,
-		// 			},
-		// 		},
-		// 	}
+			codeuri := cloudformation.NewString("./some-folder")
+			template := &cloudformation.Template{
+				Resources: map[string]interface{}{
+					"MySAMFunction": cloudformation.AWSServerlessFunction{
+						Handler: cloudformation.NewString("nodejs6.10"),
+						CodeUri: codeuri,
+					},
+				},
+			}
 
-		// 	function, err := template.GetAWSServerlessFunctionWithName("MySAMFunction")
-		// 	It("should have an AWS::Serverless::Function called MySAMFunction", func() {
-		// 		Expect(function).ToNot(BeNil())
-		// 		Expect(err).ToNot(HaveOccurred())
-		// 	})
+			function, err := template.GetAWSServerlessFunctionWithName("MySAMFunction")
+			It("should have an AWS::Serverless::Function called MySAMFunction", func() {
+				Expect(function).ToNot(BeNil())
+				Expect(err).ToNot(HaveOccurred())
+			})
 
-		// 	It("should have the correct CodeUri", func() {
-		// 		Expect(function.CodeUri).To(PointTo(Equal("./some-folder")))
-		// 	})
+			It("should have the correct CodeUri", func() {
+				Expect(function.CodeUri.String()).To(Equal("./some-folder"))
+			})
 
-		// })
+		})
 
 	})
 
@@ -437,15 +437,15 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("should have the correct value for Name", func() {
-			Expect(api1.Name).To(Equal(cloudformation.NewString("test-name")))
+			Expect(api1.Name.String()).To(Equal("test-name"))
 		})
 
 		It("should have the correct value for StageName", func() {
-			Expect(api1.StageName).To(Equal(cloudformation.NewString("test-stage-name")))
+			Expect(api1.StageName.String()).To(Equal("test-stage-name"))
 		})
 
 		It("should have the correct value for DefinitionUri", func() {
-			Expect(api1.DefinitionUri.String).To(PointTo(Equal("test-definition-uri")))
+			Expect(api1.DefinitionUri.String).To(Equal("test-definition-uri"))
 		})
 
 		It("should have the correct value for CacheClusterEnabled", func() {
@@ -453,7 +453,7 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("should have the correct value for CacheClusterSize", func() {
-			Expect(api1.CacheClusterSize).To(Equal(cloudformation.NewString("test-cache-cluster-size")))
+			Expect(api1.CacheClusterSize.String()).To(Equal("test-cache-cluster-size"))
 		})
 
 		It("should have the correct value for Variables", func() {
@@ -516,7 +516,8 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("it should have the correct values", func() {
-			Expect(function.Environment.Variables).To(HaveKeyWithValue("REF_ENV_VAR", cloudformation.NewString("SomeNewValue")))
+			Expect(function.Environment.Variables).To(HaveKey("REF_ENV_VAR"))
+			Expect(function.Environment.Variables["REF_ENV_VAR"].String()).To(Equal("SomeNewValue"))
 		})
 	})
 
@@ -526,7 +527,6 @@ var _ = Describe("Goformation", func() {
 				Topic: cloudformation.NewString("MyTopic"),
 			},
 		}
-
 		It("should marshal properties correctly", func() {
 			bytes, err := event.MarshalJSON()
 			Expect(err).ToNot(HaveOccurred())

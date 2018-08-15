@@ -47,30 +47,47 @@ type Value struct {
 	value json.Marshaler
 }
 
+func NewValue(v json.Marshaler) *Value { return &Value{value: v} }
+
+func (v *Value) Raw() interface{} { return v.value }
+
+func (v *Value) String() string {
+	if x, ok := v.Raw().(string); ok {
+		return x
+	}
+	return fmt.Sprintf("%v", v.value)
+}
+
 func (v *Value) UnmarshalJSON(b []byte) error {
-	var obj interface{}
-	if err := json.Unmarshal(b, &obj); err != nil {
+	var raw interface{}
+	if err := json.Unmarshal(b, &raw); err != nil {
 		return err
 	}
 
-	switch obj.(type) {
+	switch raw.(type) {
 	case string:
-		v.value = String(obj.(string))
+		v.value = String(raw.(string))
 		return nil
 	case float64:
-		v.value = Double(obj.(float64))
+		v.value = Double(raw.(float64))
 	case bool:
-		v.value = Boolean(obj.(bool))
+		v.value = Boolean(raw.(bool))
+	case map[string]interface{}:
+		v.value = Anything(raw.(map[string]interface{}))
 	default:
-		return fmt.Errorf("cannot handle type %s", reflect.ValueOf(obj).Kind())
+		return fmt.Errorf("cannot handle type %s", reflect.ValueOf(raw).Kind())
 	}
 
 	return nil
 }
 
+func (v Value) MarshalJSON() ([]byte, error) {
+	return v.value.MarshalJSON()
+}
+
 type String string
 
-func NewString(v string) *Value { return &Value{String(v)} }
+func NewString(v string) *Value { return NewValue(String(v)) }
 
 func (v String) MarshalJSON() ([]byte, error) {
 	x := string(v)
@@ -79,14 +96,18 @@ func (v String) MarshalJSON() ([]byte, error) {
 
 // func (v String) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, v) }
 
-type StringSlice struct {
-	s []string
-}
+type StringSlice []string
 
-func NewStringSlice(v ...string) *Value { return &Value{StringSlice{v}} }
+func NewStringSlice(v ...string) *Value { return NewValue(StringSlice(v)) }
 
 func (v StringSlice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(&v.s)
+	return json.Marshal(v)
+}
+
+type Anything map[string]interface{}
+
+func (v Anything) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v)
 }
 
 // func (v StringSlice) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v.s) }
@@ -102,7 +123,7 @@ func (v Long) MarshalJSON() ([]byte, error) {
 
 type Integer int
 
-func NewInteger(v int) *Value { return &Value{Integer(v)} }
+func NewInteger(v int) *Value { return NewValue(Integer(v)) }
 
 func (v Integer) MarshalJSON() ([]byte, error) {
 	x := int(v)
@@ -113,7 +134,7 @@ func (v Integer) MarshalJSON() ([]byte, error) {
 
 type Double float64
 
-func NewDouble(v float64) *Value { return &Value{Double(v)} }
+func NewDouble(v float64) *Value { return NewValue(Double(v)) }
 
 func (v Double) MarshalJSON() ([]byte, error) {
 	x := float64(v)
@@ -132,7 +153,7 @@ var (
 func True() *Value  { return trueValue }
 func False() *Value { return falseValue }
 
-func NewBoolean(v bool) *Value { return &Value{Boolean(v)} }
+func NewBoolean(v bool) *Value { return NewValue(Boolean(v)) }
 
 func (v Boolean) MarshalJSON() ([]byte, error) {
 	x := bool(v)
@@ -145,15 +166,17 @@ type Intrinsic struct {
 	Value map[string]interface{}
 }
 
-func MakeIntrinsic(k string, v interface{}) Intrinsic {
-	return Intrinsic{
-		map[string]interface{}{
-			k: v,
+func MakeIntrinsic(k string, v interface{}) *Value {
+	return NewValue(
+		Intrinsic{
+			map[string]interface{}{
+				k: v,
+			},
 		},
-	}
+	)
 }
 
-func MakeRef(r string) Intrinsic { return MakeIntrinsic(Ref, r) }
+func MakeRef(r string) *Value { return MakeIntrinsic(Ref, r) }
 
 // TODO MakeFnBase64
 // TODO MakeFnCIDR
@@ -164,15 +187,15 @@ func MakeRef(r string) Intrinsic { return MakeIntrinsic(Ref, r) }
 // TODO MakeFnOr
 // TODO MakeFnFindInMap
 
-func MakeFnGetAtt(arg *Value) Intrinsic       { return MakeIntrinsic(FnGetAtt, arg) }
-func MakeFnGetAttString(arg string) Intrinsic { return MakeFnGetAtt(NewString(arg)) }
+func MakeFnGetAtt(arg *Value) *Value       { return MakeIntrinsic(FnGetAtt, arg) }
+func MakeFnGetAttString(arg string) *Value { return MakeFnGetAtt(NewString(arg)) }
 
 // TODO MakeFnGetAZs
 
-func MakeFnImportValue(arg *Value) Intrinsic       { return MakeIntrinsic(FnImportValue, arg) }
-func MakeFnImportValueString(arg string) Intrinsic { return MakeFnImportValue(NewString(arg)) }
+func MakeFnImportValue(arg *Value) *Value       { return MakeIntrinsic(FnImportValue, arg) }
+func MakeFnImportValueString(arg string) *Value { return MakeFnImportValue(NewString(arg)) }
 
-func MakeFnJoin(sep string, args []*Value) Intrinsic {
+func MakeFnJoin(sep string, args []*Value) *Value {
 	return MakeIntrinsic(FnJoin,
 		[]interface{}{
 			sep,
@@ -181,12 +204,12 @@ func MakeFnJoin(sep string, args []*Value) Intrinsic {
 	)
 }
 
-func MakeFnSub(arg *Value) Intrinsic       { return MakeIntrinsic(FnSub, arg) }
-func MakeFnSubString(arg string) Intrinsic { return MakeFnSub(NewString(arg)) }
+func MakeFnSub(arg *Value) *Value       { return MakeIntrinsic(FnSub, arg) }
+func MakeFnSubString(arg string) *Value { return MakeFnSub(NewString(arg)) }
 
 // TODO MakeFnSelect
 
-func MakeFnSplit(sep string, arg *Value) Intrinsic {
+func MakeFnSplit(sep string, arg *Value) *Value {
 	return MakeIntrinsic(FnSplit,
 		[]interface{}{
 			sep,
@@ -195,7 +218,7 @@ func MakeFnSplit(sep string, arg *Value) Intrinsic {
 	)
 }
 
-func MakeFnSplitString(sep string, arg string) Intrinsic {
+func MakeFnSplitString(sep string, arg string) *Value {
 	return MakeFnSplit(sep, NewString(arg))
 }
 
