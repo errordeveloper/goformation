@@ -58,7 +58,7 @@ type AWSServerlessFunction struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Policies *AWSServerlessFunction_Policies `json:"Policies,omitempty"`
+	Policies *Value `json:"Policies,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false

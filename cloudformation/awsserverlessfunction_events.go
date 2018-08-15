@@ -1,60 +1,60 @@
 package cloudformation
 
-import (
-	"encoding/json"
+// import (
+// 	"encoding/json"
 
-	"github.com/mitchellh/mapstructure"
-)
+// 	"github.com/mitchellh/mapstructure"
+// )
 
-// AWSServerlessFunction_Events is a helper struct that can hold either a String or String value
-type AWSServerlessFunction_Events struct {
-	String **Value
+// // AWSServerlessFunction_Events is a helper struct that can hold either a String or String value
+// type AWSServerlessFunction_Events struct {
+// 	String **Value
 
-	StringArray *[]*Value
-}
+// 	StringArray *[]*Value
+// }
 
-func (r AWSServerlessFunction_Events) value() interface{} {
+// func (r AWSServerlessFunction_Events) value() interface{} {
 
-	if r.String != nil {
-		return r.String
-	}
+// 	if r.String != nil {
+// 		return r.String
+// 	}
 
-	if r.StringArray != nil {
-		return r.StringArray
-	}
+// 	if r.StringArray != nil {
+// 		return r.StringArray
+// 	}
 
-	return nil
+// 	return nil
 
-}
+// }
 
-func (r *AWSServerlessFunction_Events) MarshalJSON() ([]byte, error) {
-	return json.Marshal(r.value())
-}
+// func (r *AWSServerlessFunction_Events) MarshalJSON() ([]byte, error) {
+// 	return json.Marshal(r.value())
+// }
 
-// Hook into the marshaller
-func (r *AWSServerlessFunction_Events) UnmarshalJSON(b []byte) error {
+// // Hook into the marshaller
+// func (r *AWSServerlessFunction_Events) UnmarshalJSON(b []byte) error {
 
-	// Unmarshal into interface{} to check it's type
-	var typecheck interface{}
-	if err := json.Unmarshal(b, &typecheck); err != nil {
-		return err
-	}
+// 	// Unmarshal into interface{} to check it's type
+// 	var typecheck interface{}
+// 	if err := json.Unmarshal(b, &typecheck); err != nil {
+// 		return err
+// 	}
 
-	switch val := typecheck.(type) {
+// 	switch val := typecheck.(type) {
 
-	case *Value:
-		r.String = &val
+// 	case *Value:
+// 		r.String = &val
 
-	case []*Value:
-		r.StringArray = &val
+// 	case []*Value:
+// 		r.StringArray = &val
 
-	case map[string]interface{}:
+// 	case map[string]interface{}:
 
-	case []interface{}:
+// 	case []interface{}:
 
-		mapstructure.Decode(val, &r.StringArray)
+// 		mapstructure.Decode(val, &r.StringArray)
 
-	}
+// 	}
 
-	return nil
-}
+// 	return nil
+// }

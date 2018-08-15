@@ -1,5 +1,7 @@
 package cloudformation
 
+import "encoding/json"
+
 // AWSApiGatewayRestApi_S3Location AWS CloudFormation Resource (AWS::ApiGateway::RestApi.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html
 type AWSApiGatewayRestApi_S3Location struct {
@@ -28,4 +30,8 @@ type AWSApiGatewayRestApi_S3Location struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApiGatewayRestApi_S3Location) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::RestApi.S3Location"
+}
+
+func (r *AWSApiGatewayRestApi_S3Location) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

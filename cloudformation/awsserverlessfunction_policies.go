@@ -1,82 +1,82 @@
 package cloudformation
 
-import (
-	"encoding/json"
+// import (
+// 	"encoding/json"
 
-	"reflect"
+// 	"reflect"
 
-	"github.com/mitchellh/mapstructure"
-)
+// 	"github.com/mitchellh/mapstructure"
+// )
 
-// AWSServerlessFunction_Policies is a helper struct that can hold either a String, String, IAMPolicyDocument, or IAMPolicyDocument value
-type AWSServerlessFunction_Policies struct {
-	String **Value
+// // AWSServerlessFunction_Policies is a helper struct that can hold either a String, String, IAMPolicyDocument, or IAMPolicyDocument value
+// type AWSServerlessFunction_Policies struct {
+// 	String **Value
 
-	StringArray *[]*Value
+// 	StringArray *[]*Value
 
-	IAMPolicyDocument *AWSServerlessFunction_IAMPolicyDocument
+// 	IAMPolicyDocument *AWSServerlessFunction_IAMPolicyDocument
 
-	IAMPolicyDocumentArray *[]AWSServerlessFunction_IAMPolicyDocument
-}
+// 	IAMPolicyDocumentArray *[]AWSServerlessFunction_IAMPolicyDocument
+// }
 
-func (r AWSServerlessFunction_Policies) value() interface{} {
+// func (r AWSServerlessFunction_Policies) value() interface{} {
 
-	if r.String != nil {
-		return r.String
-	}
+// 	if r.String != nil {
+// 		return r.String
+// 	}
 
-	if r.StringArray != nil {
-		return r.StringArray
-	}
+// 	if r.StringArray != nil {
+// 		return r.StringArray
+// 	}
 
-	if r.IAMPolicyDocument != nil && !reflect.DeepEqual(r.IAMPolicyDocument, &AWSServerlessFunction_IAMPolicyDocument{}) {
-		return r.IAMPolicyDocument
-	}
+// 	if r.IAMPolicyDocument != nil && !reflect.DeepEqual(r.IAMPolicyDocument, &AWSServerlessFunction_IAMPolicyDocument{}) {
+// 		return r.IAMPolicyDocument
+// 	}
 
-	if r.IAMPolicyDocument != nil {
-		return r.IAMPolicyDocument
-	}
+// 	if r.IAMPolicyDocument != nil {
+// 		return r.IAMPolicyDocument
+// 	}
 
-	if r.IAMPolicyDocumentArray != nil {
-		return r.IAMPolicyDocumentArray
-	}
+// 	if r.IAMPolicyDocumentArray != nil {
+// 		return r.IAMPolicyDocumentArray
+// 	}
 
-	return nil
+// 	return nil
 
-}
+// }
 
-func (r *AWSServerlessFunction_Policies) MarshalJSON() ([]byte, error) {
-	return json.Marshal(r.value())
-}
+// func (r *AWSServerlessFunction_Policies) MarshalJSON() ([]byte, error) {
+// 	return json.Marshal(r.value())
+// }
 
-// Hook into the marshaller
-func (r *AWSServerlessFunction_Policies) UnmarshalJSON(b []byte) error {
+// // Hook into the marshaller
+// func (r *AWSServerlessFunction_Policies) UnmarshalJSON(b []byte) error {
 
-	// Unmarshal into interface{} to check it's type
-	var typecheck interface{}
-	if err := json.Unmarshal(b, &typecheck); err != nil {
-		return err
-	}
+// 	// Unmarshal into interface{} to check it's type
+// 	var typecheck interface{}
+// 	if err := json.Unmarshal(b, &typecheck); err != nil {
+// 		return err
+// 	}
 
-	switch val := typecheck.(type) {
+// 	switch val := typecheck.(type) {
 
-	case *Value:
-		r.String = &val
+// 	case *Value:
+// 		r.String = &val
 
-	case []*Value:
-		r.StringArray = &val
+// 	case []*Value:
+// 		r.StringArray = &val
 
-	case map[string]interface{}:
+// 	case map[string]interface{}:
 
-		mapstructure.Decode(val, &r.IAMPolicyDocument)
+// 		mapstructure.Decode(val, &r.IAMPolicyDocument)
 
-	case []interface{}:
+// 	case []interface{}:
 
-		mapstructure.Decode(val, &r.StringArray)
+// 		mapstructure.Decode(val, &r.StringArray)
 
-		mapstructure.Decode(val, &r.IAMPolicyDocumentArray)
+// 		mapstructure.Decode(val, &r.IAMPolicyDocumentArray)
 
-	}
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
