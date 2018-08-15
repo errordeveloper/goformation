@@ -13,17 +13,17 @@ type AWSNeptuneDBClusterParameterGroup struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-description
-	Description Value `json:"Description,omitempty"`
+	Description *Value `json:"Description,omitempty"`
 
 	// Family AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-family
-	Family Value `json:"Family,omitempty"`
+	Family *Value `json:"Family,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: true

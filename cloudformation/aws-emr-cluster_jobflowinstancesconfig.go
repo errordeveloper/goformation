@@ -7,12 +7,12 @@ type AWSEMRCluster_JobFlowInstancesConfig struct {
 	// AdditionalMasterSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-additionalmastersecuritygroups
-	AdditionalMasterSecurityGroups []Value `json:"AdditionalMasterSecurityGroups,omitempty"`
+	AdditionalMasterSecurityGroups []*Value `json:"AdditionalMasterSecurityGroups,omitempty"`
 
 	// AdditionalSlaveSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-additionalslavesecuritygroups
-	AdditionalSlaveSecurityGroups []Value `json:"AdditionalSlaveSecurityGroups,omitempty"`
+	AdditionalSlaveSecurityGroups []*Value `json:"AdditionalSlaveSecurityGroups,omitempty"`
 
 	// CoreInstanceFleet AWS CloudFormation Property
 	// Required: false
@@ -27,27 +27,27 @@ type AWSEMRCluster_JobFlowInstancesConfig struct {
 	// Ec2KeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2keyname
-	Ec2KeyName Value `json:"Ec2KeyName,omitempty"`
+	Ec2KeyName *Value `json:"Ec2KeyName,omitempty"`
 
 	// Ec2SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetid
-	Ec2SubnetId Value `json:"Ec2SubnetId,omitempty"`
+	Ec2SubnetId *Value `json:"Ec2SubnetId,omitempty"`
 
 	// EmrManagedMasterSecurityGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-emrmanagedmastersecuritygroup
-	EmrManagedMasterSecurityGroup Value `json:"EmrManagedMasterSecurityGroup,omitempty"`
+	EmrManagedMasterSecurityGroup *Value `json:"EmrManagedMasterSecurityGroup,omitempty"`
 
 	// EmrManagedSlaveSecurityGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-emrmanagedslavesecuritygroup
-	EmrManagedSlaveSecurityGroup Value `json:"EmrManagedSlaveSecurityGroup,omitempty"`
+	EmrManagedSlaveSecurityGroup *Value `json:"EmrManagedSlaveSecurityGroup,omitempty"`
 
 	// HadoopVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-hadoopversion
-	HadoopVersion Value `json:"HadoopVersion,omitempty"`
+	HadoopVersion *Value `json:"HadoopVersion,omitempty"`
 
 	// MasterInstanceFleet AWS CloudFormation Property
 	// Required: false
@@ -67,12 +67,12 @@ type AWSEMRCluster_JobFlowInstancesConfig struct {
 	// ServiceAccessSecurityGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-serviceaccesssecuritygroup
-	ServiceAccessSecurityGroup Value `json:"ServiceAccessSecurityGroup,omitempty"`
+	ServiceAccessSecurityGroup *Value `json:"ServiceAccessSecurityGroup,omitempty"`
 
 	// TerminationProtected AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-terminationprotected
-	TerminationProtected Value `json:"TerminationProtected,omitempty"`
+	TerminationProtected *Value `json:"TerminationProtected,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

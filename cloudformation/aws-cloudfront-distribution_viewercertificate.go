@@ -7,27 +7,27 @@ type AWSCloudFrontDistribution_ViewerCertificate struct {
 	// AcmCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn
-	AcmCertificateArn Value `json:"AcmCertificateArn,omitempty"`
+	AcmCertificateArn *Value `json:"AcmCertificateArn,omitempty"`
 
 	// CloudFrontDefaultCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
-	CloudFrontDefaultCertificate Value `json:"CloudFrontDefaultCertificate,omitempty"`
+	CloudFrontDefaultCertificate *Value `json:"CloudFrontDefaultCertificate,omitempty"`
 
 	// IamCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid
-	IamCertificateId Value `json:"IamCertificateId,omitempty"`
+	IamCertificateId *Value `json:"IamCertificateId,omitempty"`
 
 	// MinimumProtocolVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion
-	MinimumProtocolVersion Value `json:"MinimumProtocolVersion,omitempty"`
+	MinimumProtocolVersion *Value `json:"MinimumProtocolVersion,omitempty"`
 
 	// SslSupportMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod
-	SslSupportMethod Value `json:"SslSupportMethod,omitempty"`
+	SslSupportMethod *Value `json:"SslSupportMethod,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

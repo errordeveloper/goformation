@@ -13,7 +13,7 @@ type AWSSNSTopic struct {
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname
-	DisplayName Value `json:"DisplayName,omitempty"`
+	DisplayName *Value `json:"DisplayName,omitempty"`
 
 	// Subscription AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type AWSSNSTopic struct {
 	// TopicName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-topicname
-	TopicName Value `json:"TopicName,omitempty"`
+	TopicName *Value `json:"TopicName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

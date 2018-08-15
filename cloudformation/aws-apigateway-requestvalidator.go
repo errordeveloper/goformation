@@ -13,22 +13,22 @@ type AWSApiGatewayRequestValidator struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
-	RestApiId Value `json:"RestApiId,omitempty"`
+	RestApiId *Value `json:"RestApiId,omitempty"`
 
 	// ValidateRequestBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
-	ValidateRequestBody Value `json:"ValidateRequestBody,omitempty"`
+	ValidateRequestBody *Value `json:"ValidateRequestBody,omitempty"`
 
 	// ValidateRequestParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
-	ValidateRequestParameters Value `json:"ValidateRequestParameters,omitempty"`
+	ValidateRequestParameters *Value `json:"ValidateRequestParameters,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

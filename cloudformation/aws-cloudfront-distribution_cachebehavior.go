@@ -7,27 +7,27 @@ type AWSCloudFrontDistribution_CacheBehavior struct {
 	// AllowedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-allowedmethods
-	AllowedMethods []Value `json:"AllowedMethods,omitempty"`
+	AllowedMethods []*Value `json:"AllowedMethods,omitempty"`
 
 	// CachedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-cachedmethods
-	CachedMethods []Value `json:"CachedMethods,omitempty"`
+	CachedMethods []*Value `json:"CachedMethods,omitempty"`
 
 	// Compress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-compress
-	Compress Value `json:"Compress,omitempty"`
+	Compress *Value `json:"Compress,omitempty"`
 
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-defaultttl
-	DefaultTTL Value `json:"DefaultTTL,omitempty"`
+	DefaultTTL *Value `json:"DefaultTTL,omitempty"`
 
 	// FieldLevelEncryptionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-fieldlevelencryptionid
-	FieldLevelEncryptionId Value `json:"FieldLevelEncryptionId,omitempty"`
+	FieldLevelEncryptionId *Value `json:"FieldLevelEncryptionId,omitempty"`
 
 	// ForwardedValues AWS CloudFormation Property
 	// Required: true
@@ -42,37 +42,37 @@ type AWSCloudFrontDistribution_CacheBehavior struct {
 	// MaxTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-maxttl
-	MaxTTL Value `json:"MaxTTL,omitempty"`
+	MaxTTL *Value `json:"MaxTTL,omitempty"`
 
 	// MinTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-minttl
-	MinTTL Value `json:"MinTTL,omitempty"`
+	MinTTL *Value `json:"MinTTL,omitempty"`
 
 	// PathPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-pathpattern
-	PathPattern Value `json:"PathPattern,omitempty"`
+	PathPattern *Value `json:"PathPattern,omitempty"`
 
 	// SmoothStreaming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-smoothstreaming
-	SmoothStreaming Value `json:"SmoothStreaming,omitempty"`
+	SmoothStreaming *Value `json:"SmoothStreaming,omitempty"`
 
 	// TargetOriginId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-targetoriginid
-	TargetOriginId Value `json:"TargetOriginId,omitempty"`
+	TargetOriginId *Value `json:"TargetOriginId,omitempty"`
 
 	// TrustedSigners AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-trustedsigners
-	TrustedSigners []Value `json:"TrustedSigners,omitempty"`
+	TrustedSigners []*Value `json:"TrustedSigners,omitempty"`
 
 	// ViewerProtocolPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-viewerprotocolpolicy
-	ViewerProtocolPolicy Value `json:"ViewerProtocolPolicy,omitempty"`
+	ViewerProtocolPolicy *Value `json:"ViewerProtocolPolicy,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

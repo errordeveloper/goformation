@@ -7,27 +7,27 @@ type AWSAutoScalingPlansScalingPlan_ScalingInstruction struct {
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-maxcapacity
-	MaxCapacity Value `json:"MaxCapacity,omitempty"`
+	MaxCapacity *Value `json:"MaxCapacity,omitempty"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-mincapacity
-	MinCapacity Value `json:"MinCapacity,omitempty"`
+	MinCapacity *Value `json:"MinCapacity,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-resourceid
-	ResourceId Value `json:"ResourceId,omitempty"`
+	ResourceId *Value `json:"ResourceId,omitempty"`
 
 	// ScalableDimension AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalabledimension
-	ScalableDimension Value `json:"ScalableDimension,omitempty"`
+	ScalableDimension *Value `json:"ScalableDimension,omitempty"`
 
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-servicenamespace
-	ServiceNamespace Value `json:"ServiceNamespace,omitempty"`
+	ServiceNamespace *Value `json:"ServiceNamespace,omitempty"`
 
 	// TargetTrackingConfigurations AWS CloudFormation Property
 	// Required: true

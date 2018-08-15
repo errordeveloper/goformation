@@ -13,87 +13,87 @@ type AWSRDSDBCluster struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones
-	AvailabilityZones []Value `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []*Value `json:"AvailabilityZones,omitempty"`
 
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backuprententionperiod
-	BackupRetentionPeriod Value `json:"BackupRetentionPeriod,omitempty"`
+	BackupRetentionPeriod *Value `json:"BackupRetentionPeriod,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusteridentifier
-	DBClusterIdentifier Value `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *Value `json:"DBClusterIdentifier,omitempty"`
 
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterparametergroupname
-	DBClusterParameterGroupName Value `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *Value `json:"DBClusterParameterGroupName,omitempty"`
 
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname
-	DBSubnetGroupName Value `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *Value `json:"DBSubnetGroupName,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databasename
-	DatabaseName Value `json:"DatabaseName,omitempty"`
+	DatabaseName *Value `json:"DatabaseName,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine
-	Engine Value `json:"Engine,omitempty"`
+	Engine *Value `json:"Engine,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion
-	EngineVersion Value `json:"EngineVersion,omitempty"`
+	EngineVersion *Value `json:"EngineVersion,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid
-	KmsKeyId Value `json:"KmsKeyId,omitempty"`
+	KmsKeyId *Value `json:"KmsKeyId,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
-	MasterUserPassword Value `json:"MasterUserPassword,omitempty"`
+	MasterUserPassword *Value `json:"MasterUserPassword,omitempty"`
 
 	// MasterUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusername
-	MasterUsername Value `json:"MasterUsername,omitempty"`
+	MasterUsername *Value `json:"MasterUsername,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-port
-	Port Value `json:"Port,omitempty"`
+	Port *Value `json:"Port,omitempty"`
 
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
-	PreferredBackupWindow Value `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *Value `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow Value `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *Value `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// ReplicationSourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier
-	ReplicationSourceIdentifier Value `json:"ReplicationSourceIdentifier,omitempty"`
+	ReplicationSourceIdentifier *Value `json:"ReplicationSourceIdentifier,omitempty"`
 
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-snapshotidentifier
-	SnapshotIdentifier Value `json:"SnapshotIdentifier,omitempty"`
+	SnapshotIdentifier *Value `json:"SnapshotIdentifier,omitempty"`
 
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
-	StorageEncrypted Value `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *Value `json:"StorageEncrypted,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -103,7 +103,7 @@ type AWSRDSDBCluster struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []Value `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []*Value `json:"VpcSecurityGroupIds,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

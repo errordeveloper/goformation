@@ -7,22 +7,22 @@ type AWSAppSyncGraphQLApi_UserPoolConfig struct {
 	// AppIdClientRegex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-appidclientregex
-	AppIdClientRegex Value `json:"AppIdClientRegex,omitempty"`
+	AppIdClientRegex *Value `json:"AppIdClientRegex,omitempty"`
 
 	// AwsRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-awsregion
-	AwsRegion Value `json:"AwsRegion,omitempty"`
+	AwsRegion *Value `json:"AwsRegion,omitempty"`
 
 	// DefaultAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-defaultaction
-	DefaultAction Value `json:"DefaultAction,omitempty"`
+	DefaultAction *Value `json:"DefaultAction,omitempty"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid
-	UserPoolId Value `json:"UserPoolId,omitempty"`
+	UserPoolId *Value `json:"UserPoolId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

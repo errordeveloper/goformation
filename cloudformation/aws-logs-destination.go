@@ -13,22 +13,22 @@ type AWSLogsDestination struct {
 	// DestinationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationname
-	DestinationName Value `json:"DestinationName,omitempty"`
+	DestinationName *Value `json:"DestinationName,omitempty"`
 
 	// DestinationPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy
-	DestinationPolicy Value `json:"DestinationPolicy,omitempty"`
+	DestinationPolicy *Value `json:"DestinationPolicy,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn
-	RoleArn Value `json:"RoleArn,omitempty"`
+	RoleArn *Value `json:"RoleArn,omitempty"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn
-	TargetArn Value `json:"TargetArn,omitempty"`
+	TargetArn *Value `json:"TargetArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

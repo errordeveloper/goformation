@@ -12,12 +12,12 @@ type AWSBudgetsBudget_BudgetData struct {
 	// BudgetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetname
-	BudgetName Value `json:"BudgetName,omitempty"`
+	BudgetName *Value `json:"BudgetName,omitempty"`
 
 	// BudgetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgettype
-	BudgetType Value `json:"BudgetType,omitempty"`
+	BudgetType *Value `json:"BudgetType,omitempty"`
 
 	// CostFilters AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type AWSBudgetsBudget_BudgetData struct {
 	// TimeUnit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeunit
-	TimeUnit Value `json:"TimeUnit,omitempty"`
+	TimeUnit *Value `json:"TimeUnit,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

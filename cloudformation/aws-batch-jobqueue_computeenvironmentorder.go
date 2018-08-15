@@ -7,12 +7,12 @@ type AWSBatchJobQueue_ComputeEnvironmentOrder struct {
 	// ComputeEnvironment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-computeenvironment
-	ComputeEnvironment Value `json:"ComputeEnvironment,omitempty"`
+	ComputeEnvironment *Value `json:"ComputeEnvironment,omitempty"`
 
 	// Order AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order
-	Order Value `json:"Order,omitempty"`
+	Order *Value `json:"Order,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

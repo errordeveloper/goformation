@@ -17,17 +17,17 @@ type AWSS3Bucket_Rule struct {
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationindays
-	ExpirationInDays Value `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *Value `json:"ExpirationInDays,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-id
-	Id Value `json:"Id,omitempty"`
+	Id *Value `json:"Id,omitempty"`
 
 	// NoncurrentVersionExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays
-	NoncurrentVersionExpirationInDays Value `json:"NoncurrentVersionExpirationInDays,omitempty"`
+	NoncurrentVersionExpirationInDays *Value `json:"NoncurrentVersionExpirationInDays,omitempty"`
 
 	// NoncurrentVersionTransition AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type AWSS3Bucket_Rule struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-prefix
-	Prefix Value `json:"Prefix,omitempty"`
+	Prefix *Value `json:"Prefix,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-status
-	Status Value `json:"Status,omitempty"`
+	Status *Value `json:"Status,omitempty"`
 
 	// TagFilters AWS CloudFormation Property
 	// Required: false

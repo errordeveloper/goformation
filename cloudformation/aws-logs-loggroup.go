@@ -13,12 +13,12 @@ type AWSLogsLogGroup struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname
-	LogGroupName Value `json:"LogGroupName,omitempty"`
+	LogGroupName *Value `json:"LogGroupName,omitempty"`
 
 	// RetentionInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays
-	RetentionInDays Value `json:"RetentionInDays,omitempty"`
+	RetentionInDays *Value `json:"RetentionInDays,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

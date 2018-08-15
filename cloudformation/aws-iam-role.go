@@ -18,17 +18,17 @@ type AWSIAMRole struct {
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns
-	ManagedPolicyArns []Value `json:"ManagedPolicyArns,omitempty"`
+	ManagedPolicyArns []*Value `json:"ManagedPolicyArns,omitempty"`
 
 	// MaxSessionDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration
-	MaxSessionDuration Value `json:"MaxSessionDuration,omitempty"`
+	MaxSessionDuration *Value `json:"MaxSessionDuration,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
-	Path Value `json:"Path,omitempty"`
+	Path *Value `json:"Path,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type AWSIAMRole struct {
 	// RoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename
-	RoleName Value `json:"RoleName,omitempty"`
+	RoleName *Value `json:"RoleName,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

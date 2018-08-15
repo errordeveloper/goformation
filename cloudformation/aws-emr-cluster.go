@@ -23,7 +23,7 @@ type AWSEMRCluster struct {
 	// AutoScalingRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole
-	AutoScalingRole Value `json:"AutoScalingRole,omitempty"`
+	AutoScalingRole *Value `json:"AutoScalingRole,omitempty"`
 
 	// BootstrapActions AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type AWSEMRCluster struct {
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-customamiid
-	CustomAmiId Value `json:"CustomAmiId,omitempty"`
+	CustomAmiId *Value `json:"CustomAmiId,omitempty"`
 
 	// EbsRootVolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
-	EbsRootVolumeSize Value `json:"EbsRootVolumeSize,omitempty"`
+	EbsRootVolumeSize *Value `json:"EbsRootVolumeSize,omitempty"`
 
 	// Instances AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type AWSEMRCluster struct {
 	// JobFlowRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole
-	JobFlowRole Value `json:"JobFlowRole,omitempty"`
+	JobFlowRole *Value `json:"JobFlowRole,omitempty"`
 
 	// KerberosAttributes AWS CloudFormation Property
 	// Required: false
@@ -63,32 +63,32 @@ type AWSEMRCluster struct {
 	// LogUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri
-	LogUri Value `json:"LogUri,omitempty"`
+	LogUri *Value `json:"LogUri,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// ReleaseLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-releaselabel
-	ReleaseLabel Value `json:"ReleaseLabel,omitempty"`
+	ReleaseLabel *Value `json:"ReleaseLabel,omitempty"`
 
 	// ScaleDownBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior
-	ScaleDownBehavior Value `json:"ScaleDownBehavior,omitempty"`
+	ScaleDownBehavior *Value `json:"ScaleDownBehavior,omitempty"`
 
 	// SecurityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-securityconfiguration
-	SecurityConfiguration Value `json:"SecurityConfiguration,omitempty"`
+	SecurityConfiguration *Value `json:"SecurityConfiguration,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole
-	ServiceRole Value `json:"ServiceRole,omitempty"`
+	ServiceRole *Value `json:"ServiceRole,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -98,7 +98,7 @@ type AWSEMRCluster struct {
 	// VisibleToAllUsers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
-	VisibleToAllUsers Value `json:"VisibleToAllUsers,omitempty"`
+	VisibleToAllUsers *Value `json:"VisibleToAllUsers,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

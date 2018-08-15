@@ -7,17 +7,17 @@ type AWSAutoScalingAutoScalingGroup_TagProperty struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Key
-	Key Value `json:"Key,omitempty"`
+	Key *Value `json:"Key,omitempty"`
 
 	// PropagateAtLaunch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch
-	PropagateAtLaunch Value `json:"PropagateAtLaunch,omitempty"`
+	PropagateAtLaunch *Value `json:"PropagateAtLaunch,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value
-	Value Value `json:"Value,omitempty"`
+	Value *Value `json:"Value,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

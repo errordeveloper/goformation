@@ -13,32 +13,32 @@ type AWSGuardDutyMember struct {
 	// DetectorId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid
-	DetectorId Value `json:"DetectorId,omitempty"`
+	DetectorId *Value `json:"DetectorId,omitempty"`
 
 	// DisableEmailNotification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
-	DisableEmailNotification Value `json:"DisableEmailNotification,omitempty"`
+	DisableEmailNotification *Value `json:"DisableEmailNotification,omitempty"`
 
 	// Email AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
-	Email Value `json:"Email,omitempty"`
+	Email *Value `json:"Email,omitempty"`
 
 	// MemberId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid
-	MemberId Value `json:"MemberId,omitempty"`
+	MemberId *Value `json:"MemberId,omitempty"`
 
 	// Message AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message
-	Message Value `json:"Message,omitempty"`
+	Message *Value `json:"Message,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-status
-	Status Value `json:"Status,omitempty"`
+	Status *Value `json:"Status,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

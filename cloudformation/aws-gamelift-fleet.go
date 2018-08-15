@@ -13,17 +13,17 @@ type AWSGameLiftFleet struct {
 	// BuildId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
-	BuildId Value `json:"BuildId,omitempty"`
+	BuildId *Value `json:"BuildId,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
-	Description Value `json:"Description,omitempty"`
+	Description *Value `json:"Description,omitempty"`
 
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
-	DesiredEC2Instances Value `json:"DesiredEC2Instances,omitempty"`
+	DesiredEC2Instances *Value `json:"DesiredEC2Instances,omitempty"`
 
 	// EC2InboundPermissions AWS CloudFormation Property
 	// Required: false
@@ -33,37 +33,37 @@ type AWSGameLiftFleet struct {
 	// EC2InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
-	EC2InstanceType Value `json:"EC2InstanceType,omitempty"`
+	EC2InstanceType *Value `json:"EC2InstanceType,omitempty"`
 
 	// LogPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths
-	LogPaths []Value `json:"LogPaths,omitempty"`
+	LogPaths []*Value `json:"LogPaths,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
-	MaxSize Value `json:"MaxSize,omitempty"`
+	MaxSize *Value `json:"MaxSize,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
-	MinSize Value `json:"MinSize,omitempty"`
+	MinSize *Value `json:"MinSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// ServerLaunchParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters
-	ServerLaunchParameters Value `json:"ServerLaunchParameters,omitempty"`
+	ServerLaunchParameters *Value `json:"ServerLaunchParameters,omitempty"`
 
 	// ServerLaunchPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath
-	ServerLaunchPath Value `json:"ServerLaunchPath,omitempty"`
+	ServerLaunchPath *Value `json:"ServerLaunchPath,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,12 +13,12 @@ type AWSAmazonMQBroker struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade
-	AutoMinorVersionUpgrade Value `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *Value `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// BrokerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-brokername
-	BrokerName Value `json:"BrokerName,omitempty"`
+	BrokerName *Value `json:"BrokerName,omitempty"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
@@ -28,22 +28,22 @@ type AWSAmazonMQBroker struct {
 	// DeploymentMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-deploymentmode
-	DeploymentMode Value `json:"DeploymentMode,omitempty"`
+	DeploymentMode *Value `json:"DeploymentMode,omitempty"`
 
 	// EngineType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-enginetype
-	EngineType Value `json:"EngineType,omitempty"`
+	EngineType *Value `json:"EngineType,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
-	EngineVersion Value `json:"EngineVersion,omitempty"`
+	EngineVersion *Value `json:"EngineVersion,omitempty"`
 
 	// HostInstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-hostinstancetype
-	HostInstanceType Value `json:"HostInstanceType,omitempty"`
+	HostInstanceType *Value `json:"HostInstanceType,omitempty"`
 
 	// Logs AWS CloudFormation Property
 	// Required: false
@@ -58,17 +58,17 @@ type AWSAmazonMQBroker struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible
-	PubliclyAccessible Value `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *Value `json:"PubliclyAccessible,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups
-	SecurityGroups []Value `json:"SecurityGroups,omitempty"`
+	SecurityGroups []*Value `json:"SecurityGroups,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-subnetids
-	SubnetIds []Value `json:"SubnetIds,omitempty"`
+	SubnetIds []*Value `json:"SubnetIds,omitempty"`
 
 	// Users AWS CloudFormation Property
 	// Required: true

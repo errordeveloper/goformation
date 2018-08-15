@@ -13,7 +13,7 @@ type AWSCodePipelineWebhook struct {
 	// Authentication AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication
-	Authentication Value `json:"Authentication,omitempty"`
+	Authentication *Value `json:"Authentication,omitempty"`
 
 	// AuthenticationConfiguration AWS CloudFormation Property
 	// Required: true
@@ -28,27 +28,27 @@ type AWSCodePipelineWebhook struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// RegisterWithThirdParty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-registerwiththirdparty
-	RegisterWithThirdParty Value `json:"RegisterWithThirdParty,omitempty"`
+	RegisterWithThirdParty *Value `json:"RegisterWithThirdParty,omitempty"`
 
 	// TargetAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction
-	TargetAction Value `json:"TargetAction,omitempty"`
+	TargetAction *Value `json:"TargetAction,omitempty"`
 
 	// TargetPipeline AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline
-	TargetPipeline Value `json:"TargetPipeline,omitempty"`
+	TargetPipeline *Value `json:"TargetPipeline,omitempty"`
 
 	// TargetPipelineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion
-	TargetPipelineVersion Value `json:"TargetPipelineVersion,omitempty"`
+	TargetPipelineVersion *Value `json:"TargetPipelineVersion,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

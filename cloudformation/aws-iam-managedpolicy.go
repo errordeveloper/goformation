@@ -13,22 +13,22 @@ type AWSIAMManagedPolicy struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description
-	Description Value `json:"Description,omitempty"`
+	Description *Value `json:"Description,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups
-	Groups []Value `json:"Groups,omitempty"`
+	Groups []*Value `json:"Groups,omitempty"`
 
 	// ManagedPolicyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname
-	ManagedPolicyName Value `json:"ManagedPolicyName,omitempty"`
+	ManagedPolicyName *Value `json:"ManagedPolicyName,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path
-	Path Value `json:"Path,omitempty"`
+	Path *Value `json:"Path,omitempty"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type AWSIAMManagedPolicy struct {
 	// Roles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles
-	Roles []Value `json:"Roles,omitempty"`
+	Roles []*Value `json:"Roles,omitempty"`
 
 	// Users AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users
-	Users []Value `json:"Users,omitempty"`
+	Users []*Value `json:"Users,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

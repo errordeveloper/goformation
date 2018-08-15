@@ -7,17 +7,17 @@ type AWSGlueCrawler_JdbcTarget struct {
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
-	ConnectionName Value `json:"ConnectionName,omitempty"`
+	ConnectionName *Value `json:"ConnectionName,omitempty"`
 
 	// Exclusions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
-	Exclusions []Value `json:"Exclusions,omitempty"`
+	Exclusions []*Value `json:"Exclusions,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
-	Path Value `json:"Path,omitempty"`
+	Path *Value `json:"Path,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

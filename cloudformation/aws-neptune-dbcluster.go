@@ -13,62 +13,62 @@ type AWSNeptuneDBCluster struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones
-	AvailabilityZones []Value `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []*Value `json:"AvailabilityZones,omitempty"`
 
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod
-	BackupRetentionPeriod Value `json:"BackupRetentionPeriod,omitempty"`
+	BackupRetentionPeriod *Value `json:"BackupRetentionPeriod,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier
-	DBClusterIdentifier Value `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *Value `json:"DBClusterIdentifier,omitempty"`
 
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
-	DBClusterParameterGroupName Value `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *Value `json:"DBClusterParameterGroupName,omitempty"`
 
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
-	DBSubnetGroupName Value `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *Value `json:"DBSubnetGroupName,omitempty"`
 
 	// IamAuthEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled
-	IamAuthEnabled Value `json:"IamAuthEnabled,omitempty"`
+	IamAuthEnabled *Value `json:"IamAuthEnabled,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid
-	KmsKeyId Value `json:"KmsKeyId,omitempty"`
+	KmsKeyId *Value `json:"KmsKeyId,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port
-	Port Value `json:"Port,omitempty"`
+	Port *Value `json:"Port,omitempty"`
 
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow
-	PreferredBackupWindow Value `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *Value `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow Value `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *Value `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
-	SnapshotIdentifier Value `json:"SnapshotIdentifier,omitempty"`
+	SnapshotIdentifier *Value `json:"SnapshotIdentifier,omitempty"`
 
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted
-	StorageEncrypted Value `json:"StorageEncrypted,omitempty"`
+	StorageEncrypted *Value `json:"StorageEncrypted,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type AWSNeptuneDBCluster struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []Value `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []*Value `json:"VpcSecurityGroupIds,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

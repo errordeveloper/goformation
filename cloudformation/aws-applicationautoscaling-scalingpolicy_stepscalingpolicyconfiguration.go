@@ -7,22 +7,22 @@ type AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration struc
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-adjustmenttype
-	AdjustmentType Value `json:"AdjustmentType,omitempty"`
+	AdjustmentType *Value `json:"AdjustmentType,omitempty"`
 
 	// Cooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-cooldown
-	Cooldown Value `json:"Cooldown,omitempty"`
+	Cooldown *Value `json:"Cooldown,omitempty"`
 
 	// MetricAggregationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-metricaggregationtype
-	MetricAggregationType Value `json:"MetricAggregationType,omitempty"`
+	MetricAggregationType *Value `json:"MetricAggregationType,omitempty"`
 
 	// MinAdjustmentMagnitude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-minadjustmentmagnitude
-	MinAdjustmentMagnitude Value `json:"MinAdjustmentMagnitude,omitempty"`
+	MinAdjustmentMagnitude *Value `json:"MinAdjustmentMagnitude,omitempty"`
 
 	// StepAdjustments AWS CloudFormation Property
 	// Required: false

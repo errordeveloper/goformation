@@ -7,17 +7,17 @@ type AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration struct {
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-adjustmenttype
-	AdjustmentType Value `json:"AdjustmentType,omitempty"`
+	AdjustmentType *Value `json:"AdjustmentType,omitempty"`
 
 	// CoolDown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-cooldown
-	CoolDown Value `json:"CoolDown,omitempty"`
+	CoolDown *Value `json:"CoolDown,omitempty"`
 
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-scalingadjustment
-	ScalingAdjustment Value `json:"ScalingAdjustment,omitempty"`
+	ScalingAdjustment *Value `json:"ScalingAdjustment,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

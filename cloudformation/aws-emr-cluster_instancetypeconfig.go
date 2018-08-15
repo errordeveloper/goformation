@@ -7,12 +7,12 @@ type AWSEMRCluster_InstanceTypeConfig struct {
 	// BidPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidprice
-	BidPrice Value `json:"BidPrice,omitempty"`
+	BidPrice *Value `json:"BidPrice,omitempty"`
 
 	// BidPriceAsPercentageOfOnDemandPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice
-	BidPriceAsPercentageOfOnDemandPrice Value `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
+	BidPriceAsPercentageOfOnDemandPrice *Value `json:"BidPriceAsPercentageOfOnDemandPrice,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type AWSEMRCluster_InstanceTypeConfig struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-instancetype
-	InstanceType Value `json:"InstanceType,omitempty"`
+	InstanceType *Value `json:"InstanceType,omitempty"`
 
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-weightedcapacity
-	WeightedCapacity Value `json:"WeightedCapacity,omitempty"`
+	WeightedCapacity *Value `json:"WeightedCapacity,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

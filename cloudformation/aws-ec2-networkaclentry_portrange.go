@@ -7,12 +7,12 @@ type AWSEC2NetworkAclEntry_PortRange struct {
 	// From AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from
-	From Value `json:"From,omitempty"`
+	From *Value `json:"From,omitempty"`
 
 	// To AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to
-	To Value `json:"To,omitempty"`
+	To *Value `json:"To,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

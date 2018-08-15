@@ -7,12 +7,12 @@ type AWSS3Bucket_WebsiteConfiguration struct {
 	// ErrorDocument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument
-	ErrorDocument Value `json:"ErrorDocument,omitempty"`
+	ErrorDocument *Value `json:"ErrorDocument,omitempty"`
 
 	// IndexDocument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument
-	IndexDocument Value `json:"IndexDocument,omitempty"`
+	IndexDocument *Value `json:"IndexDocument,omitempty"`
 
 	// RedirectAllRequestsTo AWS CloudFormation Property
 	// Required: false

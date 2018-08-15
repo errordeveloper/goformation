@@ -13,12 +13,12 @@ type AWSEC2VPCEndpointServicePermissions struct {
 	// AllowedPrincipals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals
-	AllowedPrincipals []Value `json:"AllowedPrincipals,omitempty"`
+	AllowedPrincipals []*Value `json:"AllowedPrincipals,omitempty"`
 
 	// ServiceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid
-	ServiceId Value `json:"ServiceId,omitempty"`
+	ServiceId *Value `json:"ServiceId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -7,12 +7,12 @@ type AWSServerlessFunction_DeadLetterQueue struct {
 	// TargetArn AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	TargetArn Value `json:"TargetArn,omitempty"`
+	TargetArn *Value `json:"TargetArn,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Type Value `json:"Type,omitempty"`
+	Type *Value `json:"Type,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

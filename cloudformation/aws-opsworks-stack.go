@@ -13,12 +13,12 @@ type AWSOpsWorksStack struct {
 	// AgentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-agentversion
-	AgentVersion Value `json:"AgentVersion,omitempty"`
+	AgentVersion *Value `json:"AgentVersion,omitempty"`
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-attributes
-	Attributes map[string]Value `json:"Attributes,omitempty"`
+	Attributes map[string]*Value `json:"Attributes,omitempty"`
 
 	// ChefConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type AWSOpsWorksStack struct {
 	// CloneAppIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-cloneappids
-	CloneAppIds []Value `json:"CloneAppIds,omitempty"`
+	CloneAppIds []*Value `json:"CloneAppIds,omitempty"`
 
 	// ClonePermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
-	ClonePermissions Value `json:"ClonePermissions,omitempty"`
+	ClonePermissions *Value `json:"ClonePermissions,omitempty"`
 
 	// ConfigurationManager AWS CloudFormation Property
 	// Required: false
@@ -53,37 +53,37 @@ type AWSOpsWorksStack struct {
 	// DefaultAvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultaz
-	DefaultAvailabilityZone Value `json:"DefaultAvailabilityZone,omitempty"`
+	DefaultAvailabilityZone *Value `json:"DefaultAvailabilityZone,omitempty"`
 
 	// DefaultInstanceProfileArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultinstanceprof
-	DefaultInstanceProfileArn Value `json:"DefaultInstanceProfileArn,omitempty"`
+	DefaultInstanceProfileArn *Value `json:"DefaultInstanceProfileArn,omitempty"`
 
 	// DefaultOs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultos
-	DefaultOs Value `json:"DefaultOs,omitempty"`
+	DefaultOs *Value `json:"DefaultOs,omitempty"`
 
 	// DefaultRootDeviceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultrootdevicetype
-	DefaultRootDeviceType Value `json:"DefaultRootDeviceType,omitempty"`
+	DefaultRootDeviceType *Value `json:"DefaultRootDeviceType,omitempty"`
 
 	// DefaultSshKeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultsshkeyname
-	DefaultSshKeyName Value `json:"DefaultSshKeyName,omitempty"`
+	DefaultSshKeyName *Value `json:"DefaultSshKeyName,omitempty"`
 
 	// DefaultSubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#defaultsubnet
-	DefaultSubnetId Value `json:"DefaultSubnetId,omitempty"`
+	DefaultSubnetId *Value `json:"DefaultSubnetId,omitempty"`
 
 	// EcsClusterArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-ecsclusterarn
-	EcsClusterArn Value `json:"EcsClusterArn,omitempty"`
+	EcsClusterArn *Value `json:"EcsClusterArn,omitempty"`
 
 	// ElasticIps AWS CloudFormation Property
 	// Required: false
@@ -93,12 +93,12 @@ type AWSOpsWorksStack struct {
 	// HostnameTheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-hostnametheme
-	HostnameTheme Value `json:"HostnameTheme,omitempty"`
+	HostnameTheme *Value `json:"HostnameTheme,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// RdsDbInstances AWS CloudFormation Property
 	// Required: false
@@ -108,12 +108,12 @@ type AWSOpsWorksStack struct {
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-servicerolearn
-	ServiceRoleArn Value `json:"ServiceRoleArn,omitempty"`
+	ServiceRoleArn *Value `json:"ServiceRoleArn,omitempty"`
 
 	// SourceStackId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-sourcestackid
-	SourceStackId Value `json:"SourceStackId,omitempty"`
+	SourceStackId *Value `json:"SourceStackId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -123,17 +123,17 @@ type AWSOpsWorksStack struct {
 	// UseCustomCookbooks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks
-	UseCustomCookbooks Value `json:"UseCustomCookbooks,omitempty"`
+	UseCustomCookbooks *Value `json:"UseCustomCookbooks,omitempty"`
 
 	// UseOpsworksSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
-	UseOpsworksSecurityGroups Value `json:"UseOpsworksSecurityGroups,omitempty"`
+	UseOpsworksSecurityGroups *Value `json:"UseOpsworksSecurityGroups,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-vpcid
-	VpcId Value `json:"VpcId,omitempty"`
+	VpcId *Value `json:"VpcId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

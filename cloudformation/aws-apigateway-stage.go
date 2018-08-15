@@ -13,32 +13,32 @@ type AWSApiGatewayStage struct {
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
-	CacheClusterEnabled Value `json:"CacheClusterEnabled,omitempty"`
+	CacheClusterEnabled *Value `json:"CacheClusterEnabled,omitempty"`
 
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize
-	CacheClusterSize Value `json:"CacheClusterSize,omitempty"`
+	CacheClusterSize *Value `json:"CacheClusterSize,omitempty"`
 
 	// ClientCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid
-	ClientCertificateId Value `json:"ClientCertificateId,omitempty"`
+	ClientCertificateId *Value `json:"ClientCertificateId,omitempty"`
 
 	// DeploymentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid
-	DeploymentId Value `json:"DeploymentId,omitempty"`
+	DeploymentId *Value `json:"DeploymentId,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description
-	Description Value `json:"Description,omitempty"`
+	Description *Value `json:"Description,omitempty"`
 
 	// DocumentationVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion
-	DocumentationVersion Value `json:"DocumentationVersion,omitempty"`
+	DocumentationVersion *Value `json:"DocumentationVersion,omitempty"`
 
 	// MethodSettings AWS CloudFormation Property
 	// Required: false
@@ -48,17 +48,17 @@ type AWSApiGatewayStage struct {
 	// RestApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid
-	RestApiId Value `json:"RestApiId,omitempty"`
+	RestApiId *Value `json:"RestApiId,omitempty"`
 
 	// StageName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename
-	StageName Value `json:"StageName,omitempty"`
+	StageName *Value `json:"StageName,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables
-	Variables map[string]Value `json:"Variables,omitempty"`
+	Variables map[string]*Value `json:"Variables,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

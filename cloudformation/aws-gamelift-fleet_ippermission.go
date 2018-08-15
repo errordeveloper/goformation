@@ -7,22 +7,22 @@ type AWSGameLiftFleet_IpPermission struct {
 	// FromPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-fromport
-	FromPort Value `json:"FromPort,omitempty"`
+	FromPort *Value `json:"FromPort,omitempty"`
 
 	// IpRange AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-iprange
-	IpRange Value `json:"IpRange,omitempty"`
+	IpRange *Value `json:"IpRange,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-protocol
-	Protocol Value `json:"Protocol,omitempty"`
+	Protocol *Value `json:"Protocol,omitempty"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-toport
-	ToPort Value `json:"ToPort,omitempty"`
+	ToPort *Value `json:"ToPort,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

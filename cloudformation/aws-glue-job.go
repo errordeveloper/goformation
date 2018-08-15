@@ -13,7 +13,7 @@ type AWSGlueJob struct {
 	// AllocatedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-allocatedcapacity
-	AllocatedCapacity Value `json:"AllocatedCapacity,omitempty"`
+	AllocatedCapacity *Value `json:"AllocatedCapacity,omitempty"`
 
 	// Command AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type AWSGlueJob struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
-	Description Value `json:"Description,omitempty"`
+	Description *Value `json:"Description,omitempty"`
 
 	// ExecutionProperty AWS CloudFormation Property
 	// Required: false
@@ -43,22 +43,22 @@ type AWSGlueJob struct {
 	// LogUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri
-	LogUri Value `json:"LogUri,omitempty"`
+	LogUri *Value `json:"LogUri,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries
-	MaxRetries Value `json:"MaxRetries,omitempty"`
+	MaxRetries *Value `json:"MaxRetries,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name
-	Name Value `json:"Name,omitempty"`
+	Name *Value `json:"Name,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role
-	Role Value `json:"Role,omitempty"`
+	Role *Value `json:"Role,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

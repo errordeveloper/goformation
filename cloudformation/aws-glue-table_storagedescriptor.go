@@ -7,7 +7,7 @@ type AWSGlueTable_StorageDescriptor struct {
 	// BucketColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-bucketcolumns
-	BucketColumns []Value `json:"BucketColumns,omitempty"`
+	BucketColumns []*Value `json:"BucketColumns,omitempty"`
 
 	// Columns AWS CloudFormation Property
 	// Required: false
@@ -17,27 +17,27 @@ type AWSGlueTable_StorageDescriptor struct {
 	// Compressed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-compressed
-	Compressed Value `json:"Compressed,omitempty"`
+	Compressed *Value `json:"Compressed,omitempty"`
 
 	// InputFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-inputformat
-	InputFormat Value `json:"InputFormat,omitempty"`
+	InputFormat *Value `json:"InputFormat,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-location
-	Location Value `json:"Location,omitempty"`
+	Location *Value `json:"Location,omitempty"`
 
 	// NumberOfBuckets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-numberofbuckets
-	NumberOfBuckets Value `json:"NumberOfBuckets,omitempty"`
+	NumberOfBuckets *Value `json:"NumberOfBuckets,omitempty"`
 
 	// OutputFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-outputformat
-	OutputFormat Value `json:"OutputFormat,omitempty"`
+	OutputFormat *Value `json:"OutputFormat,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type AWSGlueTable_StorageDescriptor struct {
 	// StoredAsSubDirectories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-storedassubdirectories
-	StoredAsSubDirectories Value `json:"StoredAsSubDirectories,omitempty"`
+	StoredAsSubDirectories *Value `json:"StoredAsSubDirectories,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

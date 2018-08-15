@@ -7,12 +7,12 @@ type AWSIoTTopicRule_RepublishAction struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-rolearn
-	RoleArn Value `json:"RoleArn,omitempty"`
+	RoleArn *Value `json:"RoleArn,omitempty"`
 
 	// Topic AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-topic
-	Topic Value `json:"Topic,omitempty"`
+	Topic *Value `json:"Topic,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

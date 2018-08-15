@@ -13,12 +13,12 @@ type AWSConfigAggregationAuthorization struct {
 	// AuthorizedAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedaccountid
-	AuthorizedAccountId Value `json:"AuthorizedAccountId,omitempty"`
+	AuthorizedAccountId *Value `json:"AuthorizedAccountId,omitempty"`
 
 	// AuthorizedAwsRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion
-	AuthorizedAwsRegion Value `json:"AuthorizedAwsRegion,omitempty"`
+	AuthorizedAwsRegion *Value `json:"AuthorizedAwsRegion,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

@@ -13,42 +13,42 @@ type AWSAutoScalingLifecycleHook struct {
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
-	AutoScalingGroupName Value `json:"AutoScalingGroupName,omitempty"`
+	AutoScalingGroupName *Value `json:"AutoScalingGroupName,omitempty"`
 
 	// DefaultResult AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
-	DefaultResult Value `json:"DefaultResult,omitempty"`
+	DefaultResult *Value `json:"DefaultResult,omitempty"`
 
 	// HeartbeatTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
-	HeartbeatTimeout Value `json:"HeartbeatTimeout,omitempty"`
+	HeartbeatTimeout *Value `json:"HeartbeatTimeout,omitempty"`
 
 	// LifecycleHookName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname
-	LifecycleHookName Value `json:"LifecycleHookName,omitempty"`
+	LifecycleHookName *Value `json:"LifecycleHookName,omitempty"`
 
 	// LifecycleTransition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
-	LifecycleTransition Value `json:"LifecycleTransition,omitempty"`
+	LifecycleTransition *Value `json:"LifecycleTransition,omitempty"`
 
 	// NotificationMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
-	NotificationMetadata Value `json:"NotificationMetadata,omitempty"`
+	NotificationMetadata *Value `json:"NotificationMetadata,omitempty"`
 
 	// NotificationTargetARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
-	NotificationTargetARN Value `json:"NotificationTargetARN,omitempty"`
+	NotificationTargetARN *Value `json:"NotificationTargetARN,omitempty"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
-	RoleARN Value `json:"RoleARN,omitempty"`
+	RoleARN *Value `json:"RoleARN,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

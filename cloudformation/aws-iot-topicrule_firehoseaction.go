@@ -7,17 +7,17 @@ type AWSIoTTopicRule_FirehoseAction struct {
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-deliverystreamname
-	DeliveryStreamName Value `json:"DeliveryStreamName,omitempty"`
+	DeliveryStreamName *Value `json:"DeliveryStreamName,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-rolearn
-	RoleArn Value `json:"RoleArn,omitempty"`
+	RoleArn *Value `json:"RoleArn,omitempty"`
 
 	// Separator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-separator
-	Separator Value `json:"Separator,omitempty"`
+	Separator *Value `json:"Separator,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

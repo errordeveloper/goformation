@@ -18,12 +18,12 @@ type AWSRDSDBSecurityGroup struct {
 	// EC2VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid
-	EC2VpcId Value `json:"EC2VpcId,omitempty"`
+	EC2VpcId *Value `json:"EC2VpcId,omitempty"`
 
 	// GroupDescription AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
-	GroupDescription Value `json:"GroupDescription,omitempty"`
+	GroupDescription *Value `json:"GroupDescription,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

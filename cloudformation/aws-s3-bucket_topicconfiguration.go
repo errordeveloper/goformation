@@ -7,7 +7,7 @@ type AWSS3Bucket_TopicConfiguration struct {
 	// Event AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-event
-	Event Value `json:"Event,omitempty"`
+	Event *Value `json:"Event,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
@@ -17,7 +17,7 @@ type AWSS3Bucket_TopicConfiguration struct {
 	// Topic AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-topic
-	Topic Value `json:"Topic,omitempty"`
+	Topic *Value `json:"Topic,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

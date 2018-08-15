@@ -18,7 +18,7 @@ type AWSSNSSubscription struct {
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
-	Endpoint Value `json:"Endpoint,omitempty"`
+	Endpoint *Value `json:"Endpoint,omitempty"`
 
 	// FilterPolicy AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type AWSSNSSubscription struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
-	Protocol Value `json:"Protocol,omitempty"`
+	Protocol *Value `json:"Protocol,omitempty"`
 
 	// RawMessageDelivery AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type AWSSNSSubscription struct {
 	// TopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
-	TopicArn Value `json:"TopicArn,omitempty"`
+	TopicArn *Value `json:"TopicArn,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

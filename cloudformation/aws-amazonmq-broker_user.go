@@ -7,22 +7,22 @@ type AWSAmazonMQBroker_User struct {
 	// ConsoleAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-consoleaccess
-	ConsoleAccess Value `json:"ConsoleAccess,omitempty"`
+	ConsoleAccess *Value `json:"ConsoleAccess,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-groups
-	Groups []Value `json:"Groups,omitempty"`
+	Groups []*Value `json:"Groups,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password
-	Password Value `json:"Password,omitempty"`
+	Password *Value `json:"Password,omitempty"`
 
 	// Username AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-username
-	Username Value `json:"Username,omitempty"`
+	Username *Value `json:"Username,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

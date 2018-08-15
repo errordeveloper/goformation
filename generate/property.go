@@ -207,15 +207,15 @@ func (p Property) GetJSONPrimitiveType() string {
 func convertTypeToGo(pt string) string {
 	switch pt {
 	case "String":
-		return "Value"
+		return "*Value"
 	case "Long":
-		return "Value"
+		return "*Value"
 	case "Integer":
-		return "Value"
+		return "*Value"
 	case "Double":
-		return "Value"
+		return "*Value"
 	case "Boolean":
-		return "Value"
+		return "*Value"
 	case "Timestamp":
 		return "string"
 	case "Json":

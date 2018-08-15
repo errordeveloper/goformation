@@ -13,42 +13,42 @@ type AWSGlueDevEndpoint struct {
 	// EndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
-	EndpointName Value `json:"EndpointName,omitempty"`
+	EndpointName *Value `json:"EndpointName,omitempty"`
 
 	// ExtraJarsS3Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path
-	ExtraJarsS3Path Value `json:"ExtraJarsS3Path,omitempty"`
+	ExtraJarsS3Path *Value `json:"ExtraJarsS3Path,omitempty"`
 
 	// ExtraPythonLibsS3Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
-	ExtraPythonLibsS3Path Value `json:"ExtraPythonLibsS3Path,omitempty"`
+	ExtraPythonLibsS3Path *Value `json:"ExtraPythonLibsS3Path,omitempty"`
 
 	// NumberOfNodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
-	NumberOfNodes Value `json:"NumberOfNodes,omitempty"`
+	NumberOfNodes *Value `json:"NumberOfNodes,omitempty"`
 
 	// PublicKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
-	PublicKey Value `json:"PublicKey,omitempty"`
+	PublicKey *Value `json:"PublicKey,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
-	RoleArn Value `json:"RoleArn,omitempty"`
+	RoleArn *Value `json:"RoleArn,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
-	SecurityGroupIds []Value `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []*Value `json:"SecurityGroupIds,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
-	SubnetId Value `json:"SubnetId,omitempty"`
+	SubnetId *Value `json:"SubnetId,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

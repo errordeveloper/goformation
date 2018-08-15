@@ -13,7 +13,7 @@ type AWSEFSFileSystem struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted
-	Encrypted Value `json:"Encrypted,omitempty"`
+	Encrypted *Value `json:"Encrypted,omitempty"`
 
 	// FileSystemTags AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type AWSEFSFileSystem struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid
-	KmsKeyId Value `json:"KmsKeyId,omitempty"`
+	KmsKeyId *Value `json:"KmsKeyId,omitempty"`
 
 	// PerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode
-	PerformanceMode Value `json:"PerformanceMode,omitempty"`
+	PerformanceMode *Value `json:"PerformanceMode,omitempty"`
 
 	// ProvisionedThroughputInMibps AWS CloudFormation Property
 	// Required: false

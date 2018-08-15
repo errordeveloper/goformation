@@ -13,7 +13,7 @@ type AWSCognitoIdentityPool struct {
 	// AllowUnauthenticatedIdentities AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
-	AllowUnauthenticatedIdentities Value `json:"AllowUnauthenticatedIdentities,omitempty"`
+	AllowUnauthenticatedIdentities *Value `json:"AllowUnauthenticatedIdentities,omitempty"`
 
 	// CognitoEvents AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type AWSCognitoIdentityPool struct {
 	// DeveloperProviderName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
-	DeveloperProviderName Value `json:"DeveloperProviderName,omitempty"`
+	DeveloperProviderName *Value `json:"DeveloperProviderName,omitempty"`
 
 	// IdentityPoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
-	IdentityPoolName Value `json:"IdentityPoolName,omitempty"`
+	IdentityPoolName *Value `json:"IdentityPoolName,omitempty"`
 
 	// OpenIdConnectProviderARNs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
-	OpenIdConnectProviderARNs []Value `json:"OpenIdConnectProviderARNs,omitempty"`
+	OpenIdConnectProviderARNs []*Value `json:"OpenIdConnectProviderARNs,omitempty"`
 
 	// PushSync AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type AWSCognitoIdentityPool struct {
 	// SamlProviderARNs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
-	SamlProviderARNs []Value `json:"SamlProviderARNs,omitempty"`
+	SamlProviderARNs []*Value `json:"SamlProviderARNs,omitempty"`
 
 	// SupportedLoginProviders AWS CloudFormation Property
 	// Required: false
