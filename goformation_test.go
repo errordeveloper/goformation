@@ -540,15 +540,14 @@ var _ = Describe("Goformation", func() {
 	Context("with an SNS event source created from JSON", func() {
 		eventString := `{"Topic":"MyTopic"}`
 		eventJson := []byte(eventString)
-		event := cloudformation.AWSServerlessFunction_Properties{}
+		event := &cloudformation.AWSServerlessFunction_Properties{}
 
 		It("should marshal properties correctly", func() {
-			Expect(event).To(BeNil())
 			err := event.UnmarshalJSON(eventJson)
 			Expect(err).ToNot(HaveOccurred())
 			bytes, err := event.MarshalJSON()
 			Expect(err).ToNot(HaveOccurred())
-			Expect(string(bytes)).To(Equal(eventString))
+			Expect(string(bytes)).To(Equal(`{"Topic":"MyTopic"}`))
 		})
 	})
 
