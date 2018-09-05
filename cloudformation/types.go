@@ -52,6 +52,9 @@ func NewValue(v json.Marshaler) *Value { return &Value{value: v} }
 func (v *Value) Raw() interface{} { return v.value }
 
 func (v *Value) String() string {
+	if v == nil {
+		return "<nil>"
+	}
 	if x, ok := v.Raw().(string); ok {
 		return x
 	}

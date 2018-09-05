@@ -145,9 +145,11 @@ func (t *Template) GetAllAWSServerlessFunctionResources() map[string]AWSServerle
 				if resType == "AWS::Serverless::Function" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServerlessFunction
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServerlessFunction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
+						} else {
+							panic(err)
 						}
 					}
 				}
@@ -172,9 +174,9 @@ func (t *Template) GetAWSServerlessFunctionWithName(name string) (AWSServerlessF
 				if resType == "AWS::Serverless::Function" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServerlessFunction
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServerlessFunction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -20,6 +20,11 @@ var _ = Describe("Goformation", func() {
 			Expect(template).ShouldNot(BeNil())
 		})
 
+		It("should have exactly one function as resource", func() {
+			Expect(template.Resources).To(HaveLen(1))
+			Expect(template.Resources).To(HaveKey("Function20161031"))
+		})
+
 		functions := template.GetAllAWSServerlessFunctionResources()
 
 		It("should have exactly one function", func() {
@@ -30,7 +35,7 @@ var _ = Describe("Goformation", func() {
 		f := functions["Function20161031"]
 
 		It("should correctly parse all of the function properties", func() {
-
+			Expect(f.Handler).ToNot(BeNil())
 			Expect(f.Handler.String()).To(Equal("file.method"))
 			Expect(f.Runtime.String()).To(Equal("nodejs"))
 			Expect(f.FunctionName.String()).To(Equal("functionname"))
@@ -45,7 +50,6 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("should correctly parse all of the function API event sources/endpoints", func() {
-
 			Expect(f.Events).ToNot(BeNil())
 			Expect(f.Events).To(HaveKey("TestApi"))
 			Expect(f.Events["TestApi"].Type).To(Equal(cloudformation.NewString(("Api"))))
@@ -469,6 +473,7 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("should have the correct value for DefinitionUri", func() {
+			Expect(api2.DefinitionUri).ToNot(BeNil())
 			x := api2.DefinitionUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
 			Expect(x.Bucket).To(Equal("test-bucket"))
 			Expect(x.Key).To(Equal("test-key"))
