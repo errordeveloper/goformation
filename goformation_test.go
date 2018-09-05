@@ -447,7 +447,7 @@ var _ = Describe("Goformation", func() {
 		})
 
 		It("should have the correct value for DefinitionUri", func() {
-			Expect(api1.DefinitionUri.String).To(Equal("test-definition-uri"))
+			Expect(api1.DefinitionUri.String()).To(Equal("test-definition-uri"))
 		})
 
 		It("should have the correct value for CacheClusterEnabled", func() {
@@ -541,9 +541,11 @@ var _ = Describe("Goformation", func() {
 		eventString := `{"Topic":"MyTopic"}`
 		eventJson := []byte(eventString)
 		event := cloudformation.AWSServerlessFunction_Properties{}
-		event.UnmarshalJSON(eventJson)
 
 		It("should marshal properties correctly", func() {
+			Expect(event).To(BeNil())
+			err := event.UnmarshalJSON(eventJson)
+			Expect(err).ToNot(HaveOccurred())
 			bytes, err := event.MarshalJSON()
 			Expect(err).ToNot(HaveOccurred())
 			Expect(string(bytes)).To(Equal(eventString))
