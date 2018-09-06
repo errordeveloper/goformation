@@ -45,8 +45,7 @@ var _ = Describe("Goformation", func() {
 			Expect(f.Role).To(Equal(cloudformation.NewString("aws::arn::123456789012::some/role")))
 			//Expect(f.Policies.StringArray).To(PointTo(ContainElement("AmazonDynamoDBFullAccess")))
 			Expect(f.Environment).ToNot(BeNil())
-			Expect(f.Environment.Variables).To(HaveKeyWithValue("NAME", "VALUE"))
-
+			Expect(f.Environment.Variables).To(HaveKeyWithValue("NAME", cloudformation.NewString("VALUE")))
 		})
 
 		It("should correctly parse all of the function API event sources/endpoints", func() {
@@ -58,7 +57,6 @@ var _ = Describe("Goformation", func() {
 			event := f.Events["TestApi"].Properties.ApiEvent
 			Expect(event.Method).To(Equal(cloudformation.NewString(("any"))))
 			Expect(event.Path).To(Equal(cloudformation.NewString(("/testing"))))
-
 		})
 
 	})
@@ -346,10 +344,10 @@ var _ = Describe("Goformation", func() {
 			})
 
 			It("should have the correct S3 bucket/key/version", func() {
-				x := function.CodeUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
-				Expect(x.Bucket).To(Equal("test-bucket"))
-				Expect(x.Key).To(Equal("test-key"))
-				Expect(x.Version).To(Equal(100))
+				x := function.CodeUri.Raw().(*cloudformation.AWSServerlessFunction_S3Location)
+				Expect(x.Bucket.String()).To(Equal("test-bucket"))
+				Expect(x.Key.String()).To(Equal("test-key"))
+				Expect(x.Version.Raw()).To(Equal(cloudformation.Integer(100)))
 			})
 
 		})
