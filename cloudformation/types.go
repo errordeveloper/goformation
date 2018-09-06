@@ -113,6 +113,16 @@ func (v Anything) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v)
 }
 
+func (v Anything) Convert(obj interface{}) error {
+	x := map[string]interface{}{}
+	x = v
+	data, err := json.Marshal(x)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(data, obj)
+}
+
 // func (v StringSlice) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v.s) }
 
 type Long int64

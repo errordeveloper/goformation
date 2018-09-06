@@ -279,9 +279,11 @@ var _ = Describe("Goformation", func() {
 
 		f2 := functions["CodeUriWithS3LocationSpecifiedAsObject"]
 		It("should parse a CodeUri property with an S3 location specified as an object", func() {
-			x := f2.CodeUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
-			Expect(x.Key).To(Equal("testkey.zip"))
-			Expect(x.Version).To(Equal(5))
+			x := &cloudformation.AWSServerlessFunction_S3Location{}
+			err := f2.CodeUri.Raw().(cloudformation.Anything).Convert(x)
+			Expect(err).ToNot(HaveOccurred())
+			Expect(x.Key.String()).To(Equal("testkey.zip"))
+			Expect(x.Version.Raw()).To(Equal(cloudformation.Double(5)))
 		})
 
 		f3 := functions["CodeUriWithString"]
@@ -472,10 +474,13 @@ var _ = Describe("Goformation", func() {
 
 		It("should have the correct value for DefinitionUri", func() {
 			Expect(api2.DefinitionUri).ToNot(BeNil())
-			x := api2.DefinitionUri.Raw().(cloudformation.AWSServerlessFunction_S3Location)
-			Expect(x.Bucket).To(Equal("test-bucket"))
-			Expect(x.Key).To(Equal("test-key"))
-			Expect(x.Version).To(Equal(1))
+
+			x := &cloudformation.AWSServerlessFunction_S3Location{}
+			err := api2.DefinitionUri.Raw().(cloudformation.Anything).Convert(x)
+			Expect(err).ToNot(HaveOccurred())
+			Expect(x.Bucket.String()).To(Equal("test-bucket"))
+			Expect(x.Key.String()).To(Equal("test-key"))
+			Expect(x.Version.Raw()).To(Equal(cloudformation.Double(1)))
 		})
 
 		api3, err := template.GetAWSServerlessApiWithName("ServerlessApiWithDefinitionBodyAsJSON")
