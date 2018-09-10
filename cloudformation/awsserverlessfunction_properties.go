@@ -119,9 +119,13 @@ func (r *AWSServerlessFunction_Properties) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
-	switch typecheck.(type) {
+	switch val := typecheck.(type) {
 
 	case map[string]interface{}:
+		_ = val
+
+		json.Unmarshal(b, &r.S3Event)
+
 		json.Unmarshal(b, &r.SNSEvent)
 
 		json.Unmarshal(b, &r.SQSEvent)
@@ -141,6 +145,8 @@ func (r *AWSServerlessFunction_Properties) UnmarshalJSON(b []byte) error {
 		json.Unmarshal(b, &r.AlexaSkillEvent)
 
 	case []interface{}:
+		_ = val
+
 	}
 
 	return nil
