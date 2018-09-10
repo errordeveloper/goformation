@@ -76,7 +76,9 @@ func (v *Value) UnmarshalJSON(b []byte) error {
 	case bool:
 		v.value = Boolean(raw.(bool))
 	case map[string]interface{}:
-		v.value = Anything(raw.(map[string]interface{}))
+		v.value = AnythingMap(raw.(map[string]interface{}))
+	case []interface{}:
+		v.value = AnythingSlice(raw.([]interface{}))
 	default:
 		return fmt.Errorf("cannot handle type %s", reflect.ValueOf(raw).Kind())
 	}
@@ -97,23 +99,13 @@ func (v String) MarshalJSON() ([]byte, error) {
 	return json.Marshal(&x)
 }
 
-// func (v String) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, v) }
+type AnythingMap map[string]interface{}
 
-type StringSlice []string
-
-func NewStringSlice(v ...string) *Value { return NewValue(StringSlice(v)) }
-
-func (v StringSlice) MarshalJSON() ([]byte, error) {
+func (v AnythingMap) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v)
 }
 
-type Anything map[string]interface{}
-
-func (v Anything) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
-}
-
-func (v Anything) Convert(obj interface{}) error {
+func (v AnythingMap) Convert(obj interface{}) error {
 	x := map[string]interface{}{}
 	x = v
 	data, err := json.Marshal(x)
@@ -123,7 +115,21 @@ func (v Anything) Convert(obj interface{}) error {
 	return json.Unmarshal(data, obj)
 }
 
-// func (v StringSlice) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v.s) }
+type AnythingSlice []interface{}
+
+func (v AnythingSlice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v)
+}
+
+func (v AnythingSlice) Convert(obj interface{}) error {
+	x := []interface{}{}
+	x = v
+	data, err := json.Marshal(x)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(data, obj)
+}
 
 type Long int64
 
@@ -131,8 +137,6 @@ func (v Long) MarshalJSON() ([]byte, error) {
 	x := int64(v)
 	return json.Marshal(&x)
 }
-
-// func (v Long) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v) }
 
 type Integer int
 
@@ -143,8 +147,6 @@ func (v Integer) MarshalJSON() ([]byte, error) {
 	return json.Marshal(&x)
 }
 
-// func (v Integer) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v) }
-
 type Double float64
 
 func NewDouble(v float64) *Value { return NewValue(Double(v)) }
@@ -153,8 +155,6 @@ func (v Double) MarshalJSON() ([]byte, error) {
 	x := float64(v)
 	return json.Marshal(&x)
 }
-
-// func (v Double) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v) }
 
 type Boolean bool
 
@@ -172,8 +172,6 @@ func (v Boolean) MarshalJSON() ([]byte, error) {
 	x := bool(v)
 	return json.Marshal(&x)
 }
-
-// func (v Boolean) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v) }
 
 type Intrinsic struct {
 	Value map[string]interface{}
@@ -236,5 +234,3 @@ func MakeFnSplitString(sep string, arg string) *Value {
 }
 
 func (v Intrinsic) MarshalJSON() ([]byte, error) { return json.Marshal(&v.Value) }
-
-// func (v Intrinsic) UnmarshalJSON(b []byte) error { return json.Unmarshal(b, &v.Value) }

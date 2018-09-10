@@ -43,7 +43,8 @@ var _ = Describe("Goformation", func() {
 			Expect(f.MemorySize.String()).To(Equal("128"))
 			Expect(f.Timeout.String()).To(Equal("30"))
 			Expect(f.Role).To(Equal(cloudformation.NewString("aws::arn::123456789012::some/role")))
-			//Expect(f.Policies.StringArray).To(PointTo(ContainElement("AmazonDynamoDBFullAccess")))
+			Expect(f.Policies).ToNot(BeNil())
+			Expect(f.Policies.Raw()).To(ContainElement("AmazonDynamoDBFullAccess"))
 			Expect(f.Environment).ToNot(BeNil())
 			Expect(f.Environment.Variables).To(HaveKeyWithValue("NAME", cloudformation.NewString("VALUE")))
 		})
@@ -280,7 +281,7 @@ var _ = Describe("Goformation", func() {
 		f2 := functions["CodeUriWithS3LocationSpecifiedAsObject"]
 		It("should parse a CodeUri property with an S3 location specified as an object", func() {
 			x := &cloudformation.AWSServerlessFunction_S3Location{}
-			err := f2.CodeUri.Raw().(cloudformation.Anything).Convert(x)
+			err := f2.CodeUri.Raw().(cloudformation.AnythingMap).Convert(x)
 			Expect(err).ToNot(HaveOccurred())
 			Expect(x.Key.String()).To(Equal("testkey.zip"))
 			Expect(x.Version.Raw()).To(Equal(cloudformation.Double(5)))
@@ -476,7 +477,7 @@ var _ = Describe("Goformation", func() {
 			Expect(api2.DefinitionUri).ToNot(BeNil())
 
 			x := &cloudformation.AWSServerlessFunction_S3Location{}
-			err := api2.DefinitionUri.Raw().(cloudformation.Anything).Convert(x)
+			err := api2.DefinitionUri.Raw().(cloudformation.AnythingMap).Convert(x)
 			Expect(err).ToNot(HaveOccurred())
 			Expect(x.Bucket.String()).To(Equal("test-bucket"))
 			Expect(x.Key.String()).To(Equal("test-key"))
