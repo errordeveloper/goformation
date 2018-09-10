@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_Device AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html
 type AWSECSTaskDefinition_Device struct {
@@ -23,4 +27,8 @@ type AWSECSTaskDefinition_Device struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_Device) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Device"
+}
+
+func (r *AWSECSTaskDefinition_Device) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

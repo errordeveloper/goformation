@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRoute53RecordSet_GeoLocation AWS CloudFormation Resource (AWS::Route53::RecordSet.GeoLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html
 type AWSRoute53RecordSet_GeoLocation struct {
@@ -23,4 +27,8 @@ type AWSRoute53RecordSet_GeoLocation struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRoute53RecordSet_GeoLocation) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSet.GeoLocation"
+}
+
+func (r *AWSRoute53RecordSet_GeoLocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

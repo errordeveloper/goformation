@@ -70,9 +70,9 @@ func (t *Template) GetAllAWSEC2PlacementGroupResources() map[string]AWSEC2Placem
 				if resType == "AWS::EC2::PlacementGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2PlacementGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2PlacementGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -97,9 +97,9 @@ func (t *Template) GetAWSEC2PlacementGroupWithName(name string) (AWSEC2Placement
 				if resType == "AWS::EC2::PlacementGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2PlacementGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2PlacementGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

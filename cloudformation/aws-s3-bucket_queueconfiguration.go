@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_QueueConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.QueueConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html
 type AWSS3Bucket_QueueConfiguration struct {
@@ -23,4 +27,8 @@ type AWSS3Bucket_QueueConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_QueueConfiguration) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.QueueConfiguration"
+}
+
+func (r *AWSS3Bucket_QueueConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

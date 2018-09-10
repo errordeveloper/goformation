@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_PutItemInput AWS CloudFormation Resource (AWS::IoT::TopicRule.PutItemInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html
 type AWSIoTTopicRule_PutItemInput struct {
@@ -13,4 +17,8 @@ type AWSIoTTopicRule_PutItemInput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_PutItemInput) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.PutItemInput"
+}
+
+func (r *AWSIoTTopicRule_PutItemInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

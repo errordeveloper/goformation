@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceDataSource AWS CloudFormation Resource (AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceDataSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-referencedatasource.html
 type AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceDataSource struct {
@@ -23,4 +27,8 @@ type AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceDataSource struc
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceDataSource) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceDataSource"
+}
+
+func (r *AWSKinesisAnalyticsApplicationReferenceDataSource_ReferenceDataSource) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

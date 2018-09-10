@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticsearchDomain_EncryptionAtRestOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.EncryptionAtRestOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html
 type AWSElasticsearchDomain_EncryptionAtRestOptions struct {
@@ -18,4 +22,8 @@ type AWSElasticsearchDomain_EncryptionAtRestOptions struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticsearchDomain_EncryptionAtRestOptions) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.EncryptionAtRestOptions"
+}
+
+func (r *AWSElasticsearchDomain_EncryptionAtRestOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

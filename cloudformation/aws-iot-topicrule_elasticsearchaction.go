@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_ElasticsearchAction AWS CloudFormation Resource (AWS::IoT::TopicRule.ElasticsearchAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html
 type AWSIoTTopicRule_ElasticsearchAction struct {
@@ -33,4 +37,8 @@ type AWSIoTTopicRule_ElasticsearchAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_ElasticsearchAction) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.ElasticsearchAction"
+}
+
+func (r *AWSIoTTopicRule_ElasticsearchAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

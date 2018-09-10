@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_NumberAttributeConstraints AWS CloudFormation Resource (AWS::Cognito::UserPool.NumberAttributeConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
 type AWSCognitoUserPool_NumberAttributeConstraints struct {
@@ -18,4 +22,8 @@ type AWSCognitoUserPool_NumberAttributeConstraints struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_NumberAttributeConstraints) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.NumberAttributeConstraints"
+}
+
+func (r *AWSCognitoUserPool_NumberAttributeConstraints) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

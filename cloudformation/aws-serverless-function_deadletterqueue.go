@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_DeadLetterQueue AWS CloudFormation Resource (AWS::Serverless::Function.DeadLetterQueue)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#deadletterqueue-object
 type AWSServerlessFunction_DeadLetterQueue struct {
@@ -18,4 +22,8 @@ type AWSServerlessFunction_DeadLetterQueue struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_DeadLetterQueue) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DeadLetterQueue"
+}
+
+func (r *AWSServerlessFunction_DeadLetterQueue) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

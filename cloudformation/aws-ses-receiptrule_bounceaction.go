@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESReceiptRule_BounceAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.BounceAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html
 type AWSSESReceiptRule_BounceAction struct {
@@ -33,4 +37,8 @@ type AWSSESReceiptRule_BounceAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESReceiptRule_BounceAction) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.BounceAction"
+}
+
+func (r *AWSSESReceiptRule_BounceAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

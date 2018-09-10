@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudTrailTrail_DataResource AWS CloudFormation Resource (AWS::CloudTrail::Trail.DataResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html
 type AWSCloudTrailTrail_DataResource struct {
@@ -18,4 +22,8 @@ type AWSCloudTrailTrail_DataResource struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudTrailTrail_DataResource) AWSCloudFormationType() string {
 	return "AWS::CloudTrail::Trail.DataResource"
+}
+
+func (r *AWSCloudTrailTrail_DataResource) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

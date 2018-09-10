@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSServiceDiscoveryPrivateDnsNamespaceResources() map[s
 				if resType == "AWS::ServiceDiscovery::PrivateDnsNamespace" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceDiscoveryPrivateDnsNamespace
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceDiscoveryPrivateDnsNamespace{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSServiceDiscoveryPrivateDnsNamespaceWithName(name string
 				if resType == "AWS::ServiceDiscovery::PrivateDnsNamespace" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceDiscoveryPrivateDnsNamespace
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceDiscoveryPrivateDnsNamespace{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

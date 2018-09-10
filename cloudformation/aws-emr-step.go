@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSEMRStepResources() map[string]AWSEMRStep {
 				if resType == "AWS::EMR::Step" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEMRStep
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEMRStep{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSEMRStepWithName(name string) (AWSEMRStep, error) {
 				if resType == "AWS::EMR::Step" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEMRStep
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEMRStep{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

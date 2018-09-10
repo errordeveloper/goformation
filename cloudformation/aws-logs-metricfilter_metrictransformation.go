@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSLogsMetricFilter_MetricTransformation AWS CloudFormation Resource (AWS::Logs::MetricFilter.MetricTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
 type AWSLogsMetricFilter_MetricTransformation struct {
@@ -28,4 +32,8 @@ type AWSLogsMetricFilter_MetricTransformation struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSLogsMetricFilter_MetricTransformation) AWSCloudFormationType() string {
 	return "AWS::Logs::MetricFilter.MetricTransformation"
+}
+
+func (r *AWSLogsMetricFilter_MetricTransformation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

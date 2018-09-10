@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSBatchJobDefinitionResources() map[string]AWSBatchJob
 				if resType == "AWS::Batch::JobDefinition" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSBatchJobDefinition
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSBatchJobDefinition{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSBatchJobDefinitionWithName(name string) (AWSBatchJobDef
 				if resType == "AWS::Batch::JobDefinition" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSBatchJobDefinition
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSBatchJobDefinition{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

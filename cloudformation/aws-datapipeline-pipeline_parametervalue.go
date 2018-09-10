@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDataPipelinePipeline_ParameterValue AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.ParameterValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html
 type AWSDataPipelinePipeline_ParameterValue struct {
@@ -18,4 +22,8 @@ type AWSDataPipelinePipeline_ParameterValue struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDataPipelinePipeline_ParameterValue) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.ParameterValue"
+}
+
+func (r *AWSDataPipelinePipeline_ParameterValue) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

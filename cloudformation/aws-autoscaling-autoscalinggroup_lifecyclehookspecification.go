@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAutoScalingAutoScalingGroup_LifecycleHookSpecification AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html
 type AWSAutoScalingAutoScalingGroup_LifecycleHookSpecification struct {
@@ -43,4 +47,8 @@ type AWSAutoScalingAutoScalingGroup_LifecycleHookSpecification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAutoScalingAutoScalingGroup_LifecycleHookSpecification) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification"
+}
+
+func (r *AWSAutoScalingAutoScalingGroup_LifecycleHookSpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

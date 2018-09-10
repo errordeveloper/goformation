@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApiGatewayDocumentationPart_Location AWS CloudFormation Resource (AWS::ApiGateway::DocumentationPart.Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html
 type AWSApiGatewayDocumentationPart_Location struct {
@@ -33,4 +37,8 @@ type AWSApiGatewayDocumentationPart_Location struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApiGatewayDocumentationPart_Location) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::DocumentationPart.Location"
+}
+
+func (r *AWSApiGatewayDocumentationPart_Location) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

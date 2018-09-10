@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEventsRule_KinesisParameters AWS CloudFormation Resource (AWS::Events::Rule.KinesisParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html
 type AWSEventsRule_KinesisParameters struct {
@@ -13,4 +17,8 @@ type AWSEventsRule_KinesisParameters struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEventsRule_KinesisParameters) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.KinesisParameters"
+}
+
+func (r *AWSEventsRule_KinesisParameters) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

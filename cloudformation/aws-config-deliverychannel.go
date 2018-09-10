@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSConfigDeliveryChannelResources() map[string]AWSConfi
 				if resType == "AWS::Config::DeliveryChannel" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigDeliveryChannel
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSConfigDeliveryChannel{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSConfigDeliveryChannelWithName(name string) (AWSConfigDe
 				if resType == "AWS::Config::DeliveryChannel" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigDeliveryChannel
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSConfigDeliveryChannel{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

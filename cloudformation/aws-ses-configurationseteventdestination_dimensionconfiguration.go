@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESConfigurationSetEventDestination_DimensionConfiguration AWS CloudFormation Resource (AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html
 type AWSSESConfigurationSetEventDestination_DimensionConfiguration struct {
@@ -23,4 +27,8 @@ type AWSSESConfigurationSetEventDestination_DimensionConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESConfigurationSetEventDestination_DimensionConfiguration) AWSCloudFormationType() string {
 	return "AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration"
+}
+
+func (r *AWSSESConfigurationSetEventDestination_DimensionConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

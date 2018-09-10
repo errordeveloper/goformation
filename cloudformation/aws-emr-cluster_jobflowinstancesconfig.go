@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_JobFlowInstancesConfig AWS CloudFormation Resource (AWS::EMR::Cluster.JobFlowInstancesConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html
 type AWSEMRCluster_JobFlowInstancesConfig struct {
@@ -78,4 +82,8 @@ type AWSEMRCluster_JobFlowInstancesConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_JobFlowInstancesConfig) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.JobFlowInstancesConfig"
+}
+
+func (r *AWSEMRCluster_JobFlowInstancesConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

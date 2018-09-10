@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_LambdaConfig AWS CloudFormation Resource (AWS::Cognito::UserPool.LambdaConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html
 type AWSCognitoUserPool_LambdaConfig struct {
@@ -48,4 +52,8 @@ type AWSCognitoUserPool_LambdaConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_LambdaConfig) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.LambdaConfig"
+}
+
+func (r *AWSCognitoUserPool_LambdaConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

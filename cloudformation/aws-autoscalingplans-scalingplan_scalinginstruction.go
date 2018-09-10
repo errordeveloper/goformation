@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAutoScalingPlansScalingPlan_ScalingInstruction AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html
 type AWSAutoScalingPlansScalingPlan_ScalingInstruction struct {
@@ -38,4 +42,8 @@ type AWSAutoScalingPlansScalingPlan_ScalingInstruction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAutoScalingPlansScalingPlan_ScalingInstruction) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction"
+}
+
+func (r *AWSAutoScalingPlansScalingPlan_ScalingInstruction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

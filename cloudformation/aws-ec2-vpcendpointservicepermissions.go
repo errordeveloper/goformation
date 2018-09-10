@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSEC2VPCEndpointServicePermissionsResources() map[stri
 				if resType == "AWS::EC2::VPCEndpointServicePermissions" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCEndpointServicePermissions
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VPCEndpointServicePermissions{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSEC2VPCEndpointServicePermissionsWithName(name string) (
 				if resType == "AWS::EC2::VPCEndpointServicePermissions" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCEndpointServicePermissions
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VPCEndpointServicePermissions{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

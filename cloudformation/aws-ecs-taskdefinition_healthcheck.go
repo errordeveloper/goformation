@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_HealthCheck AWS CloudFormation Resource (AWS::ECS::TaskDefinition.HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html
 type AWSECSTaskDefinition_HealthCheck struct {
@@ -33,4 +37,8 @@ type AWSECSTaskDefinition_HealthCheck struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_HealthCheck) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.HealthCheck"
+}
+
+func (r *AWSECSTaskDefinition_HealthCheck) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

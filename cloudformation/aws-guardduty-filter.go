@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSGuardDutyFilterResources() map[string]AWSGuardDutyFi
 				if resType == "AWS::GuardDuty::Filter" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyFilter
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGuardDutyFilter{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSGuardDutyFilterWithName(name string) (AWSGuardDutyFilte
 				if resType == "AWS::GuardDuty::Filter" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyFilter
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGuardDutyFilter{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

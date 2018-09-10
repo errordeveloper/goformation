@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSAutoScalingScheduledActionResources() map[string]AWS
 				if resType == "AWS::AutoScaling::ScheduledAction" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingScheduledAction
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAutoScalingScheduledAction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSAutoScalingScheduledActionWithName(name string) (AWSAut
 				if resType == "AWS::AutoScaling::ScheduledAction" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingScheduledAction
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAutoScalingScheduledAction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

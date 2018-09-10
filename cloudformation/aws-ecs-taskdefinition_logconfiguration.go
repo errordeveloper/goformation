@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_LogConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.LogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html
 type AWSECSTaskDefinition_LogConfiguration struct {
@@ -18,4 +22,8 @@ type AWSECSTaskDefinition_LogConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_LogConfiguration) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.LogConfiguration"
+}
+
+func (r *AWSECSTaskDefinition_LogConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

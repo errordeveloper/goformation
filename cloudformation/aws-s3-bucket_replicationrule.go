@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_ReplicationRule AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html
 type AWSS3Bucket_ReplicationRule struct {
@@ -33,4 +37,8 @@ type AWSS3Bucket_ReplicationRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_ReplicationRule) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicationRule"
+}
+
+func (r *AWSS3Bucket_ReplicationRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

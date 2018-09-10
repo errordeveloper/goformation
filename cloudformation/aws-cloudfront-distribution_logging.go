@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_Logging AWS CloudFormation Resource (AWS::CloudFront::Distribution.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
 type AWSCloudFrontDistribution_Logging struct {
@@ -23,4 +27,8 @@ type AWSCloudFrontDistribution_Logging struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_Logging) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.Logging"
+}
+
+func (r *AWSCloudFrontDistribution_Logging) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

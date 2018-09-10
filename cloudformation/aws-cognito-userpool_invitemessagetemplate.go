@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_InviteMessageTemplate AWS CloudFormation Resource (AWS::Cognito::UserPool.InviteMessageTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html
 type AWSCognitoUserPool_InviteMessageTemplate struct {
@@ -23,4 +27,8 @@ type AWSCognitoUserPool_InviteMessageTemplate struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_InviteMessageTemplate) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.InviteMessageTemplate"
+}
+
+func (r *AWSCognitoUserPool_InviteMessageTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

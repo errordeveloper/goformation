@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_ContainerDefinition AWS CloudFormation Resource (AWS::ECS::TaskDefinition.ContainerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html
 type AWSECSTaskDefinition_ContainerDefinition struct {
@@ -148,4 +152,8 @@ type AWSECSTaskDefinition_ContainerDefinition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_ContainerDefinition) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.ContainerDefinition"
+}
+
+func (r *AWSECSTaskDefinition_ContainerDefinition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

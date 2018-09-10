@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSApiGatewayUsagePlanResources() map[string]AWSApiGate
 				if resType == "AWS::ApiGateway::UsagePlan" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayUsagePlan
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayUsagePlan{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSApiGatewayUsagePlanWithName(name string) (AWSApiGateway
 				if resType == "AWS::ApiGateway::UsagePlan" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayUsagePlan
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayUsagePlan{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

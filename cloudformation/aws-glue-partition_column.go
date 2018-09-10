@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGluePartition_Column AWS CloudFormation Resource (AWS::Glue::Partition.Column)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html
 type AWSGluePartition_Column struct {
@@ -23,4 +27,8 @@ type AWSGluePartition_Column struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGluePartition_Column) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.Column"
+}
+
+func (r *AWSGluePartition_Column) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoIdentityPoolRoleAttachment_MappingRule AWS CloudFormation Resource (AWS::Cognito::IdentityPoolRoleAttachment.MappingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html
 type AWSCognitoIdentityPoolRoleAttachment_MappingRule struct {
@@ -28,4 +32,8 @@ type AWSCognitoIdentityPoolRoleAttachment_MappingRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoIdentityPoolRoleAttachment_MappingRule) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPoolRoleAttachment.MappingRule"
+}
+
+func (r *AWSCognitoIdentityPoolRoleAttachment_MappingRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

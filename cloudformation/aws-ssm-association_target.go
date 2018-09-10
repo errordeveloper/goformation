@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMAssociation_Target AWS CloudFormation Resource (AWS::SSM::Association.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html
 type AWSSSMAssociation_Target struct {
@@ -18,4 +22,8 @@ type AWSSSMAssociation_Target struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMAssociation_Target) AWSCloudFormationType() string {
 	return "AWS::SSM::Association.Target"
+}
+
+func (r *AWSSSMAssociation_Target) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

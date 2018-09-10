@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSApiGatewayRequestValidatorResources() map[string]AWS
 				if resType == "AWS::ApiGateway::RequestValidator" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayRequestValidator
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayRequestValidator{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSApiGatewayRequestValidatorWithName(name string) (AWSApi
 				if resType == "AWS::ApiGateway::RequestValidator" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayRequestValidator
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayRequestValidator{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

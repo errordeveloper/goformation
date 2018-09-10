@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration struct {
@@ -63,4 +67,8 @@ type AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration stru
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_ElasticsearchDestinationConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

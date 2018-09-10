@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_ExtendedS3DestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_ExtendedS3DestinationConfiguration struct {
@@ -58,4 +62,8 @@ type AWSKinesisFirehoseDeliveryStream_ExtendedS3DestinationConfiguration struct 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_ExtendedS3DestinationConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_ExtendedS3DestinationConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

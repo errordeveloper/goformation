@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_TopicConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.TopicConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html
 type AWSS3Bucket_TopicConfiguration struct {
@@ -23,4 +27,8 @@ type AWSS3Bucket_TopicConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_TopicConfiguration) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.TopicConfiguration"
+}
+
+func (r *AWSS3Bucket_TopicConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

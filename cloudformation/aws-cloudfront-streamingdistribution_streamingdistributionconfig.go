@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontStreamingDistribution_StreamingDistributionConfig AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html
 type AWSCloudFrontStreamingDistribution_StreamingDistributionConfig struct {
@@ -43,4 +47,8 @@ type AWSCloudFrontStreamingDistribution_StreamingDistributionConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontStreamingDistribution_StreamingDistributionConfig) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig"
+}
+
+func (r *AWSCloudFrontStreamingDistribution_StreamingDistributionConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

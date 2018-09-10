@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMAssociation_ParameterValues AWS CloudFormation Resource (AWS::SSM::Association.ParameterValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html
 type AWSSSMAssociation_ParameterValues struct {
@@ -13,4 +17,8 @@ type AWSSSMAssociation_ParameterValues struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMAssociation_ParameterValues) AWSCloudFormationType() string {
 	return "AWS::SSM::Association.ParameterValues"
+}
+
+func (r *AWSSSMAssociation_ParameterValues) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

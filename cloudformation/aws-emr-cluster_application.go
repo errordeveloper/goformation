@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_Application AWS CloudFormation Resource (AWS::EMR::Cluster.Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html
 type AWSEMRCluster_Application struct {
@@ -28,4 +32,8 @@ type AWSEMRCluster_Application struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_Application) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.Application"
+}
+
+func (r *AWSEMRCluster_Application) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

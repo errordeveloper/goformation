@@ -115,9 +115,9 @@ func (t *Template) GetAllAWSServiceCatalogCloudFormationProvisionedProductResour
 				if resType == "AWS::ServiceCatalog::CloudFormationProvisionedProduct" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogCloudFormationProvisionedProduct
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogCloudFormationProvisionedProduct{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -142,9 +142,9 @@ func (t *Template) GetAWSServiceCatalogCloudFormationProvisionedProductWithName(
 				if resType == "AWS::ServiceCatalog::CloudFormationProvisionedProduct" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogCloudFormationProvisionedProduct
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogCloudFormationProvisionedProduct{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

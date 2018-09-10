@@ -135,9 +135,9 @@ func (t *Template) GetAllAWSECSServiceResources() map[string]AWSECSService {
 				if resType == "AWS::ECS::Service" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSECSService
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSECSService{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -162,9 +162,9 @@ func (t *Template) GetAWSECSServiceWithName(name string) (AWSECSService, error) 
 				if resType == "AWS::ECS::Service" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSECSService
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSECSService{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

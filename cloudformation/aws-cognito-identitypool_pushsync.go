@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoIdentityPool_PushSync AWS CloudFormation Resource (AWS::Cognito::IdentityPool.PushSync)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
 type AWSCognitoIdentityPool_PushSync struct {
@@ -18,4 +22,8 @@ type AWSCognitoIdentityPool_PushSync struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoIdentityPool_PushSync) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.PushSync"
+}
+
+func (r *AWSCognitoIdentityPool_PushSync) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

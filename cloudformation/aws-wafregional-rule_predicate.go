@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFRegionalRule_Predicate AWS CloudFormation Resource (AWS::WAFRegional::Rule.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html
 type AWSWAFRegionalRule_Predicate struct {
@@ -23,4 +27,8 @@ type AWSWAFRegionalRule_Predicate struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFRegionalRule_Predicate) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::Rule.Predicate"
+}
+
+func (r *AWSWAFRegionalRule_Predicate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigConfigurationRecorder_RecordingGroup AWS CloudFormation Resource (AWS::Config::ConfigurationRecorder.RecordingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html
 type AWSConfigConfigurationRecorder_RecordingGroup struct {
@@ -23,4 +27,8 @@ type AWSConfigConfigurationRecorder_RecordingGroup struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSConfigConfigurationRecorder_RecordingGroup) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigurationRecorder.RecordingGroup"
+}
+
+func (r *AWSConfigConfigurationRecorder_RecordingGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

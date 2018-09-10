@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSElastiCacheSubnetGroupResources() map[string]AWSElas
 				if resType == "AWS::ElastiCache::SubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElastiCacheSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElastiCacheSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSElastiCacheSubnetGroupWithName(name string) (AWSElastiC
 				if resType == "AWS::ElastiCache::SubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElastiCacheSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElastiCacheSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

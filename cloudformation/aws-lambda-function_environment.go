@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSLambdaFunction_Environment AWS CloudFormation Resource (AWS::Lambda::Function.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html
 type AWSLambdaFunction_Environment struct {
@@ -13,4 +17,8 @@ type AWSLambdaFunction_Environment struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSLambdaFunction_Environment) AWSCloudFormationType() string {
 	return "AWS::Lambda::Function.Environment"
+}
+
+func (r *AWSLambdaFunction_Environment) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

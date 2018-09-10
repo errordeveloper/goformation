@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSRDSDBSecurityGroupIngressResources() map[string]AWSR
 				if resType == "AWS::RDS::DBSecurityGroupIngress" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSDBSecurityGroupIngress
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRDSDBSecurityGroupIngress{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSRDSDBSecurityGroupIngressWithName(name string) (AWSRDSD
 				if resType == "AWS::RDS::DBSecurityGroupIngress" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSDBSecurityGroupIngress
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRDSDBSecurityGroupIngress{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

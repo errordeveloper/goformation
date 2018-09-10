@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRoute53RecordSetGroup_RecordSet AWS CloudFormation Resource (AWS::Route53::RecordSetGroup.RecordSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
 type AWSRoute53RecordSetGroup_RecordSet struct {
@@ -78,4 +82,8 @@ type AWSRoute53RecordSetGroup_RecordSet struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRoute53RecordSetGroup_RecordSet) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSetGroup.RecordSet"
+}
+
+func (r *AWSRoute53RecordSetGroup_RecordSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_CustomOriginConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.CustomOriginConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
 type AWSCloudFrontDistribution_CustomOriginConfig struct {
@@ -38,4 +42,8 @@ type AWSCloudFrontDistribution_CustomOriginConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_CustomOriginConfig) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.CustomOriginConfig"
+}
+
+func (r *AWSCloudFrontDistribution_CustomOriginConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApplicationAutoScalingScalingPolicy_CustomizedMetricSpecification AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.CustomizedMetricSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html
 type AWSApplicationAutoScalingScalingPolicy_CustomizedMetricSpecification struct {
@@ -33,4 +37,8 @@ type AWSApplicationAutoScalingScalingPolicy_CustomizedMetricSpecification struct
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApplicationAutoScalingScalingPolicy_CustomizedMetricSpecification) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy.CustomizedMetricSpecification"
+}
+
+func (r *AWSApplicationAutoScalingScalingPolicy_CustomizedMetricSpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

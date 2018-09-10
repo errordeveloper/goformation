@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_Policies AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.Policies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html
 type AWSElasticLoadBalancingLoadBalancer_Policies struct {
@@ -33,4 +37,8 @@ type AWSElasticLoadBalancingLoadBalancer_Policies struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_Policies) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.Policies"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_Policies) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

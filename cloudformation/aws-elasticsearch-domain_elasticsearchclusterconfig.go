@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticsearchDomain_ElasticsearchClusterConfig AWS CloudFormation Resource (AWS::Elasticsearch::Domain.ElasticsearchClusterConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html
 type AWSElasticsearchDomain_ElasticsearchClusterConfig struct {
@@ -38,4 +42,8 @@ type AWSElasticsearchDomain_ElasticsearchClusterConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticsearchDomain_ElasticsearchClusterConfig) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.ElasticsearchClusterConfig"
+}
+
+func (r *AWSElasticsearchDomain_ElasticsearchClusterConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

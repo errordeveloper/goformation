@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSElasticBeanstalkConfigurationTemplateResources() map
 				if resType == "AWS::ElasticBeanstalk::ConfigurationTemplate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticBeanstalkConfigurationTemplate
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElasticBeanstalkConfigurationTemplate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSElasticBeanstalkConfigurationTemplateWithName(name stri
 				if resType == "AWS::ElasticBeanstalk::ConfigurationTemplate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticBeanstalkConfigurationTemplate
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElasticBeanstalkConfigurationTemplate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

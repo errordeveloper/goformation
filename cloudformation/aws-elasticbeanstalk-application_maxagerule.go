@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticBeanstalkApplication_MaxAgeRule AWS CloudFormation Resource (AWS::ElasticBeanstalk::Application.MaxAgeRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html
 type AWSElasticBeanstalkApplication_MaxAgeRule struct {
@@ -23,4 +27,8 @@ type AWSElasticBeanstalkApplication_MaxAgeRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticBeanstalkApplication_MaxAgeRule) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Application.MaxAgeRule"
+}
+
+func (r *AWSElasticBeanstalkApplication_MaxAgeRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

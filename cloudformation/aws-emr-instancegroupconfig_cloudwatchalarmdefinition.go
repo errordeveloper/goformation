@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceGroupConfig_CloudWatchAlarmDefinition AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html
 type AWSEMRInstanceGroupConfig_CloudWatchAlarmDefinition struct {
@@ -53,4 +57,8 @@ type AWSEMRInstanceGroupConfig_CloudWatchAlarmDefinition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceGroupConfig_CloudWatchAlarmDefinition) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition"
+}
+
+func (r *AWSEMRInstanceGroupConfig_CloudWatchAlarmDefinition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

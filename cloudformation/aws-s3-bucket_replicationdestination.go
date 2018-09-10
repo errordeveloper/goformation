@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_ReplicationDestination AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html
 type AWSS3Bucket_ReplicationDestination struct {
@@ -33,4 +37,8 @@ type AWSS3Bucket_ReplicationDestination struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_ReplicationDestination) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.ReplicationDestination"
+}
+
+func (r *AWSS3Bucket_ReplicationDestination) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

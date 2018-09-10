@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSLambdaPermissionResources() map[string]AWSLambdaPerm
 				if resType == "AWS::Lambda::Permission" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaPermission
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLambdaPermission{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSLambdaPermissionWithName(name string) (AWSLambdaPermiss
 				if resType == "AWS::Lambda::Permission" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaPermission
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLambdaPermission{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

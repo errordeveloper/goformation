@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSConfigConfigurationAggregatorResources() map[string]
 				if resType == "AWS::Config::ConfigurationAggregator" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigConfigurationAggregator
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSConfigConfigurationAggregator{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSConfigConfigurationAggregatorWithName(name string) (AWS
 				if resType == "AWS::Config::ConfigurationAggregator" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigConfigurationAggregator
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSConfigConfigurationAggregator{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

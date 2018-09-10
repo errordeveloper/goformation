@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTable_StorageDescriptor AWS CloudFormation Resource (AWS::Glue::Table.StorageDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html
 type AWSGlueTable_StorageDescriptor struct {
@@ -68,4 +72,8 @@ type AWSGlueTable_StorageDescriptor struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTable_StorageDescriptor) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.StorageDescriptor"
+}
+
+func (r *AWSGlueTable_StorageDescriptor) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

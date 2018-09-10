@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFWebACL_ActivatedRule AWS CloudFormation Resource (AWS::WAF::WebACL.ActivatedRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html
 type AWSWAFWebACL_ActivatedRule struct {
@@ -23,4 +27,8 @@ type AWSWAFWebACL_ActivatedRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFWebACL_ActivatedRule) AWSCloudFormationType() string {
 	return "AWS::WAF::WebACL.ActivatedRule"
+}
+
+func (r *AWSWAFWebACL_ActivatedRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

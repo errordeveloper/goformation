@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSCodePipelinePipelineResources() map[string]AWSCodePi
 				if resType == "AWS::CodePipeline::Pipeline" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelinePipeline
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodePipelinePipeline{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSCodePipelinePipelineWithName(name string) (AWSCodePipel
 				if resType == "AWS::CodePipeline::Pipeline" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelinePipeline
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodePipelinePipeline{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

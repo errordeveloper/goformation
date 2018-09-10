@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMMaintenanceWindowTask_Target AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
 type AWSSSMMaintenanceWindowTask_Target struct {
@@ -18,4 +22,8 @@ type AWSSSMMaintenanceWindowTask_Target struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMMaintenanceWindowTask_Target) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.Target"
+}
+
+func (r *AWSSSMMaintenanceWindowTask_Target) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

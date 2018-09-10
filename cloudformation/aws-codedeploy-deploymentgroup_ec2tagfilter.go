@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeDeployDeploymentGroup_EC2TagFilter AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.EC2TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilters.html
 type AWSCodeDeployDeploymentGroup_EC2TagFilter struct {
@@ -23,4 +27,8 @@ type AWSCodeDeployDeploymentGroup_EC2TagFilter struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeDeployDeploymentGroup_EC2TagFilter) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.EC2TagFilter"
+}
+
+func (r *AWSCodeDeployDeploymentGroup_EC2TagFilter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

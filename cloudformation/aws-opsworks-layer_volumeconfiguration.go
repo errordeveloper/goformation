@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksLayer_VolumeConfiguration AWS CloudFormation Resource (AWS::OpsWorks::Layer.VolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html
 type AWSOpsWorksLayer_VolumeConfiguration struct {
@@ -38,4 +42,8 @@ type AWSOpsWorksLayer_VolumeConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksLayer_VolumeConfiguration) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.VolumeConfiguration"
+}
+
+func (r *AWSOpsWorksLayer_VolumeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

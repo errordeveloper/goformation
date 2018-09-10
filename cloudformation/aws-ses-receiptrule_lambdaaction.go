@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESReceiptRule_LambdaAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.LambdaAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html
 type AWSSESReceiptRule_LambdaAction struct {
@@ -23,4 +27,8 @@ type AWSSESReceiptRule_LambdaAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESReceiptRule_LambdaAction) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.LambdaAction"
+}
+
+func (r *AWSSESReceiptRule_LambdaAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

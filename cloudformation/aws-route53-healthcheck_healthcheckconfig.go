@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRoute53HealthCheck_HealthCheckConfig AWS CloudFormation Resource (AWS::Route53::HealthCheck.HealthCheckConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html
 type AWSRoute53HealthCheck_HealthCheckConfig struct {
@@ -88,4 +92,8 @@ type AWSRoute53HealthCheck_HealthCheckConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRoute53HealthCheck_HealthCheckConfig) AWSCloudFormationType() string {
 	return "AWS::Route53::HealthCheck.HealthCheckConfig"
+}
+
+func (r *AWSRoute53HealthCheck_HealthCheckConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

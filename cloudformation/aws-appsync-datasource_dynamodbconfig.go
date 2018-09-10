@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAppSyncDataSource_DynamoDBConfig AWS CloudFormation Resource (AWS::AppSync::DataSource.DynamoDBConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
 type AWSAppSyncDataSource_DynamoDBConfig struct {
@@ -23,4 +27,8 @@ type AWSAppSyncDataSource_DynamoDBConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAppSyncDataSource_DynamoDBConfig) AWSCloudFormationType() string {
 	return "AWS::AppSync::DataSource.DynamoDBConfig"
+}
+
+func (r *AWSAppSyncDataSource_DynamoDBConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

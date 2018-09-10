@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSAppSyncResolverResources() map[string]AWSAppSyncReso
 				if resType == "AWS::AppSync::Resolver" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAppSyncResolver
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAppSyncResolver{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSAppSyncResolverWithName(name string) (AWSAppSyncResolve
 				if resType == "AWS::AppSync::Resolver" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAppSyncResolver
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAppSyncResolver{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

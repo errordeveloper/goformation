@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBatchComputeEnvironment_ComputeResources AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.ComputeResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html
 type AWSBatchComputeEnvironment_ComputeResources struct {
@@ -73,4 +77,8 @@ type AWSBatchComputeEnvironment_ComputeResources struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBatchComputeEnvironment_ComputeResources) AWSCloudFormationType() string {
 	return "AWS::Batch::ComputeEnvironment.ComputeResources"
+}
+
+func (r *AWSBatchComputeEnvironment_ComputeResources) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

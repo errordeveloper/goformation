@@ -110,9 +110,9 @@ func (t *Template) GetAllAWSSageMakerNotebookInstanceResources() map[string]AWSS
 				if resType == "AWS::SageMaker::NotebookInstance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerNotebookInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSageMakerNotebookInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -137,9 +137,9 @@ func (t *Template) GetAWSSageMakerNotebookInstanceWithName(name string) (AWSSage
 				if resType == "AWS::SageMaker::NotebookInstance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerNotebookInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSageMakerNotebookInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

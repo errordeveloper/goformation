@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFSizeConstraintSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::SizeConstraintSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html
 type AWSWAFSizeConstraintSet_FieldToMatch struct {
@@ -18,4 +22,8 @@ type AWSWAFSizeConstraintSet_FieldToMatch struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFSizeConstraintSet_FieldToMatch) AWSCloudFormationType() string {
 	return "AWS::WAF::SizeConstraintSet.FieldToMatch"
+}
+
+func (r *AWSWAFSizeConstraintSet_FieldToMatch) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

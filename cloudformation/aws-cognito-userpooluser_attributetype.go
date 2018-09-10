@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPoolUser_AttributeType AWS CloudFormation Resource (AWS::Cognito::UserPoolUser.AttributeType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html
 type AWSCognitoUserPoolUser_AttributeType struct {
@@ -18,4 +22,8 @@ type AWSCognitoUserPoolUser_AttributeType struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPoolUser_AttributeType) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPoolUser.AttributeType"
+}
+
+func (r *AWSCognitoUserPoolUser_AttributeType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

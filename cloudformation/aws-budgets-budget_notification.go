@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBudgetsBudget_Notification AWS CloudFormation Resource (AWS::Budgets::Budget.Notification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html
 type AWSBudgetsBudget_Notification struct {
@@ -28,4 +32,8 @@ type AWSBudgetsBudget_Notification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBudgetsBudget_Notification) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.Notification"
+}
+
+func (r *AWSBudgetsBudget_Notification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

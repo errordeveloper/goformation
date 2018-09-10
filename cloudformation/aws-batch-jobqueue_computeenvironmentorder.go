@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBatchJobQueue_ComputeEnvironmentOrder AWS CloudFormation Resource (AWS::Batch::JobQueue.ComputeEnvironmentOrder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html
 type AWSBatchJobQueue_ComputeEnvironmentOrder struct {
@@ -18,4 +22,8 @@ type AWSBatchJobQueue_ComputeEnvironmentOrder struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBatchJobQueue_ComputeEnvironmentOrder) AWSCloudFormationType() string {
 	return "AWS::Batch::JobQueue.ComputeEnvironmentOrder"
+}
+
+func (r *AWSBatchJobQueue_ComputeEnvironmentOrder) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

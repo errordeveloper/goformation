@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBudgetsBudget_TimePeriod AWS CloudFormation Resource (AWS::Budgets::Budget.TimePeriod)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html
 type AWSBudgetsBudget_TimePeriod struct {
@@ -18,4 +22,8 @@ type AWSBudgetsBudget_TimePeriod struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBudgetsBudget_TimePeriod) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.TimePeriod"
+}
+
+func (r *AWSBudgetsBudget_TimePeriod) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDynamoDBTable_SSESpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
 type AWSDynamoDBTable_SSESpecification struct {
@@ -13,4 +17,8 @@ type AWSDynamoDBTable_SSESpecification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDynamoDBTable_SSESpecification) AWSCloudFormationType() string {
 	return "AWS::DynamoDB::Table.SSESpecification"
+}
+
+func (r *AWSDynamoDBTable_SSESpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

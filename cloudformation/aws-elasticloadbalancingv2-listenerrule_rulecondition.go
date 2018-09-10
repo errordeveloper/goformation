@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingV2ListenerRule_RuleCondition AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html
 type AWSElasticLoadBalancingV2ListenerRule_RuleCondition struct {
@@ -18,4 +22,8 @@ type AWSElasticLoadBalancingV2ListenerRule_RuleCondition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingV2ListenerRule_RuleCondition) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition"
+}
+
+func (r *AWSElasticLoadBalancingV2ListenerRule_RuleCondition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

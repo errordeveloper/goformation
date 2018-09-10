@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRoute53RecordSetGroup_AliasTarget AWS CloudFormation Resource (AWS::Route53::RecordSetGroup.AliasTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
 type AWSRoute53RecordSetGroup_AliasTarget struct {
@@ -23,4 +27,8 @@ type AWSRoute53RecordSetGroup_AliasTarget struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRoute53RecordSetGroup_AliasTarget) AWSCloudFormationType() string {
 	return "AWS::Route53::RecordSetGroup.AliasTarget"
+}
+
+func (r *AWSRoute53RecordSetGroup_AliasTarget) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

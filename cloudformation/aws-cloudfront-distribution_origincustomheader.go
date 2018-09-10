@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_OriginCustomHeader AWS CloudFormation Resource (AWS::CloudFront::Distribution.OriginCustomHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html
 type AWSCloudFrontDistribution_OriginCustomHeader struct {
@@ -18,4 +22,8 @@ type AWSCloudFrontDistribution_OriginCustomHeader struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_OriginCustomHeader) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.OriginCustomHeader"
+}
+
+func (r *AWSCloudFrontDistribution_OriginCustomHeader) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

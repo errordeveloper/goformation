@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSServiceCatalogLaunchTemplateConstraintResources() ma
 				if resType == "AWS::ServiceCatalog::LaunchTemplateConstraint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogLaunchTemplateConstraint
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogLaunchTemplateConstraint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSServiceCatalogLaunchTemplateConstraintWithName(name str
 				if resType == "AWS::ServiceCatalog::LaunchTemplateConstraint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogLaunchTemplateConstraint
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogLaunchTemplateConstraint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSGlueTriggerResources() map[string]AWSGlueTrigger {
 				if resType == "AWS::Glue::Trigger" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGlueTrigger
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGlueTrigger{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSGlueTriggerWithName(name string) (AWSGlueTrigger, error
 				if resType == "AWS::Glue::Trigger" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGlueTrigger
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGlueTrigger{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

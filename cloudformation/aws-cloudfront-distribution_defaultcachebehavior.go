@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_DefaultCacheBehavior AWS CloudFormation Resource (AWS::CloudFront::Distribution.DefaultCacheBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html
 type AWSCloudFrontDistribution_DefaultCacheBehavior struct {
@@ -73,4 +77,8 @@ type AWSCloudFrontDistribution_DefaultCacheBehavior struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_DefaultCacheBehavior) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.DefaultCacheBehavior"
+}
+
+func (r *AWSCloudFrontDistribution_DefaultCacheBehavior) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

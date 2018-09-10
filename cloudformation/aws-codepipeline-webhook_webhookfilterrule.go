@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelineWebhook_WebhookFilterRule AWS CloudFormation Resource (AWS::CodePipeline::Webhook.WebhookFilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html
 type AWSCodePipelineWebhook_WebhookFilterRule struct {
@@ -18,4 +22,8 @@ type AWSCodePipelineWebhook_WebhookFilterRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelineWebhook_WebhookFilterRule) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Webhook.WebhookFilterRule"
+}
+
+func (r *AWSCodePipelineWebhook_WebhookFilterRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServiceCatalogCloudFormationProduct_ProvisioningArtifactProperties AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html
 type AWSServiceCatalogCloudFormationProduct_ProvisioningArtifactProperties struct {
@@ -23,4 +27,8 @@ type AWSServiceCatalogCloudFormationProduct_ProvisioningArtifactProperties struc
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServiceCatalogCloudFormationProduct_ProvisioningArtifactProperties) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties"
+}
+
+func (r *AWSServiceCatalogCloudFormationProduct_ProvisioningArtifactProperties) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

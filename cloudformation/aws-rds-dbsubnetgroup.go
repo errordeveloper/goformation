@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSRDSDBSubnetGroupResources() map[string]AWSRDSDBSubne
 				if resType == "AWS::RDS::DBSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSDBSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRDSDBSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSRDSDBSubnetGroupWithName(name string) (AWSRDSDBSubnetGr
 				if resType == "AWS::RDS::DBSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSDBSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRDSDBSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

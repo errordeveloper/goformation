@@ -170,9 +170,9 @@ func (t *Template) GetAllAWSAutoScalingAutoScalingGroupResources() map[string]AW
 				if resType == "AWS::AutoScaling::AutoScalingGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingAutoScalingGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAutoScalingAutoScalingGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -197,9 +197,9 @@ func (t *Template) GetAWSAutoScalingAutoScalingGroupWithName(name string) (AWSAu
 				if resType == "AWS::AutoScaling::AutoScalingGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingAutoScalingGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAutoScalingAutoScalingGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

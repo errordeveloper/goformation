@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceGroupConfig_ScalingConstraints AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.ScalingConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html
 type AWSEMRInstanceGroupConfig_ScalingConstraints struct {
@@ -18,4 +22,8 @@ type AWSEMRInstanceGroupConfig_ScalingConstraints struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceGroupConfig_ScalingConstraints) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.ScalingConstraints"
+}
+
+func (r *AWSEMRInstanceGroupConfig_ScalingConstraints) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2LaunchTemplate_NetworkInterface AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.NetworkInterface)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html
 type AWSEC2LaunchTemplate_NetworkInterface struct {
@@ -68,4 +72,8 @@ type AWSEC2LaunchTemplate_NetworkInterface struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2LaunchTemplate_NetworkInterface) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.NetworkInterface"
+}
+
+func (r *AWSEC2LaunchTemplate_NetworkInterface) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

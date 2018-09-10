@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSServiceCatalogPortfolioResources() map[string]AWSSer
 				if resType == "AWS::ServiceCatalog::Portfolio" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogPortfolio
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogPortfolio{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSServiceCatalogPortfolioWithName(name string) (AWSServic
 				if resType == "AWS::ServiceCatalog::Portfolio" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogPortfolio
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogPortfolio{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

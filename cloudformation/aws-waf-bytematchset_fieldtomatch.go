@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFByteMatchSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::ByteMatchSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html
 type AWSWAFByteMatchSet_FieldToMatch struct {
@@ -18,4 +22,8 @@ type AWSWAFByteMatchSet_FieldToMatch struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFByteMatchSet_FieldToMatch) AWSCloudFormationType() string {
 	return "AWS::WAF::ByteMatchSet.FieldToMatch"
+}
+
+func (r *AWSWAFByteMatchSet_FieldToMatch) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

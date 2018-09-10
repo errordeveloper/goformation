@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_DeviceConfiguration AWS CloudFormation Resource (AWS::Cognito::UserPool.DeviceConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html
 type AWSCognitoUserPool_DeviceConfiguration struct {
@@ -18,4 +22,8 @@ type AWSCognitoUserPool_DeviceConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_DeviceConfiguration) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.DeviceConfiguration"
+}
+
+func (r *AWSCognitoUserPool_DeviceConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSKinesisStreamResources() map[string]AWSKinesisStream
 				if resType == "AWS::Kinesis::Stream" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSKinesisStream
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSKinesisStream{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSKinesisStreamWithName(name string) (AWSKinesisStream, e
 				if resType == "AWS::Kinesis::Stream" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSKinesisStream
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSKinesisStream{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

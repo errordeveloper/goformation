@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSAthenaNamedQueryResources() map[string]AWSAthenaName
 				if resType == "AWS::Athena::NamedQuery" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAthenaNamedQuery
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAthenaNamedQuery{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSAthenaNamedQueryWithName(name string) (AWSAthenaNamedQu
 				if resType == "AWS::Athena::NamedQuery" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAthenaNamedQuery
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAthenaNamedQuery{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

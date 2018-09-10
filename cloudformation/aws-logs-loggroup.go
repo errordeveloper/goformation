@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSLogsLogGroupResources() map[string]AWSLogsLogGroup {
 				if resType == "AWS::Logs::LogGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLogsLogGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLogsLogGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSLogsLogGroupWithName(name string) (AWSLogsLogGroup, err
 				if resType == "AWS::Logs::LogGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLogsLogGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLogsLogGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

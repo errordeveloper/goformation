@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksStack_StackConfigurationManager AWS CloudFormation Resource (AWS::OpsWorks::Stack.StackConfigurationManager)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html
 type AWSOpsWorksStack_StackConfigurationManager struct {
@@ -18,4 +22,8 @@ type AWSOpsWorksStack_StackConfigurationManager struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksStack_StackConfigurationManager) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Stack.StackConfigurationManager"
+}
+
+func (r *AWSOpsWorksStack_StackConfigurationManager) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

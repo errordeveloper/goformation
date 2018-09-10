@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_AccessLoggingPolicy AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html
 type AWSElasticLoadBalancingLoadBalancer_AccessLoggingPolicy struct {
@@ -28,4 +32,8 @@ type AWSElasticLoadBalancingLoadBalancer_AccessLoggingPolicy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_AccessLoggingPolicy) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_AccessLoggingPolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

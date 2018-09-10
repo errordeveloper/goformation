@@ -1,6 +1,8 @@
 package cloudformation
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 // AWSServerlessApi_S3Location AWS CloudFormation Resource (AWS::Serverless::Api.S3Location)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object

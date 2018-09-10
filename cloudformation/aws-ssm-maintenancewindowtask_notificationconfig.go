@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMMaintenanceWindowTask_NotificationConfig AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.NotificationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html
 type AWSSSMMaintenanceWindowTask_NotificationConfig struct {
@@ -23,4 +27,8 @@ type AWSSSMMaintenanceWindowTask_NotificationConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMMaintenanceWindowTask_NotificationConfig) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.NotificationConfig"
+}
+
+func (r *AWSSSMMaintenanceWindowTask_NotificationConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

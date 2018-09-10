@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSGlueDatabaseResources() map[string]AWSGlueDatabase {
 				if resType == "AWS::Glue::Database" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGlueDatabase
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGlueDatabase{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSGlueDatabaseWithName(name string) (AWSGlueDatabase, err
 				if resType == "AWS::Glue::Database" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGlueDatabase
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGlueDatabase{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

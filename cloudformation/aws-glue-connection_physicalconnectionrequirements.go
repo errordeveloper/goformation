@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueConnection_PhysicalConnectionRequirements AWS CloudFormation Resource (AWS::Glue::Connection.PhysicalConnectionRequirements)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html
 type AWSGlueConnection_PhysicalConnectionRequirements struct {
@@ -23,4 +27,8 @@ type AWSGlueConnection_PhysicalConnectionRequirements struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueConnection_PhysicalConnectionRequirements) AWSCloudFormationType() string {
 	return "AWS::Glue::Connection.PhysicalConnectionRequirements"
+}
+
+func (r *AWSGlueConnection_PhysicalConnectionRequirements) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

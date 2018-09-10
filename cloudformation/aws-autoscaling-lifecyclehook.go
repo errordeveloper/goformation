@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSAutoScalingLifecycleHookResources() map[string]AWSAu
 				if resType == "AWS::AutoScaling::LifecycleHook" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingLifecycleHook
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAutoScalingLifecycleHook{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSAutoScalingLifecycleHookWithName(name string) (AWSAutoS
 				if resType == "AWS::AutoScaling::LifecycleHook" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingLifecycleHook
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAutoScalingLifecycleHook{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

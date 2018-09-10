@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeCommitRepository_RepositoryTrigger AWS CloudFormation Resource (AWS::CodeCommit::Repository.RepositoryTrigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html
 type AWSCodeCommitRepository_RepositoryTrigger struct {
@@ -33,4 +37,8 @@ type AWSCodeCommitRepository_RepositoryTrigger struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeCommitRepository_RepositoryTrigger) AWSCloudFormationType() string {
 	return "AWS::CodeCommit::Repository.RepositoryTrigger"
+}
+
+func (r *AWSCodeCommitRepository_RepositoryTrigger) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_ScalingRule AWS CloudFormation Resource (AWS::EMR::Cluster.ScalingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html
 type AWSEMRCluster_ScalingRule struct {
@@ -28,4 +32,8 @@ type AWSEMRCluster_ScalingRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_ScalingRule) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.ScalingRule"
+}
+
+func (r *AWSEMRCluster_ScalingRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

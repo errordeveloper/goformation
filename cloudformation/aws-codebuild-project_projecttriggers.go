@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeBuildProject_ProjectTriggers AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectTriggers)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
 type AWSCodeBuildProject_ProjectTriggers struct {
@@ -13,4 +17,8 @@ type AWSCodeBuildProject_ProjectTriggers struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeBuildProject_ProjectTriggers) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectTriggers"
+}
+
+func (r *AWSCodeBuildProject_ProjectTriggers) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

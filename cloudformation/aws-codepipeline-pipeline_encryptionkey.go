@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_EncryptionKey AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.EncryptionKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html
 type AWSCodePipelinePipeline_EncryptionKey struct {
@@ -18,4 +22,8 @@ type AWSCodePipelinePipeline_EncryptionKey struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_EncryptionKey) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.EncryptionKey"
+}
+
+func (r *AWSCodePipelinePipeline_EncryptionKey) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

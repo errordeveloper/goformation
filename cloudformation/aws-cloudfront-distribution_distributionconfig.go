@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_DistributionConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.DistributionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
 type AWSCloudFrontDistribution_DistributionConfig struct {
@@ -83,4 +87,8 @@ type AWSCloudFrontDistribution_DistributionConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_DistributionConfig) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.DistributionConfig"
+}
+
+func (r *AWSCloudFrontDistribution_DistributionConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

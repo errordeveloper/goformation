@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESReceiptRule_WorkmailAction AWS CloudFormation Resource (AWS::SES::ReceiptRule.WorkmailAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html
 type AWSSESReceiptRule_WorkmailAction struct {
@@ -18,4 +22,8 @@ type AWSSESReceiptRule_WorkmailAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESReceiptRule_WorkmailAction) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.WorkmailAction"
+}
+
+func (r *AWSSESReceiptRule_WorkmailAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

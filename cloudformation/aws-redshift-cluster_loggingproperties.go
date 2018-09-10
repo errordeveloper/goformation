@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRedshiftCluster_LoggingProperties AWS CloudFormation Resource (AWS::Redshift::Cluster.LoggingProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html
 type AWSRedshiftCluster_LoggingProperties struct {
@@ -18,4 +22,8 @@ type AWSRedshiftCluster_LoggingProperties struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRedshiftCluster_LoggingProperties) AWSCloudFormationType() string {
 	return "AWS::Redshift::Cluster.LoggingProperties"
+}
+
+func (r *AWSRedshiftCluster_LoggingProperties) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSCodePipelineCustomActionTypeResources() map[string]A
 				if resType == "AWS::CodePipeline::CustomActionType" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelineCustomActionType
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodePipelineCustomActionType{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSCodePipelineCustomActionTypeWithName(name string) (AWSC
 				if resType == "AWS::CodePipeline::CustomActionType" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelineCustomActionType
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodePipelineCustomActionType{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

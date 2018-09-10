@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigConfigRule_Source AWS CloudFormation Resource (AWS::Config::ConfigRule.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
 type AWSConfigConfigRule_Source struct {
@@ -23,4 +27,8 @@ type AWSConfigConfigRule_Source struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSConfigConfigRule_Source) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigRule.Source"
+}
+
+func (r *AWSConfigConfigRule_Source) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

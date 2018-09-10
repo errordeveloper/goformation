@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_TaskDefinitionPlacementConstraint AWS CloudFormation Resource (AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html
 type AWSECSTaskDefinition_TaskDefinitionPlacementConstraint struct {
@@ -18,4 +22,8 @@ type AWSECSTaskDefinition_TaskDefinitionPlacementConstraint struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_TaskDefinitionPlacementConstraint) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint"
+}
+
+func (r *AWSECSTaskDefinition_TaskDefinitionPlacementConstraint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

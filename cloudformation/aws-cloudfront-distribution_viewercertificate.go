@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_ViewerCertificate AWS CloudFormation Resource (AWS::CloudFront::Distribution.ViewerCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
 type AWSCloudFrontDistribution_ViewerCertificate struct {
@@ -33,4 +37,8 @@ type AWSCloudFrontDistribution_ViewerCertificate struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_ViewerCertificate) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.ViewerCertificate"
+}
+
+func (r *AWSCloudFrontDistribution_ViewerCertificate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

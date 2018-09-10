@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSElasticBeanstalkApplicationVersionResources() map[st
 				if resType == "AWS::ElasticBeanstalk::ApplicationVersion" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticBeanstalkApplicationVersion
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElasticBeanstalkApplicationVersion{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSElasticBeanstalkApplicationVersionWithName(name string)
 				if resType == "AWS::ElasticBeanstalk::ApplicationVersion" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticBeanstalkApplicationVersion
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElasticBeanstalkApplicationVersion{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

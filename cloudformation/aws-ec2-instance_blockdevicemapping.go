@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2Instance_BlockDeviceMapping AWS CloudFormation Resource (AWS::EC2::Instance.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html
 type AWSEC2Instance_BlockDeviceMapping struct {
@@ -28,4 +32,8 @@ type AWSEC2Instance_BlockDeviceMapping struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2Instance_BlockDeviceMapping) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.BlockDeviceMapping"
+}
+
+func (r *AWSEC2Instance_BlockDeviceMapping) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

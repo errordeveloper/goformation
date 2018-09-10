@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_StringAttributeConstraints AWS CloudFormation Resource (AWS::Cognito::UserPool.StringAttributeConstraints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html
 type AWSCognitoUserPool_StringAttributeConstraints struct {
@@ -18,4 +22,8 @@ type AWSCognitoUserPool_StringAttributeConstraints struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_StringAttributeConstraints) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.StringAttributeConstraints"
+}
+
+func (r *AWSCognitoUserPool_StringAttributeConstraints) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSRedshiftClusterSubnetGroupResources() map[string]AWS
 				if resType == "AWS::Redshift::ClusterSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftClusterSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRedshiftClusterSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSRedshiftClusterSubnetGroupWithName(name string) (AWSRed
 				if resType == "AWS::Redshift::ClusterSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftClusterSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRedshiftClusterSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

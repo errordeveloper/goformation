@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceGroupConfig_EbsBlockDeviceConfig AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html
 type AWSEMRInstanceGroupConfig_EbsBlockDeviceConfig struct {
@@ -18,4 +22,8 @@ type AWSEMRInstanceGroupConfig_EbsBlockDeviceConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceGroupConfig_EbsBlockDeviceConfig) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig"
+}
+
+func (r *AWSEMRInstanceGroupConfig_EbsBlockDeviceConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

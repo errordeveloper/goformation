@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGameLiftFleet_IpPermission AWS CloudFormation Resource (AWS::GameLift::Fleet.IpPermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html
 type AWSGameLiftFleet_IpPermission struct {
@@ -28,4 +32,8 @@ type AWSGameLiftFleet_IpPermission struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGameLiftFleet_IpPermission) AWSCloudFormationType() string {
 	return "AWS::GameLift::Fleet.IpPermission"
+}
+
+func (r *AWSGameLiftFleet_IpPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_PasswordPolicy AWS CloudFormation Resource (AWS::Cognito::UserPool.PasswordPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html
 type AWSCognitoUserPool_PasswordPolicy struct {
@@ -33,4 +37,8 @@ type AWSCognitoUserPool_PasswordPolicy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_PasswordPolicy) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.PasswordPolicy"
+}
+
+func (r *AWSCognitoUserPool_PasswordPolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

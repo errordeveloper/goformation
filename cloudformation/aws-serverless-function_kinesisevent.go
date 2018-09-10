@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_KinesisEvent AWS CloudFormation Resource (AWS::Serverless::Function.KinesisEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
 type AWSServerlessFunction_KinesisEvent struct {
@@ -23,4 +27,8 @@ type AWSServerlessFunction_KinesisEvent struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_KinesisEvent) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.KinesisEvent"
+}
+
+func (r *AWSServerlessFunction_KinesisEvent) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

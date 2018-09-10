@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_BootstrapActionConfig AWS CloudFormation Resource (AWS::EMR::Cluster.BootstrapActionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html
 type AWSEMRCluster_BootstrapActionConfig struct {
@@ -18,4 +22,8 @@ type AWSEMRCluster_BootstrapActionConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_BootstrapActionConfig) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.BootstrapActionConfig"
+}
+
+func (r *AWSEMRCluster_BootstrapActionConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSLogsSubscriptionFilterResources() map[string]AWSLogs
 				if resType == "AWS::Logs::SubscriptionFilter" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLogsSubscriptionFilter
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLogsSubscriptionFilter{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSLogsSubscriptionFilterWithName(name string) (AWSLogsSub
 				if resType == "AWS::Logs::SubscriptionFilter" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLogsSubscriptionFilter
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLogsSubscriptionFilter{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApiGatewayDeployment_MethodSetting AWS CloudFormation Resource (AWS::ApiGateway::Deployment.MethodSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html
 type AWSApiGatewayDeployment_MethodSetting struct {
@@ -58,4 +62,8 @@ type AWSApiGatewayDeployment_MethodSetting struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApiGatewayDeployment_MethodSetting) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Deployment.MethodSetting"
+}
+
+func (r *AWSApiGatewayDeployment_MethodSetting) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

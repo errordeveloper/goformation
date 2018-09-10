@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSSNSTopicPolicyResources() map[string]AWSSNSTopicPoli
 				if resType == "AWS::SNS::TopicPolicy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSNSTopicPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSNSTopicPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSSNSTopicPolicyWithName(name string) (AWSSNSTopicPolicy,
 				if resType == "AWS::SNS::TopicPolicy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSNSTopicPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSNSTopicPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSSNSTopicResources() map[string]AWSSNSTopic {
 				if resType == "AWS::SNS::Topic" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSNSTopic
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSNSTopic{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSSNSTopicWithName(name string) (AWSSNSTopic, error) {
 				if resType == "AWS::SNS::Topic" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSNSTopic
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSNSTopic{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

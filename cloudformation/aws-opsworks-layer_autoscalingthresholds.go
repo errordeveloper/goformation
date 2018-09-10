@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksLayer_AutoScalingThresholds AWS CloudFormation Resource (AWS::OpsWorks::Layer.AutoScalingThresholds)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html
 type AWSOpsWorksLayer_AutoScalingThresholds struct {
@@ -38,4 +42,8 @@ type AWSOpsWorksLayer_AutoScalingThresholds struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksLayer_AutoScalingThresholds) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.AutoScalingThresholds"
+}
+
+func (r *AWSOpsWorksLayer_AutoScalingThresholds) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_AccessControlTranslation AWS CloudFormation Resource (AWS::S3::Bucket.AccessControlTranslation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accesscontroltranslation.html
 type AWSS3Bucket_AccessControlTranslation struct {
@@ -13,4 +17,8 @@ type AWSS3Bucket_AccessControlTranslation struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_AccessControlTranslation) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.AccessControlTranslation"
+}
+
+func (r *AWSS3Bucket_AccessControlTranslation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

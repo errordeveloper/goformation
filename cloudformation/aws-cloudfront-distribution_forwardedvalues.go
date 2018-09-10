@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_ForwardedValues AWS CloudFormation Resource (AWS::CloudFront::Distribution.ForwardedValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html
 type AWSCloudFrontDistribution_ForwardedValues struct {
@@ -28,4 +32,8 @@ type AWSCloudFrontDistribution_ForwardedValues struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_ForwardedValues) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.ForwardedValues"
+}
+
+func (r *AWSCloudFrontDistribution_ForwardedValues) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

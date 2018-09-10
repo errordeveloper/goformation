@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSSSMResourceDataSyncResources() map[string]AWSSSMReso
 				if resType == "AWS::SSM::ResourceDataSync" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMResourceDataSync
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSSMResourceDataSync{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSSSMResourceDataSyncWithName(name string) (AWSSSMResourc
 				if resType == "AWS::SSM::ResourceDataSync" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMResourceDataSync
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSSMResourceDataSync{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSCognitoUserPoolClientResources() map[string]AWSCogni
 				if resType == "AWS::Cognito::UserPoolClient" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCognitoUserPoolClient
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCognitoUserPoolClient{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSCognitoUserPoolClientWithName(name string) (AWSCognitoU
 				if resType == "AWS::Cognito::UserPoolClient" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCognitoUserPoolClient
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCognitoUserPoolClient{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

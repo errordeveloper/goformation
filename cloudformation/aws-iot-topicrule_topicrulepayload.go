@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_TopicRulePayload AWS CloudFormation Resource (AWS::IoT::TopicRule.TopicRulePayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
 type AWSIoTTopicRule_TopicRulePayload struct {
@@ -33,4 +37,8 @@ type AWSIoTTopicRule_TopicRulePayload struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_TopicRulePayload) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.TopicRulePayload"
+}
+
+func (r *AWSIoTTopicRule_TopicRulePayload) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

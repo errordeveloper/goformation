@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSServiceCatalogPortfolioProductAssociationResources()
 				if resType == "AWS::ServiceCatalog::PortfolioProductAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogPortfolioProductAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogPortfolioProductAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSServiceCatalogPortfolioProductAssociationWithName(name 
 				if resType == "AWS::ServiceCatalog::PortfolioProductAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogPortfolioProductAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogPortfolioProductAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

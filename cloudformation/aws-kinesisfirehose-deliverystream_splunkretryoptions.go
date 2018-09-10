@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_SplunkRetryOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkretryoptions.html
 type AWSKinesisFirehoseDeliveryStream_SplunkRetryOptions struct {
@@ -13,4 +17,8 @@ type AWSKinesisFirehoseDeliveryStream_SplunkRetryOptions struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_SplunkRetryOptions) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_SplunkRetryOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

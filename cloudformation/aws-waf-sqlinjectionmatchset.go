@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSWAFSqlInjectionMatchSetResources() map[string]AWSWAF
 				if resType == "AWS::WAF::SqlInjectionMatchSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFSqlInjectionMatchSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWAFSqlInjectionMatchSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSWAFSqlInjectionMatchSetWithName(name string) (AWSWAFSql
 				if resType == "AWS::WAF::SqlInjectionMatchSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFSqlInjectionMatchSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWAFSqlInjectionMatchSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSEC2SubnetResources() map[string]AWSEC2Subnet {
 				if resType == "AWS::EC2::Subnet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2Subnet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2Subnet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSEC2SubnetWithName(name string) (AWSEC2Subnet, error) {
 				if resType == "AWS::EC2::Subnet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2Subnet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2Subnet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

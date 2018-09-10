@@ -130,9 +130,9 @@ func (t *Template) GetAllAWSSSMMaintenanceWindowTaskResources() map[string]AWSSS
 				if resType == "AWS::SSM::MaintenanceWindowTask" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMMaintenanceWindowTask
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSSMMaintenanceWindowTask{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -157,9 +157,9 @@ func (t *Template) GetAWSSSMMaintenanceWindowTaskWithName(name string) (AWSSSMMa
 				if resType == "AWS::SSM::MaintenanceWindowTask" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMMaintenanceWindowTask
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSSMMaintenanceWindowTask{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSEC2VPNGatewayResources() map[string]AWSEC2VPNGateway
 				if resType == "AWS::EC2::VPNGateway" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPNGateway
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VPNGateway{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSEC2VPNGatewayWithName(name string) (AWSEC2VPNGateway, e
 				if resType == "AWS::EC2::VPNGateway" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPNGateway
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VPNGateway{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSIAMInstanceProfileResources() map[string]AWSIAMInsta
 				if resType == "AWS::IAM::InstanceProfile" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMInstanceProfile
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSIAMInstanceProfile{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSIAMInstanceProfileWithName(name string) (AWSIAMInstance
 				if resType == "AWS::IAM::InstanceProfile" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMInstanceProfile
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSIAMInstanceProfile{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

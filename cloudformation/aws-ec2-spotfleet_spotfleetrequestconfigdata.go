@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2SpotFleet_SpotFleetRequestConfigData AWS CloudFormation Resource (AWS::EC2::SpotFleet.SpotFleetRequestConfigData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html
 type AWSEC2SpotFleet_SpotFleetRequestConfigData struct {
@@ -68,4 +72,8 @@ type AWSEC2SpotFleet_SpotFleetRequestConfigData struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2SpotFleet_SpotFleetRequestConfigData) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.SpotFleetRequestConfigData"
+}
+
+func (r *AWSEC2SpotFleet_SpotFleetRequestConfigData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

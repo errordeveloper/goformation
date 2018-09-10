@@ -115,9 +115,9 @@ func (t *Template) GetAllAWSAutoScalingScalingPolicyResources() map[string]AWSAu
 				if resType == "AWS::AutoScaling::ScalingPolicy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingScalingPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAutoScalingScalingPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -142,9 +142,9 @@ func (t *Template) GetAWSAutoScalingScalingPolicyWithName(name string) (AWSAutoS
 				if resType == "AWS::AutoScaling::ScalingPolicy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAutoScalingScalingPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAutoScalingScalingPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

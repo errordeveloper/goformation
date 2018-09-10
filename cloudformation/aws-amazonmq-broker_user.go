@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAmazonMQBroker_User AWS CloudFormation Resource (AWS::AmazonMQ::Broker.User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html
 type AWSAmazonMQBroker_User struct {
@@ -28,4 +32,8 @@ type AWSAmazonMQBroker_User struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAmazonMQBroker_User) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.User"
+}
+
+func (r *AWSAmazonMQBroker_User) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

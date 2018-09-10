@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_IoTRuleEvent AWS CloudFormation Resource (AWS::Serverless::Function.IoTRuleEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#iotrule
 type AWSServerlessFunction_IoTRuleEvent struct {
@@ -18,4 +22,8 @@ type AWSServerlessFunction_IoTRuleEvent struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_IoTRuleEvent) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.IoTRuleEvent"
+}
+
+func (r *AWSServerlessFunction_IoTRuleEvent) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

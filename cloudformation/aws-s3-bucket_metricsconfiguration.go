@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_MetricsConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.MetricsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
 type AWSS3Bucket_MetricsConfiguration struct {
@@ -23,4 +27,8 @@ type AWSS3Bucket_MetricsConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_MetricsConfiguration) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.MetricsConfiguration"
+}
+
+func (r *AWSS3Bucket_MetricsConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

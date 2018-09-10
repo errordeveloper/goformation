@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSApiGatewayGatewayResponseResources() map[string]AWSA
 				if resType == "AWS::ApiGateway::GatewayResponse" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayGatewayResponse
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayGatewayResponse{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSApiGatewayGatewayResponseWithName(name string) (AWSApiG
 				if resType == "AWS::ApiGateway::GatewayResponse" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayGatewayResponse
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayGatewayResponse{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

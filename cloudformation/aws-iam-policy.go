@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSIAMPolicyResources() map[string]AWSIAMPolicy {
 				if resType == "AWS::IAM::Policy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSIAMPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSIAMPolicyWithName(name string) (AWSIAMPolicy, error) {
 				if resType == "AWS::IAM::Policy" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMPolicy
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSIAMPolicy{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

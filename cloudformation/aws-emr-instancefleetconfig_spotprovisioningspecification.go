@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceFleetConfig_SpotProvisioningSpecification AWS CloudFormation Resource (AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html
 type AWSEMRInstanceFleetConfig_SpotProvisioningSpecification struct {
@@ -23,4 +27,8 @@ type AWSEMRInstanceFleetConfig_SpotProvisioningSpecification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceFleetConfig_SpotProvisioningSpecification) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification"
+}
+
+func (r *AWSEMRInstanceFleetConfig_SpotProvisioningSpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

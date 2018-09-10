@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSConfigConfigurationAggregator_AccountAggregationSource AWS CloudFormation Resource (AWS::Config::ConfigurationAggregator.AccountAggregationSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html
 type AWSConfigConfigurationAggregator_AccountAggregationSource struct {
@@ -23,4 +27,8 @@ type AWSConfigConfigurationAggregator_AccountAggregationSource struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSConfigConfigurationAggregator_AccountAggregationSource) AWSCloudFormationType() string {
 	return "AWS::Config::ConfigurationAggregator.AccountAggregationSource"
+}
+
+func (r *AWSConfigConfigurationAggregator_AccountAggregationSource) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

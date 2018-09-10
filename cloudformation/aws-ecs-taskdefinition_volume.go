@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_Volume AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Volume)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html
 type AWSECSTaskDefinition_Volume struct {
@@ -18,4 +22,8 @@ type AWSECSTaskDefinition_Volume struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_Volume) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Volume"
+}
+
+func (r *AWSECSTaskDefinition_Volume) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

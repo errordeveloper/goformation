@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_WebsiteConfiguration AWS CloudFormation Resource (AWS::S3::Bucket.WebsiteConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
 type AWSS3Bucket_WebsiteConfiguration struct {
@@ -28,4 +32,8 @@ type AWSS3Bucket_WebsiteConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_WebsiteConfiguration) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.WebsiteConfiguration"
+}
+
+func (r *AWSS3Bucket_WebsiteConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_FirehoseAction AWS CloudFormation Resource (AWS::IoT::TopicRule.FirehoseAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
 type AWSIoTTopicRule_FirehoseAction struct {
@@ -23,4 +27,8 @@ type AWSIoTTopicRule_FirehoseAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_FirehoseAction) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.FirehoseAction"
+}
+
+func (r *AWSIoTTopicRule_FirehoseAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

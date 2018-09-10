@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksApp_SslConfiguration AWS CloudFormation Resource (AWS::OpsWorks::App.SslConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
 type AWSOpsWorksApp_SslConfiguration struct {
@@ -23,4 +27,8 @@ type AWSOpsWorksApp_SslConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksApp_SslConfiguration) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App.SslConfiguration"
+}
+
+func (r *AWSOpsWorksApp_SslConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

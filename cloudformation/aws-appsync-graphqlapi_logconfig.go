@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAppSyncGraphQLApi_LogConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.LogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
 type AWSAppSyncGraphQLApi_LogConfig struct {
@@ -18,4 +22,8 @@ type AWSAppSyncGraphQLApi_LogConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAppSyncGraphQLApi_LogConfig) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.LogConfig"
+}
+
+func (r *AWSAppSyncGraphQLApi_LogConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

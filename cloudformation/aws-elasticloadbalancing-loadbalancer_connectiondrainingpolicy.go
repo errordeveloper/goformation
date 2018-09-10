@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_ConnectionDrainingPolicy AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html
 type AWSElasticLoadBalancingLoadBalancer_ConnectionDrainingPolicy struct {
@@ -18,4 +22,8 @@ type AWSElasticLoadBalancingLoadBalancer_ConnectionDrainingPolicy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_ConnectionDrainingPolicy) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_ConnectionDrainingPolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

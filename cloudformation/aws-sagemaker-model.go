@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSSageMakerModelResources() map[string]AWSSageMakerMod
 				if resType == "AWS::SageMaker::Model" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerModel
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSageMakerModel{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSSageMakerModelWithName(name string) (AWSSageMakerModel,
 				if resType == "AWS::SageMaker::Model" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerModel
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSageMakerModel{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

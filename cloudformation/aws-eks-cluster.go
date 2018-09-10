@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSEKSClusterResources() map[string]AWSEKSCluster {
 				if resType == "AWS::EKS::Cluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEKSCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEKSCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSEKSClusterWithName(name string) (AWSEKSCluster, error) 
 				if resType == "AWS::EKS::Cluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEKSCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEKSCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

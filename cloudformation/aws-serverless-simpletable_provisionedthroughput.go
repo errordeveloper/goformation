@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessSimpleTable_ProvisionedThroughput AWS CloudFormation Resource (AWS::Serverless::SimpleTable.ProvisionedThroughput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
 type AWSServerlessSimpleTable_ProvisionedThroughput struct {
@@ -18,4 +22,8 @@ type AWSServerlessSimpleTable_ProvisionedThroughput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessSimpleTable_ProvisionedThroughput) AWSCloudFormationType() string {
 	return "AWS::Serverless::SimpleTable.ProvisionedThroughput"
+}
+
+func (r *AWSServerlessSimpleTable_ProvisionedThroughput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

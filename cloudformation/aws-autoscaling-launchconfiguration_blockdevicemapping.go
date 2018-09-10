@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAutoScalingLaunchConfiguration_BlockDeviceMapping AWS CloudFormation Resource (AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html
 type AWSAutoScalingLaunchConfiguration_BlockDeviceMapping struct {
@@ -28,4 +32,8 @@ type AWSAutoScalingLaunchConfiguration_BlockDeviceMapping struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAutoScalingLaunchConfiguration_BlockDeviceMapping) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping"
+}
+
+func (r *AWSAutoScalingLaunchConfiguration_BlockDeviceMapping) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

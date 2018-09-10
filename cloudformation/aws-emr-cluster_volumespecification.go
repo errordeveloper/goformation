@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_VolumeSpecification AWS CloudFormation Resource (AWS::EMR::Cluster.VolumeSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html
 type AWSEMRCluster_VolumeSpecification struct {
@@ -23,4 +27,8 @@ type AWSEMRCluster_VolumeSpecification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_VolumeSpecification) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.VolumeSpecification"
+}
+
+func (r *AWSEMRCluster_VolumeSpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

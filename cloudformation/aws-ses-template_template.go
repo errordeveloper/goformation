@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESTemplate_Template AWS CloudFormation Resource (AWS::SES::Template.Template)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html
 type AWSSESTemplate_Template struct {
@@ -28,4 +32,8 @@ type AWSSESTemplate_Template struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESTemplate_Template) AWSCloudFormationType() string {
 	return "AWS::SES::Template.Template"
+}
+
+func (r *AWSSESTemplate_Template) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

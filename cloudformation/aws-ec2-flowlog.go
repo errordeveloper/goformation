@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSEC2FlowLogResources() map[string]AWSEC2FlowLog {
 				if resType == "AWS::EC2::FlowLog" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2FlowLog
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2FlowLog{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSEC2FlowLogWithName(name string) (AWSEC2FlowLog, error) 
 				if resType == "AWS::EC2::FlowLog" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2FlowLog
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2FlowLog{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

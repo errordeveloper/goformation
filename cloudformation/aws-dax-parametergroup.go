@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSDAXParameterGroupResources() map[string]AWSDAXParame
 				if resType == "AWS::DAX::ParameterGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDAXParameterGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSDAXParameterGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSDAXParameterGroupWithName(name string) (AWSDAXParameter
 				if resType == "AWS::DAX::ParameterGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDAXParameterGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSDAXParameterGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

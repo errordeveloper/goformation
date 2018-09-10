@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIAMUser_Policy AWS CloudFormation Resource (AWS::IAM::User.Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
 type AWSIAMUser_Policy struct {
@@ -18,4 +22,8 @@ type AWSIAMUser_Policy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIAMUser_Policy) AWSCloudFormationType() string {
 	return "AWS::IAM::User.Policy"
+}
+
+func (r *AWSIAMUser_Policy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

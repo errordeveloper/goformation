@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFXssMatchSet_FieldToMatch AWS CloudFormation Resource (AWS::WAF::XssMatchSet.FieldToMatch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple-fieldtomatch.html
 type AWSWAFXssMatchSet_FieldToMatch struct {
@@ -18,4 +22,8 @@ type AWSWAFXssMatchSet_FieldToMatch struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFXssMatchSet_FieldToMatch) AWSCloudFormationType() string {
 	return "AWS::WAF::XssMatchSet.FieldToMatch"
+}
+
+func (r *AWSWAFXssMatchSet_FieldToMatch) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

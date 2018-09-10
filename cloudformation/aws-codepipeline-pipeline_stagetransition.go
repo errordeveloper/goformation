@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_StageTransition AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.StageTransition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
 type AWSCodePipelinePipeline_StageTransition struct {
@@ -18,4 +22,8 @@ type AWSCodePipelinePipeline_StageTransition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_StageTransition) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.StageTransition"
+}
+
+func (r *AWSCodePipelinePipeline_StageTransition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

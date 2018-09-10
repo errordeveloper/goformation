@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSWAFRuleResources() map[string]AWSWAFRule {
 				if resType == "AWS::WAF::Rule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWAFRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSWAFRuleWithName(name string) (AWSWAFRule, error) {
 				if resType == "AWS::WAF::Rule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWAFRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

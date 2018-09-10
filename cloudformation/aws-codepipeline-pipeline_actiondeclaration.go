@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_ActionDeclaration AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ActionDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
 type AWSCodePipelinePipeline_ActionDeclaration struct {
@@ -43,4 +47,8 @@ type AWSCodePipelinePipeline_ActionDeclaration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_ActionDeclaration) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ActionDeclaration"
+}
+
+func (r *AWSCodePipelinePipeline_ActionDeclaration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

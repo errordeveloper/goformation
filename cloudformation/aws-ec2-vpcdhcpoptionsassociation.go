@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSEC2VPCDHCPOptionsAssociationResources() map[string]A
 				if resType == "AWS::EC2::VPCDHCPOptionsAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCDHCPOptionsAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VPCDHCPOptionsAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSEC2VPCDHCPOptionsAssociationWithName(name string) (AWSE
 				if resType == "AWS::EC2::VPCDHCPOptionsAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCDHCPOptionsAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VPCDHCPOptionsAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

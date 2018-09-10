@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGluePartition_StorageDescriptor AWS CloudFormation Resource (AWS::Glue::Partition.StorageDescriptor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-storagedescriptor.html
 type AWSGluePartition_StorageDescriptor struct {
@@ -68,4 +72,8 @@ type AWSGluePartition_StorageDescriptor struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGluePartition_StorageDescriptor) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.StorageDescriptor"
+}
+
+func (r *AWSGluePartition_StorageDescriptor) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

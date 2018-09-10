@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceGroupConfig_ScalingRule AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.ScalingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html
 type AWSEMRInstanceGroupConfig_ScalingRule struct {
@@ -28,4 +32,8 @@ type AWSEMRInstanceGroupConfig_ScalingRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceGroupConfig_ScalingRule) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.ScalingRule"
+}
+
+func (r *AWSEMRInstanceGroupConfig_ScalingRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

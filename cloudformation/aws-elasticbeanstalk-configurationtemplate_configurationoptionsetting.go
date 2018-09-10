@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticBeanstalkConfigurationTemplate_ConfigurationOptionSetting AWS CloudFormation Resource (AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-configurationoptionsetting.html
 type AWSElasticBeanstalkConfigurationTemplate_ConfigurationOptionSetting struct {
@@ -28,4 +32,8 @@ type AWSElasticBeanstalkConfigurationTemplate_ConfigurationOptionSetting struct 
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticBeanstalkConfigurationTemplate_ConfigurationOptionSetting) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting"
+}
+
+func (r *AWSElasticBeanstalkConfigurationTemplate_ConfigurationOptionSetting) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

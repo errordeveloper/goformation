@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAppSyncGraphQLApi_UserPoolConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.UserPoolConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html
 type AWSAppSyncGraphQLApi_UserPoolConfig struct {
@@ -28,4 +32,8 @@ type AWSAppSyncGraphQLApi_UserPoolConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAppSyncGraphQLApi_UserPoolConfig) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.UserPoolConfig"
+}
+
+func (r *AWSAppSyncGraphQLApi_UserPoolConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

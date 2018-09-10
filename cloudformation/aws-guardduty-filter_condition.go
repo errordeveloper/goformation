@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGuardDutyFilter_Condition AWS CloudFormation Resource (AWS::GuardDuty::Filter.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
 type AWSGuardDutyFilter_Condition struct {
@@ -33,4 +37,8 @@ type AWSGuardDutyFilter_Condition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGuardDutyFilter_Condition) AWSCloudFormationType() string {
 	return "AWS::GuardDuty::Filter.Condition"
+}
+
+func (r *AWSGuardDutyFilter_Condition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

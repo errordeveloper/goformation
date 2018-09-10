@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_SchemaAttribute AWS CloudFormation Resource (AWS::Cognito::UserPool.SchemaAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html
 type AWSCognitoUserPool_SchemaAttribute struct {
@@ -43,4 +47,8 @@ type AWSCognitoUserPool_SchemaAttribute struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_SchemaAttribute) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.SchemaAttribute"
+}
+
+func (r *AWSCognitoUserPool_SchemaAttribute) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

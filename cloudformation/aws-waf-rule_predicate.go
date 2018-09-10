@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFRule_Predicate AWS CloudFormation Resource (AWS::WAF::Rule.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html
 type AWSWAFRule_Predicate struct {
@@ -23,4 +27,8 @@ type AWSWAFRule_Predicate struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFRule_Predicate) AWSCloudFormationType() string {
 	return "AWS::WAF::Rule.Predicate"
+}
+
+func (r *AWSWAFRule_Predicate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

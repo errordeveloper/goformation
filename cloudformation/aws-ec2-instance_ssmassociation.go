@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2Instance_SsmAssociation AWS CloudFormation Resource (AWS::EC2::Instance.SsmAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
 type AWSEC2Instance_SsmAssociation struct {
@@ -18,4 +22,8 @@ type AWSEC2Instance_SsmAssociation struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2Instance_SsmAssociation) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.SsmAssociation"
+}
+
+func (r *AWSEC2Instance_SsmAssociation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

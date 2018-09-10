@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration struct {
@@ -18,4 +22,8 @@ type AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_EncryptionConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

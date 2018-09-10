@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGluePartition_SerdeInfo AWS CloudFormation Resource (AWS::Glue::Partition.SerdeInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
 type AWSGluePartition_SerdeInfo struct {
@@ -23,4 +27,8 @@ type AWSGluePartition_SerdeInfo struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGluePartition_SerdeInfo) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SerdeInfo"
+}
+
+func (r *AWSGluePartition_SerdeInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

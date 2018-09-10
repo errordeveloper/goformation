@@ -70,9 +70,9 @@ func (t *Template) GetAllAWSSESConfigurationSetResources() map[string]AWSSESConf
 				if resType == "AWS::SES::ConfigurationSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSESConfigurationSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSESConfigurationSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -97,9 +97,9 @@ func (t *Template) GetAWSSESConfigurationSetWithName(name string) (AWSSESConfigu
 				if resType == "AWS::SES::ConfigurationSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSESConfigurationSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSESConfigurationSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

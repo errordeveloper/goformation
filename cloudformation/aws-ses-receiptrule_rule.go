@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESReceiptRule_Rule AWS CloudFormation Resource (AWS::SES::ReceiptRule.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
 type AWSSESReceiptRule_Rule struct {
@@ -38,4 +42,8 @@ type AWSSESReceiptRule_Rule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESReceiptRule_Rule) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptRule.Rule"
+}
+
+func (r *AWSSESReceiptRule_Rule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

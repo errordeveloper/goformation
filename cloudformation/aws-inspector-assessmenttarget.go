@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSInspectorAssessmentTargetResources() map[string]AWSI
 				if resType == "AWS::Inspector::AssessmentTarget" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSInspectorAssessmentTarget
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSInspectorAssessmentTarget{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSInspectorAssessmentTargetWithName(name string) (AWSInsp
 				if resType == "AWS::Inspector::AssessmentTarget" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSInspectorAssessmentTarget
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSInspectorAssessmentTarget{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

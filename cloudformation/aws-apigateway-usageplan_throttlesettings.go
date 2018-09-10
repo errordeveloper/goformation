@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApiGatewayUsagePlan_ThrottleSettings AWS CloudFormation Resource (AWS::ApiGateway::UsagePlan.ThrottleSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html
 type AWSApiGatewayUsagePlan_ThrottleSettings struct {
@@ -18,4 +22,8 @@ type AWSApiGatewayUsagePlan_ThrottleSettings struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApiGatewayUsagePlan_ThrottleSettings) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::UsagePlan.ThrottleSettings"
+}
+
+func (r *AWSApiGatewayUsagePlan_ThrottleSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

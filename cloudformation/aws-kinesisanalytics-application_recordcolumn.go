@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisAnalyticsApplication_RecordColumn AWS CloudFormation Resource (AWS::KinesisAnalytics::Application.RecordColumn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html
 type AWSKinesisAnalyticsApplication_RecordColumn struct {
@@ -23,4 +27,8 @@ type AWSKinesisAnalyticsApplication_RecordColumn struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisAnalyticsApplication_RecordColumn) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::Application.RecordColumn"
+}
+
+func (r *AWSKinesisAnalyticsApplication_RecordColumn) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -115,9 +115,9 @@ func (t *Template) GetAllAWSApiGatewayAuthorizerResources() map[string]AWSApiGat
 				if resType == "AWS::ApiGateway::Authorizer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayAuthorizer
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayAuthorizer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -142,9 +142,9 @@ func (t *Template) GetAWSApiGatewayAuthorizerWithName(name string) (AWSApiGatewa
 				if resType == "AWS::ApiGateway::Authorizer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayAuthorizer
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayAuthorizer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

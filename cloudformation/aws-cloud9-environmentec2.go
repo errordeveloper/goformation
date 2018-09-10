@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSCloud9EnvironmentEC2Resources() map[string]AWSCloud9
 				if resType == "AWS::Cloud9::EnvironmentEC2" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloud9EnvironmentEC2
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCloud9EnvironmentEC2{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSCloud9EnvironmentEC2WithName(name string) (AWSCloud9Env
 				if resType == "AWS::Cloud9::EnvironmentEC2" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloud9EnvironmentEC2
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCloud9EnvironmentEC2{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

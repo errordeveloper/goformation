@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSApiGatewayDocumentationVersionResources() map[string
 				if resType == "AWS::ApiGateway::DocumentationVersion" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayDocumentationVersion
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayDocumentationVersion{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSApiGatewayDocumentationVersionWithName(name string) (AW
 				if resType == "AWS::ApiGateway::DocumentationVersion" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayDocumentationVersion
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayDocumentationVersion{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

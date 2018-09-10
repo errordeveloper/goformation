@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBatchJobDefinition_ContainerProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.ContainerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html
 type AWSBatchJobDefinition_ContainerProperties struct {
@@ -68,4 +72,8 @@ type AWSBatchJobDefinition_ContainerProperties struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBatchJobDefinition_ContainerProperties) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.ContainerProperties"
+}
+
+func (r *AWSBatchJobDefinition_ContainerProperties) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

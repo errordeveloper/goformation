@@ -70,9 +70,9 @@ func (t *Template) GetAllAWSApiGatewayAccountResources() map[string]AWSApiGatewa
 				if resType == "AWS::ApiGateway::Account" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayAccount
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayAccount{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -97,9 +97,9 @@ func (t *Template) GetAWSApiGatewayAccountWithName(name string) (AWSApiGatewayAc
 				if resType == "AWS::ApiGateway::Account" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayAccount
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayAccount{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

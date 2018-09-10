@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBatchJobDefinition_Ulimit AWS CloudFormation Resource (AWS::Batch::JobDefinition.Ulimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html
 type AWSBatchJobDefinition_Ulimit struct {
@@ -23,4 +27,8 @@ type AWSBatchJobDefinition_Ulimit struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBatchJobDefinition_Ulimit) AWSCloudFormationType() string {
 	return "AWS::Batch::JobDefinition.Ulimit"
+}
+
+func (r *AWSBatchJobDefinition_Ulimit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

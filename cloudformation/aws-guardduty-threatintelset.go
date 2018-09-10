@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSGuardDutyThreatIntelSetResources() map[string]AWSGua
 				if resType == "AWS::GuardDuty::ThreatIntelSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyThreatIntelSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGuardDutyThreatIntelSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSGuardDutyThreatIntelSetWithName(name string) (AWSGuardD
 				if resType == "AWS::GuardDuty::ThreatIntelSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyThreatIntelSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGuardDutyThreatIntelSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

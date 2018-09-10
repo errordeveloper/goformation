@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksLayer_ShutdownEventConfiguration AWS CloudFormation Resource (AWS::OpsWorks::Layer.ShutdownEventConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html
 type AWSOpsWorksLayer_ShutdownEventConfiguration struct {
@@ -18,4 +22,8 @@ type AWSOpsWorksLayer_ShutdownEventConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksLayer_ShutdownEventConfiguration) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.ShutdownEventConfiguration"
+}
+
+func (r *AWSOpsWorksLayer_ShutdownEventConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

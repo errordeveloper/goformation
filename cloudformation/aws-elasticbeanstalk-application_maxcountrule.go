@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticBeanstalkApplication_MaxCountRule AWS CloudFormation Resource (AWS::ElasticBeanstalk::Application.MaxCountRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html
 type AWSElasticBeanstalkApplication_MaxCountRule struct {
@@ -23,4 +27,8 @@ type AWSElasticBeanstalkApplication_MaxCountRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticBeanstalkApplication_MaxCountRule) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Application.MaxCountRule"
+}
+
+func (r *AWSElasticBeanstalkApplication_MaxCountRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

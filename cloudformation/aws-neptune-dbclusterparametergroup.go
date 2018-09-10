@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSNeptuneDBClusterParameterGroupResources() map[string
 				if resType == "AWS::Neptune::DBClusterParameterGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBClusterParameterGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSNeptuneDBClusterParameterGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSNeptuneDBClusterParameterGroupWithName(name string) (AW
 				if resType == "AWS::Neptune::DBClusterParameterGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBClusterParameterGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSNeptuneDBClusterParameterGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

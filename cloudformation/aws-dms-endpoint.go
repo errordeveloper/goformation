@@ -145,9 +145,9 @@ func (t *Template) GetAllAWSDMSEndpointResources() map[string]AWSDMSEndpoint {
 				if resType == "AWS::DMS::Endpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSDMSEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -172,9 +172,9 @@ func (t *Template) GetAWSDMSEndpointWithName(name string) (AWSDMSEndpoint, error
 				if resType == "AWS::DMS::Endpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSDMSEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

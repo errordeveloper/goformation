@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontStreamingDistribution_TrustedSigners AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.TrustedSigners)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
 type AWSCloudFrontStreamingDistribution_TrustedSigners struct {
@@ -18,4 +22,8 @@ type AWSCloudFrontStreamingDistribution_TrustedSigners struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontStreamingDistribution_TrustedSigners) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.TrustedSigners"
+}
+
+func (r *AWSCloudFrontStreamingDistribution_TrustedSigners) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

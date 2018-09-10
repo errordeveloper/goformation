@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRDSOptionGroup_OptionSetting AWS CloudFormation Resource (AWS::RDS::OptionGroup.OptionSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html
 type AWSRDSOptionGroup_OptionSetting struct {
@@ -18,4 +22,8 @@ type AWSRDSOptionGroup_OptionSetting struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRDSOptionGroup_OptionSetting) AWSCloudFormationType() string {
 	return "AWS::RDS::OptionGroup.OptionSetting"
+}
+
+func (r *AWSRDSOptionGroup_OptionSetting) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDMSEndpoint_MongoDbSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.MongoDbSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html
 type AWSDMSEndpoint_MongoDbSettings struct {
@@ -63,4 +67,8 @@ type AWSDMSEndpoint_MongoDbSettings struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDMSEndpoint_MongoDbSettings) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.MongoDbSettings"
+}
+
+func (r *AWSDMSEndpoint_MongoDbSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeBuildProject_Artifacts AWS CloudFormation Resource (AWS::CodeBuild::Project.Artifacts)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html
 type AWSCodeBuildProject_Artifacts struct {
@@ -48,4 +52,8 @@ type AWSCodeBuildProject_Artifacts struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeBuildProject_Artifacts) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.Artifacts"
+}
+
+func (r *AWSCodeBuildProject_Artifacts) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

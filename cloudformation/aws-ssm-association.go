@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSSSMAssociationResources() map[string]AWSSSMAssociati
 				if resType == "AWS::SSM::Association" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSSMAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSSSMAssociationWithName(name string) (AWSSSMAssociation,
 				if resType == "AWS::SSM::Association" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSSMAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSSMAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

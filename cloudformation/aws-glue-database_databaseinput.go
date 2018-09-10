@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueDatabase_DatabaseInput AWS CloudFormation Resource (AWS::Glue::Database.DatabaseInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html
 type AWSGlueDatabase_DatabaseInput struct {
@@ -28,4 +32,8 @@ type AWSGlueDatabase_DatabaseInput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueDatabase_DatabaseInput) AWSCloudFormationType() string {
 	return "AWS::Glue::Database.DatabaseInput"
+}
+
+func (r *AWSGlueDatabase_DatabaseInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

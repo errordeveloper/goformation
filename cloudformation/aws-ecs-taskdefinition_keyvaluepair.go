@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_KeyValuePair AWS CloudFormation Resource (AWS::ECS::TaskDefinition.KeyValuePair)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html
 type AWSECSTaskDefinition_KeyValuePair struct {
@@ -18,4 +22,8 @@ type AWSECSTaskDefinition_KeyValuePair struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_KeyValuePair) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.KeyValuePair"
+}
+
+func (r *AWSECSTaskDefinition_KeyValuePair) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

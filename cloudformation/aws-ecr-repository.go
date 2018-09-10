@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSECRRepositoryResources() map[string]AWSECRRepository
 				if resType == "AWS::ECR::Repository" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSECRRepository
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSECRRepository{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSECRRepositoryWithName(name string) (AWSECRRepository, e
 				if resType == "AWS::ECR::Repository" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSECRRepository
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSECRRepository{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

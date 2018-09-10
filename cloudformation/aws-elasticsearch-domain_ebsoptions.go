@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticsearchDomain_EBSOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.EBSOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html
 type AWSElasticsearchDomain_EBSOptions struct {
@@ -28,4 +32,8 @@ type AWSElasticsearchDomain_EBSOptions struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticsearchDomain_EBSOptions) AWSCloudFormationType() string {
 	return "AWS::Elasticsearch::Domain.EBSOptions"
+}
+
+func (r *AWSElasticsearchDomain_EBSOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

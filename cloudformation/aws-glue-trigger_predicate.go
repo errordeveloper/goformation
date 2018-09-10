@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTrigger_Predicate AWS CloudFormation Resource (AWS::Glue::Trigger.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
 type AWSGlueTrigger_Predicate struct {
@@ -18,4 +22,8 @@ type AWSGlueTrigger_Predicate struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTrigger_Predicate) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Predicate"
+}
+
+func (r *AWSGlueTrigger_Predicate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

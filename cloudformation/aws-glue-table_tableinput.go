@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTable_TableInput AWS CloudFormation Resource (AWS::Glue::Table.TableInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
 type AWSGlueTable_TableInput struct {
@@ -58,4 +62,8 @@ type AWSGlueTable_TableInput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTable_TableInput) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.TableInput"
+}
+
+func (r *AWSGlueTable_TableInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

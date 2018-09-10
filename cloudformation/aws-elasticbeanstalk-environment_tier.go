@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticBeanstalkEnvironment_Tier AWS CloudFormation Resource (AWS::ElasticBeanstalk::Environment.Tier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html
 type AWSElasticBeanstalkEnvironment_Tier struct {
@@ -23,4 +27,8 @@ type AWSElasticBeanstalkEnvironment_Tier struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticBeanstalkEnvironment_Tier) AWSCloudFormationType() string {
 	return "AWS::ElasticBeanstalk::Environment.Tier"
+}
+
+func (r *AWSElasticBeanstalkEnvironment_Tier) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

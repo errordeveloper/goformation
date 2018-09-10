@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDataPipelinePipeline_PipelineTag AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.PipelineTag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html
 type AWSDataPipelinePipeline_PipelineTag struct {
@@ -18,4 +22,8 @@ type AWSDataPipelinePipeline_PipelineTag struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDataPipelinePipeline_PipelineTag) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.PipelineTag"
+}
+
+func (r *AWSDataPipelinePipeline_PipelineTag) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

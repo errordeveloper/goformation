@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSRedshiftClusterSecurityGroupIngressResources() map[s
 				if resType == "AWS::Redshift::ClusterSecurityGroupIngress" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftClusterSecurityGroupIngress
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRedshiftClusterSecurityGroupIngress{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSRedshiftClusterSecurityGroupIngressWithName(name string
 				if resType == "AWS::Redshift::ClusterSecurityGroupIngress" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftClusterSecurityGroupIngress
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRedshiftClusterSecurityGroupIngress{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

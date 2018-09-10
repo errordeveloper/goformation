@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueConnection_ConnectionInput AWS CloudFormation Resource (AWS::Glue::Connection.ConnectionInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html
 type AWSGlueConnection_ConnectionInput struct {
@@ -38,4 +42,8 @@ type AWSGlueConnection_ConnectionInput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueConnection_ConnectionInput) AWSCloudFormationType() string {
 	return "AWS::Glue::Connection.ConnectionInput"
+}
+
+func (r *AWSGlueConnection_ConnectionInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_HealthCheck AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html
 type AWSElasticLoadBalancingLoadBalancer_HealthCheck struct {
@@ -33,4 +37,8 @@ type AWSElasticLoadBalancingLoadBalancer_HealthCheck struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_HealthCheck) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_HealthCheck) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

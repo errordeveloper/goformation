@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSService_LoadBalancer AWS CloudFormation Resource (AWS::ECS::Service.LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancers.html
 type AWSECSService_LoadBalancer struct {
@@ -28,4 +32,8 @@ type AWSECSService_LoadBalancer struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSService_LoadBalancer) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.LoadBalancer"
+}
+
+func (r *AWSECSService_LoadBalancer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // Tag AWS CloudFormation Resource (Tag)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-tag.html
 type Tag struct {
@@ -18,4 +22,8 @@ type Tag struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *Tag) AWSCloudFormationType() string {
 	return "Tag"
+}
+
+func (r *Tag) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

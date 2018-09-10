@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_ArtifactStore AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.ArtifactStore)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html
 type AWSCodePipelinePipeline_ArtifactStore struct {
@@ -23,4 +27,8 @@ type AWSCodePipelinePipeline_ArtifactStore struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_ArtifactStore) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.ArtifactStore"
+}
+
+func (r *AWSCodePipelinePipeline_ArtifactStore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

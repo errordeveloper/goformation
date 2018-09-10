@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_Transition AWS CloudFormation Resource (AWS::S3::Bucket.Transition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
 type AWSS3Bucket_Transition struct {
@@ -23,4 +27,8 @@ type AWSS3Bucket_Transition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_Transition) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Transition"
+}
+
+func (r *AWSS3Bucket_Transition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

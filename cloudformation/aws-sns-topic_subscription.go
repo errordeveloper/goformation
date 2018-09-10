@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSNSTopic_Subscription AWS CloudFormation Resource (AWS::SNS::Topic.Subscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
 type AWSSNSTopic_Subscription struct {
@@ -18,4 +22,8 @@ type AWSSNSTopic_Subscription struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSNSTopic_Subscription) AWSCloudFormationType() string {
 	return "AWS::SNS::Topic.Subscription"
+}
+
+func (r *AWSSNSTopic_Subscription) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

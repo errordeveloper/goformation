@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSWAFRegionalWebACLResources() map[string]AWSWAFRegion
 				if resType == "AWS::WAFRegional::WebACL" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRegionalWebACL
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWAFRegionalWebACL{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSWAFRegionalWebACLWithName(name string) (AWSWAFRegionalW
 				if resType == "AWS::WAFRegional::WebACL" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRegionalWebACL
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWAFRegionalWebACL{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

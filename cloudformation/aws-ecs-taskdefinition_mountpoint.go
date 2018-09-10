@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_MountPoint AWS CloudFormation Resource (AWS::ECS::TaskDefinition.MountPoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html
 type AWSECSTaskDefinition_MountPoint struct {
@@ -23,4 +27,8 @@ type AWSECSTaskDefinition_MountPoint struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_MountPoint) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.MountPoint"
+}
+
+func (r *AWSECSTaskDefinition_MountPoint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

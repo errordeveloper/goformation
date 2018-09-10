@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMPatchBaseline_Rule AWS CloudFormation Resource (AWS::SSM::PatchBaseline.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
 type AWSSSMPatchBaseline_Rule struct {
@@ -28,4 +32,8 @@ type AWSSSMPatchBaseline_Rule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMPatchBaseline_Rule) AWSCloudFormationType() string {
 	return "AWS::SSM::PatchBaseline.Rule"
+}
+
+func (r *AWSSSMPatchBaseline_Rule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

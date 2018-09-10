@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_DynamoDBEvent AWS CloudFormation Resource (AWS::Serverless::Function.DynamoDBEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
 type AWSServerlessFunction_DynamoDBEvent struct {
@@ -23,4 +27,8 @@ type AWSServerlessFunction_DynamoDBEvent struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_DynamoDBEvent) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.DynamoDBEvent"
+}
+
+func (r *AWSServerlessFunction_DynamoDBEvent) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

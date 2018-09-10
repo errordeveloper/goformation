@@ -28,7 +28,7 @@ type AWSServerlessApi struct {
 	// DefinitionUri AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	DefinitionUri *Value `json:"DefinitionUri,omitempty"`
+	DefinitionUri *AWSServerlessApi_DefinitionUri `json:"DefinitionUri,omitempty"`
 
 	// MethodSettings AWS CloudFormation Property
 	// Required: false
@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSServerlessApiResources() map[string]AWSServerlessApi
 				if resType == "AWS::Serverless::Api" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServerlessApi
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServerlessApi{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSServerlessApiWithName(name string) (AWSServerlessApi, e
 				if resType == "AWS::Serverless::Api" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServerlessApi
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServerlessApi{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

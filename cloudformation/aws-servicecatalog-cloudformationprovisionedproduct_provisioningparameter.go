@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServiceCatalogCloudFormationProvisionedProduct_ProvisioningParameter AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html
 type AWSServiceCatalogCloudFormationProvisionedProduct_ProvisioningParameter struct {
@@ -18,4 +22,8 @@ type AWSServiceCatalogCloudFormationProvisionedProduct_ProvisioningParameter str
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServiceCatalogCloudFormationProvisionedProduct_ProvisioningParameter) AWSCloudFormationType() string {
 	return "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter"
+}
+
+func (r *AWSServiceCatalogCloudFormationProvisionedProduct_ProvisioningParameter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

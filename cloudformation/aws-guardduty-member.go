@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSGuardDutyMemberResources() map[string]AWSGuardDutyMe
 				if resType == "AWS::GuardDuty::Member" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyMember
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGuardDutyMember{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSGuardDutyMemberWithName(name string) (AWSGuardDutyMembe
 				if resType == "AWS::GuardDuty::Member" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGuardDutyMember
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGuardDutyMember{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

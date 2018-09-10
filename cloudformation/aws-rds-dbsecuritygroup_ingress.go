@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSRDSDBSecurityGroup_Ingress AWS CloudFormation Resource (AWS::RDS::DBSecurityGroup.Ingress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html
 type AWSRDSDBSecurityGroup_Ingress struct {
@@ -28,4 +32,8 @@ type AWSRDSDBSecurityGroup_Ingress struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSRDSDBSecurityGroup_Ingress) AWSCloudFormationType() string {
 	return "AWS::RDS::DBSecurityGroup.Ingress"
+}
+
+func (r *AWSRDSDBSecurityGroup_Ingress) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

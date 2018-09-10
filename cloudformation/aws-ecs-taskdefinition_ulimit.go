@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_Ulimit AWS CloudFormation Resource (AWS::ECS::TaskDefinition.Ulimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html
 type AWSECSTaskDefinition_Ulimit struct {
@@ -23,4 +27,8 @@ type AWSECSTaskDefinition_Ulimit struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_Ulimit) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.Ulimit"
+}
+
+func (r *AWSECSTaskDefinition_Ulimit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

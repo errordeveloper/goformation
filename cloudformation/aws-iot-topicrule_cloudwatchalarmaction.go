@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_CloudwatchAlarmAction AWS CloudFormation Resource (AWS::IoT::TopicRule.CloudwatchAlarmAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html
 type AWSIoTTopicRule_CloudwatchAlarmAction struct {
@@ -28,4 +32,8 @@ type AWSIoTTopicRule_CloudwatchAlarmAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_CloudwatchAlarmAction) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.CloudwatchAlarmAction"
+}
+
+func (r *AWSIoTTopicRule_CloudwatchAlarmAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

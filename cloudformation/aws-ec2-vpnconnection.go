@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSEC2VPNConnectionResources() map[string]AWSEC2VPNConn
 				if resType == "AWS::EC2::VPNConnection" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPNConnection
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VPNConnection{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSEC2VPNConnectionWithName(name string) (AWSEC2VPNConnect
 				if resType == "AWS::EC2::VPNConnection" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPNConnection
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VPNConnection{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

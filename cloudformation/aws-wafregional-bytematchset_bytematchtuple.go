@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFRegionalByteMatchSet_ByteMatchTuple AWS CloudFormation Resource (AWS::WAFRegional::ByteMatchSet.ByteMatchTuple)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html
 type AWSWAFRegionalByteMatchSet_ByteMatchTuple struct {
@@ -33,4 +37,8 @@ type AWSWAFRegionalByteMatchSet_ByteMatchTuple struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFRegionalByteMatchSet_ByteMatchTuple) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::ByteMatchSet.ByteMatchTuple"
+}
+
+func (r *AWSWAFRegionalByteMatchSet_ByteMatchTuple) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

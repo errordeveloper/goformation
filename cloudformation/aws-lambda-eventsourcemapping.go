@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSLambdaEventSourceMappingResources() map[string]AWSLa
 				if resType == "AWS::Lambda::EventSourceMapping" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaEventSourceMapping
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLambdaEventSourceMapping{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSLambdaEventSourceMappingWithName(name string) (AWSLambd
 				if resType == "AWS::Lambda::EventSourceMapping" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaEventSourceMapping
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLambdaEventSourceMapping{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

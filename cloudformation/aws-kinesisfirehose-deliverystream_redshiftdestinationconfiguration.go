@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_RedshiftDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_RedshiftDestinationConfiguration struct {
@@ -48,4 +52,8 @@ type AWSKinesisFirehoseDeliveryStream_RedshiftDestinationConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_RedshiftDestinationConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_RedshiftDestinationConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_OutputArtifact AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.OutputArtifact)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
 type AWSCodePipelinePipeline_OutputArtifact struct {
@@ -13,4 +17,8 @@ type AWSCodePipelinePipeline_OutputArtifact struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_OutputArtifact) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.OutputArtifact"
+}
+
+func (r *AWSCodePipelinePipeline_OutputArtifact) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

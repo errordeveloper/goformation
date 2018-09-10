@@ -130,9 +130,9 @@ func (t *Template) GetAllAWSCodeDeployDeploymentGroupResources() map[string]AWSC
 				if resType == "AWS::CodeDeploy::DeploymentGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeDeployDeploymentGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodeDeployDeploymentGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -157,9 +157,9 @@ func (t *Template) GetAWSCodeDeployDeploymentGroupWithName(name string) (AWSCode
 				if resType == "AWS::CodeDeploy::DeploymentGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeDeployDeploymentGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodeDeployDeploymentGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

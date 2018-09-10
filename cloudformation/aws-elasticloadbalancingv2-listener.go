@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSElasticLoadBalancingV2ListenerResources() map[string
 				if resType == "AWS::ElasticLoadBalancingV2::Listener" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingV2Listener
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElasticLoadBalancingV2Listener{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSElasticLoadBalancingV2ListenerWithName(name string) (AW
 				if resType == "AWS::ElasticLoadBalancingV2::Listener" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingV2Listener
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElasticLoadBalancingV2Listener{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

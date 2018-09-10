@@ -120,9 +120,9 @@ func (t *Template) GetAllAWSEC2NetworkInterfaceResources() map[string]AWSEC2Netw
 				if resType == "AWS::EC2::NetworkInterface" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NetworkInterface
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2NetworkInterface{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -147,9 +147,9 @@ func (t *Template) GetAWSEC2NetworkInterfaceWithName(name string) (AWSEC2Network
 				if resType == "AWS::EC2::NetworkInterface" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NetworkInterface
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2NetworkInterface{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

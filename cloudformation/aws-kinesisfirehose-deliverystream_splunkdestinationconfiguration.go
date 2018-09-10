@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_SplunkDestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_SplunkDestinationConfiguration struct {
@@ -53,4 +57,8 @@ type AWSKinesisFirehoseDeliveryStream_SplunkDestinationConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_SplunkDestinationConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_SplunkDestinationConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

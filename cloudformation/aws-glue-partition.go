@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSGluePartitionResources() map[string]AWSGluePartition
 				if resType == "AWS::Glue::Partition" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGluePartition
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSGluePartition{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSGluePartitionWithName(name string) (AWSGluePartition, e
 				if resType == "AWS::Glue::Partition" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSGluePartition
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSGluePartition{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

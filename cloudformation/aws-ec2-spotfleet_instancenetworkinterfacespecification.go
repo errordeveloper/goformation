@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2SpotFleet_InstanceNetworkInterfaceSpecification AWS CloudFormation Resource (AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html
 type AWSEC2SpotFleet_InstanceNetworkInterfaceSpecification struct {
@@ -63,4 +67,8 @@ type AWSEC2SpotFleet_InstanceNetworkInterfaceSpecification struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2SpotFleet_InstanceNetworkInterfaceSpecification) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification"
+}
+
+func (r *AWSEC2SpotFleet_InstanceNetworkInterfaceSpecification) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

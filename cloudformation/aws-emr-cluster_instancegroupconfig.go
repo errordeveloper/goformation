@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_InstanceGroupConfig AWS CloudFormation Resource (AWS::EMR::Cluster.InstanceGroupConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html
 type AWSEMRCluster_InstanceGroupConfig struct {
@@ -48,4 +52,8 @@ type AWSEMRCluster_InstanceGroupConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_InstanceGroupConfig) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.InstanceGroupConfig"
+}
+
+func (r *AWSEMRCluster_InstanceGroupConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksApp_Source AWS CloudFormation Resource (AWS::OpsWorks::App.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html
 type AWSOpsWorksApp_Source struct {
@@ -38,4 +42,8 @@ type AWSOpsWorksApp_Source struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksApp_Source) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::App.Source"
+}
+
+func (r *AWSOpsWorksApp_Source) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

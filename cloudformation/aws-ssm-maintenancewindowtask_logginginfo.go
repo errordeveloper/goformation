@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMMaintenanceWindowTask_LoggingInfo AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.LoggingInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html
 type AWSSSMMaintenanceWindowTask_LoggingInfo struct {
@@ -23,4 +27,8 @@ type AWSSSMMaintenanceWindowTask_LoggingInfo struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMMaintenanceWindowTask_LoggingInfo) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.LoggingInfo"
+}
+
+func (r *AWSSSMMaintenanceWindowTask_LoggingInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSConfigConfigRuleResources() map[string]AWSConfigConf
 				if resType == "AWS::Config::ConfigRule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigConfigRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSConfigConfigRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSConfigConfigRuleWithName(name string) (AWSConfigConfigR
 				if resType == "AWS::Config::ConfigRule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSConfigConfigRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSConfigConfigRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

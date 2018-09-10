@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksInstance_TimeBasedAutoScaling AWS CloudFormation Resource (AWS::OpsWorks::Instance.TimeBasedAutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html
 type AWSOpsWorksInstance_TimeBasedAutoScaling struct {
@@ -43,4 +47,8 @@ type AWSOpsWorksInstance_TimeBasedAutoScaling struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksInstance_TimeBasedAutoScaling) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.TimeBasedAutoScaling"
+}
+
+func (r *AWSOpsWorksInstance_TimeBasedAutoScaling) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

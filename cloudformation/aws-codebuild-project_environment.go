@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeBuildProject_Environment AWS CloudFormation Resource (AWS::CodeBuild::Project.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
 type AWSCodeBuildProject_Environment struct {
@@ -38,4 +42,8 @@ type AWSCodeBuildProject_Environment struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeBuildProject_Environment) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.Environment"
+}
+
+func (r *AWSCodeBuildProject_Environment) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

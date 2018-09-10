@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElastiCacheReplicationGroup_NodeGroupConfiguration AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html
 type AWSElastiCacheReplicationGroup_NodeGroupConfiguration struct {
@@ -28,4 +32,8 @@ type AWSElastiCacheReplicationGroup_NodeGroupConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElastiCacheReplicationGroup_NodeGroupConfiguration) AWSCloudFormationType() string {
 	return "AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration"
+}
+
+func (r *AWSElastiCacheReplicationGroup_NodeGroupConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

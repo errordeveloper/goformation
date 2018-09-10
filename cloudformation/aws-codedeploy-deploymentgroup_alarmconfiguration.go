@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeDeployDeploymentGroup_AlarmConfiguration AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html
 type AWSCodeDeployDeploymentGroup_AlarmConfiguration struct {
@@ -23,4 +27,8 @@ type AWSCodeDeployDeploymentGroup_AlarmConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeDeployDeploymentGroup_AlarmConfiguration) AWSCloudFormationType() string {
 	return "AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration"
+}
+
+func (r *AWSCodeDeployDeploymentGroup_AlarmConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

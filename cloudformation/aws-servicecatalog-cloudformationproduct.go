@@ -115,9 +115,9 @@ func (t *Template) GetAllAWSServiceCatalogCloudFormationProductResources() map[s
 				if resType == "AWS::ServiceCatalog::CloudFormationProduct" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogCloudFormationProduct
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogCloudFormationProduct{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -142,9 +142,9 @@ func (t *Template) GetAWSServiceCatalogCloudFormationProductWithName(name string
 				if resType == "AWS::ServiceCatalog::CloudFormationProduct" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogCloudFormationProduct
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogCloudFormationProduct{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

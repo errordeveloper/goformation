@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html
 type AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
@@ -53,4 +57,8 @@ type AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters) AWSCloudFormationType() string {
 	return "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters"
+}
+
+func (r *AWSSSMMaintenanceWindowTask_MaintenanceWindowRunCommandParameters) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

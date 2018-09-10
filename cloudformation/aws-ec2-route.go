@@ -110,9 +110,9 @@ func (t *Template) GetAllAWSEC2RouteResources() map[string]AWSEC2Route {
 				if resType == "AWS::EC2::Route" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2Route
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2Route{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -137,9 +137,9 @@ func (t *Template) GetAWSEC2RouteWithName(name string) (AWSEC2Route, error) {
 				if resType == "AWS::EC2::Route" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2Route
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2Route{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

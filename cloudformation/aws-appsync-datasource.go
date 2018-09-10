@@ -110,9 +110,9 @@ func (t *Template) GetAllAWSAppSyncDataSourceResources() map[string]AWSAppSyncDa
 				if resType == "AWS::AppSync::DataSource" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAppSyncDataSource
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAppSyncDataSource{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -137,9 +137,9 @@ func (t *Template) GetAWSAppSyncDataSourceWithName(name string) (AWSAppSyncDataS
 				if resType == "AWS::AppSync::DataSource" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAppSyncDataSource
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAppSyncDataSource{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

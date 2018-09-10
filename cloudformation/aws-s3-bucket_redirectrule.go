@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_RedirectRule AWS CloudFormation Resource (AWS::S3::Bucket.RedirectRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html
 type AWSS3Bucket_RedirectRule struct {
@@ -33,4 +37,8 @@ type AWSS3Bucket_RedirectRule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_RedirectRule) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.RedirectRule"
+}
+
+func (r *AWSS3Bucket_RedirectRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSWAFRegionalByteMatchSetResources() map[string]AWSWAF
 				if resType == "AWS::WAFRegional::ByteMatchSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRegionalByteMatchSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWAFRegionalByteMatchSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSWAFRegionalByteMatchSetWithName(name string) (AWSWAFReg
 				if resType == "AWS::WAFRegional::ByteMatchSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFRegionalByteMatchSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWAFRegionalByteMatchSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -135,9 +135,9 @@ func (t *Template) GetAllAWSRoute53RecordSetResources() map[string]AWSRoute53Rec
 				if resType == "AWS::Route53::RecordSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRoute53RecordSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRoute53RecordSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -162,9 +162,9 @@ func (t *Template) GetAWSRoute53RecordSetWithName(name string) (AWSRoute53Record
 				if resType == "AWS::Route53::RecordSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRoute53RecordSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRoute53RecordSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

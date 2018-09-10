@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSEC2LaunchTemplateResources() map[string]AWSEC2Launch
 				if resType == "AWS::EC2::LaunchTemplate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2LaunchTemplate
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2LaunchTemplate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSEC2LaunchTemplateWithName(name string) (AWSEC2LaunchTem
 				if resType == "AWS::EC2::LaunchTemplate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2LaunchTemplate
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2LaunchTemplate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

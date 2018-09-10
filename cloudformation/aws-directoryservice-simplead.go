@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSDirectoryServiceSimpleADResources() map[string]AWSDi
 				if resType == "AWS::DirectoryService::SimpleAD" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDirectoryServiceSimpleAD
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSDirectoryServiceSimpleAD{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSDirectoryServiceSimpleADWithName(name string) (AWSDirec
 				if resType == "AWS::DirectoryService::SimpleAD" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDirectoryServiceSimpleAD
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSDirectoryServiceSimpleAD{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

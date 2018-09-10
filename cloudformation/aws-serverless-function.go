@@ -13,7 +13,7 @@ type AWSServerlessFunction struct {
 	// CodeUri AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	CodeUri *Value `json:"CodeUri,omitempty"`
+	CodeUri *AWSServerlessFunction_CodeUri `json:"CodeUri,omitempty"`
 
 	// DeadLetterQueue AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type AWSServerlessFunction struct {
 	// Policies AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-	Policies *Value `json:"Policies,omitempty"`
+	Policies *AWSServerlessFunction_Policies `json:"Policies,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
@@ -148,8 +148,6 @@ func (t *Template) GetAllAWSServerlessFunctionResources() map[string]AWSServerle
 						result := &AWSServerlessFunction{}
 						if err := result.UnmarshalJSON(b); err == nil {
 							results[name] = *result
-						} else {
-							panic(err)
 						}
 					}
 				}

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_BufferingHints AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.BufferingHints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
 type AWSKinesisFirehoseDeliveryStream_BufferingHints struct {
@@ -18,4 +22,8 @@ type AWSKinesisFirehoseDeliveryStream_BufferingHints struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_BufferingHints) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.BufferingHints"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_BufferingHints) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

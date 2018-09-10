@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2SecurityGroup_Ingress AWS CloudFormation Resource (AWS::EC2::SecurityGroup.Ingress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
 type AWSEC2SecurityGroup_Ingress struct {
@@ -53,4 +57,8 @@ type AWSEC2SecurityGroup_Ingress struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2SecurityGroup_Ingress) AWSCloudFormationType() string {
 	return "AWS::EC2::SecurityGroup.Ingress"
+}
+
+func (r *AWSEC2SecurityGroup_Ingress) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

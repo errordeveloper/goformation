@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSSageMakerEndpointResources() map[string]AWSSageMaker
 				if resType == "AWS::SageMaker::Endpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSageMakerEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSSageMakerEndpointWithName(name string) (AWSSageMakerEnd
 				if resType == "AWS::SageMaker::Endpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSageMakerEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSageMakerEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

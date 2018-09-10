@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSEC2VPCEndpointResources() map[string]AWSEC2VPCEndpoi
 				if resType == "AWS::EC2::VPCEndpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VPCEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSEC2VPCEndpointWithName(name string) (AWSEC2VPCEndpoint,
 				if resType == "AWS::EC2::VPCEndpoint" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VPCEndpoint
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VPCEndpoint{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -100,9 +100,9 @@ func (t *Template) GetAllAWSEventsRuleResources() map[string]AWSEventsRule {
 				if resType == "AWS::Events::Rule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEventsRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEventsRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -127,9 +127,9 @@ func (t *Template) GetAWSEventsRuleWithName(name string) (AWSEventsRule, error) 
 				if resType == "AWS::Events::Rule" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEventsRule
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEventsRule{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

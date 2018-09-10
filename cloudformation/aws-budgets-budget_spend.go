@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBudgetsBudget_Spend AWS CloudFormation Resource (AWS::Budgets::Budget.Spend)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html
 type AWSBudgetsBudget_Spend struct {
@@ -18,4 +22,8 @@ type AWSBudgetsBudget_Spend struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBudgetsBudget_Spend) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.Spend"
+}
+
+func (r *AWSBudgetsBudget_Spend) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

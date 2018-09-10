@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2SpotFleet_EbsBlockDevice AWS CloudFormation Resource (AWS::EC2::SpotFleet.EbsBlockDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html
 type AWSEC2SpotFleet_EbsBlockDevice struct {
@@ -38,4 +42,8 @@ type AWSEC2SpotFleet_EbsBlockDevice struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2SpotFleet_EbsBlockDevice) AWSCloudFormationType() string {
 	return "AWS::EC2::SpotFleet.EbsBlockDevice"
+}
+
+func (r *AWSEC2SpotFleet_EbsBlockDevice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

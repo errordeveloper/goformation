@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_S3Event AWS CloudFormation Resource (AWS::Serverless::Function.S3Event)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
 type AWSServerlessFunction_S3Event struct {
@@ -12,7 +16,7 @@ type AWSServerlessFunction_S3Event struct {
 	// Events AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
-	Events *Value `json:"Events,omitempty"`
+	Events *AWSServerlessFunction_Events `json:"Events,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
@@ -23,4 +27,8 @@ type AWSServerlessFunction_S3Event struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_S3Event) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.S3Event"
+}
+
+func (r *AWSServerlessFunction_S3Event) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

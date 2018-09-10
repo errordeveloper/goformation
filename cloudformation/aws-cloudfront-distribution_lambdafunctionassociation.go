@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_LambdaFunctionAssociation AWS CloudFormation Resource (AWS::CloudFront::Distribution.LambdaFunctionAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html
 type AWSCloudFrontDistribution_LambdaFunctionAssociation struct {
@@ -18,4 +22,8 @@ type AWSCloudFrontDistribution_LambdaFunctionAssociation struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_LambdaFunctionAssociation) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.LambdaFunctionAssociation"
+}
+
+func (r *AWSCloudFrontDistribution_LambdaFunctionAssociation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

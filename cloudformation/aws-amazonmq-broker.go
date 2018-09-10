@@ -130,9 +130,9 @@ func (t *Template) GetAllAWSAmazonMQBrokerResources() map[string]AWSAmazonMQBrok
 				if resType == "AWS::AmazonMQ::Broker" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAmazonMQBroker
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAmazonMQBroker{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -157,9 +157,9 @@ func (t *Template) GetAWSAmazonMQBrokerWithName(name string) (AWSAmazonMQBroker,
 				if resType == "AWS::AmazonMQ::Broker" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAmazonMQBroker
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAmazonMQBroker{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

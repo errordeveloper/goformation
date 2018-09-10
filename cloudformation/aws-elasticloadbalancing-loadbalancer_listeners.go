@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_Listeners AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.Listeners)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html
 type AWSElasticLoadBalancingLoadBalancer_Listeners struct {
@@ -38,4 +42,8 @@ type AWSElasticLoadBalancingLoadBalancer_Listeners struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_Listeners) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.Listeners"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_Listeners) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

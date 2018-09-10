@@ -1,6 +1,8 @@
 package cloudformation
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 // AWSGameLiftBuild_S3Location AWS CloudFormation Resource (AWS::GameLift::Build.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html

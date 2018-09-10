@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGluePartition_Order AWS CloudFormation Resource (AWS::Glue::Partition.Order)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html
 type AWSGluePartition_Order struct {
@@ -18,4 +22,8 @@ type AWSGluePartition_Order struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGluePartition_Order) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.Order"
+}
+
+func (r *AWSGluePartition_Order) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

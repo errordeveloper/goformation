@@ -125,9 +125,9 @@ func (t *Template) GetAllAWSSQSQueueResources() map[string]AWSSQSQueue {
 				if resType == "AWS::SQS::Queue" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSQSQueue
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSSQSQueue{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -152,9 +152,9 @@ func (t *Template) GetAWSSQSQueueWithName(name string) (AWSSQSQueue, error) {
 				if resType == "AWS::SQS::Queue" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSSQSQueue
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSSQSQueue{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

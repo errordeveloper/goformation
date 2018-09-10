@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDMSEndpoint_S3Settings AWS CloudFormation Resource (AWS::DMS::Endpoint.S3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html
 type AWSDMSEndpoint_S3Settings struct {
@@ -43,4 +47,8 @@ type AWSDMSEndpoint_S3Settings struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDMSEndpoint_S3Settings) AWSCloudFormationType() string {
 	return "AWS::DMS::Endpoint.S3Settings"
+}
+
+func (r *AWSDMSEndpoint_S3Settings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

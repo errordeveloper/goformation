@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSageMakerModel_ContainerDefinition AWS CloudFormation Resource (AWS::SageMaker::Model.ContainerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html
 type AWSSageMakerModel_ContainerDefinition struct {
@@ -28,4 +32,8 @@ type AWSSageMakerModel_ContainerDefinition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSageMakerModel_ContainerDefinition) AWSCloudFormationType() string {
 	return "AWS::SageMaker::Model.ContainerDefinition"
+}
+
+func (r *AWSSageMakerModel_ContainerDefinition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

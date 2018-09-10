@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSDataPipelinePipeline_PipelineObject AWS CloudFormation Resource (AWS::DataPipeline::Pipeline.PipelineObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html
 type AWSDataPipelinePipeline_PipelineObject struct {
@@ -23,4 +27,8 @@ type AWSDataPipelinePipeline_PipelineObject struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSDataPipelinePipeline_PipelineObject) AWSCloudFormationType() string {
 	return "AWS::DataPipeline::Pipeline.PipelineObject"
+}
+
+func (r *AWSDataPipelinePipeline_PipelineObject) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSService_PlacementStrategy AWS CloudFormation Resource (AWS::ECS::Service.PlacementStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementstrategy.html
 type AWSECSService_PlacementStrategy struct {
@@ -18,4 +22,8 @@ type AWSECSService_PlacementStrategy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSService_PlacementStrategy) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.PlacementStrategy"
+}
+
+func (r *AWSECSService_PlacementStrategy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

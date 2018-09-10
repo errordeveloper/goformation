@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontStreamingDistribution_S3Origin AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.S3Origin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html
 type AWSCloudFrontStreamingDistribution_S3Origin struct {
@@ -18,4 +22,8 @@ type AWSCloudFrontStreamingDistribution_S3Origin struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontStreamingDistribution_S3Origin) AWSCloudFormationType() string {
 	return "AWS::CloudFront::StreamingDistribution.S3Origin"
+}
+
+func (r *AWSCloudFrontStreamingDistribution_S3Origin) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

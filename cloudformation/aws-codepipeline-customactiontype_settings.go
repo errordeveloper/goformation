@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelineCustomActionType_Settings AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType.Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html
 type AWSCodePipelineCustomActionType_Settings struct {
@@ -28,4 +32,8 @@ type AWSCodePipelineCustomActionType_Settings struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelineCustomActionType_Settings) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::CustomActionType.Settings"
+}
+
+func (r *AWSCodePipelineCustomActionType_Settings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

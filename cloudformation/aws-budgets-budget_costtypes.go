@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSBudgetsBudget_CostTypes AWS CloudFormation Resource (AWS::Budgets::Budget.CostTypes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html
 type AWSBudgetsBudget_CostTypes struct {
@@ -63,4 +67,8 @@ type AWSBudgetsBudget_CostTypes struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSBudgetsBudget_CostTypes) AWSCloudFormationType() string {
 	return "AWS::Budgets::Budget.CostTypes"
+}
+
+func (r *AWSBudgetsBudget_CostTypes) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

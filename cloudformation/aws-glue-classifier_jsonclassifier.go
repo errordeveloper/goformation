@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueClassifier_JsonClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.JsonClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
 type AWSGlueClassifier_JsonClassifier struct {
@@ -18,4 +22,8 @@ type AWSGlueClassifier_JsonClassifier struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueClassifier_JsonClassifier) AWSCloudFormationType() string {
 	return "AWS::Glue::Classifier.JsonClassifier"
+}
+
+func (r *AWSGlueClassifier_JsonClassifier) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

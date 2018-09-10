@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_LinuxParameters AWS CloudFormation Resource (AWS::ECS::TaskDefinition.LinuxParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html
 type AWSECSTaskDefinition_LinuxParameters struct {
@@ -23,4 +27,8 @@ type AWSECSTaskDefinition_LinuxParameters struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_LinuxParameters) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.LinuxParameters"
+}
+
+func (r *AWSECSTaskDefinition_LinuxParameters) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTrigger_Action AWS CloudFormation Resource (AWS::Glue::Trigger.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html
 type AWSGlueTrigger_Action struct {
@@ -18,4 +22,8 @@ type AWSGlueTrigger_Action struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTrigger_Action) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Action"
+}
+
+func (r *AWSGlueTrigger_Action) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

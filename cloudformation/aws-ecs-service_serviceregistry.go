@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSService_ServiceRegistry AWS CloudFormation Resource (AWS::ECS::Service.ServiceRegistry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html
 type AWSECSService_ServiceRegistry struct {
@@ -18,4 +22,8 @@ type AWSECSService_ServiceRegistry struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSService_ServiceRegistry) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.ServiceRegistry"
+}
+
+func (r *AWSECSService_ServiceRegistry) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

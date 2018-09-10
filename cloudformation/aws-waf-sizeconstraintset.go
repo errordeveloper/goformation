@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSWAFSizeConstraintSetResources() map[string]AWSWAFSiz
 				if resType == "AWS::WAF::SizeConstraintSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFSizeConstraintSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWAFSizeConstraintSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSWAFSizeConstraintSetWithName(name string) (AWSWAFSizeCo
 				if resType == "AWS::WAF::SizeConstraintSet" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWAFSizeConstraintSet
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWAFSizeConstraintSet{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

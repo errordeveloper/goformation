@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAmazonMQBroker_MaintenanceWindow AWS CloudFormation Resource (AWS::AmazonMQ::Broker.MaintenanceWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html
 type AWSAmazonMQBroker_MaintenanceWindow struct {
@@ -23,4 +27,8 @@ type AWSAmazonMQBroker_MaintenanceWindow struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAmazonMQBroker_MaintenanceWindow) AWSCloudFormationType() string {
 	return "AWS::AmazonMQ::Broker.MaintenanceWindow"
+}
+
+func (r *AWSAmazonMQBroker_MaintenanceWindow) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -135,9 +135,9 @@ func (t *Template) GetAllAWSNeptuneDBClusterResources() map[string]AWSNeptuneDBC
 				if resType == "AWS::Neptune::DBCluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSNeptuneDBCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -162,9 +162,9 @@ func (t *Template) GetAWSNeptuneDBClusterWithName(name string) (AWSNeptuneDBClus
 				if resType == "AWS::Neptune::DBCluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSNeptuneDBCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

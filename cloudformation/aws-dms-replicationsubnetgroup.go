@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSDMSReplicationSubnetGroupResources() map[string]AWSD
 				if resType == "AWS::DMS::ReplicationSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSReplicationSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSDMSReplicationSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSDMSReplicationSubnetGroupWithName(name string) (AWSDMSR
 				if resType == "AWS::DMS::ReplicationSubnetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSReplicationSubnetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSDMSReplicationSubnetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

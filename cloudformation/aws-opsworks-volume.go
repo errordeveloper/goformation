@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSOpsWorksVolumeResources() map[string]AWSOpsWorksVolu
 				if resType == "AWS::OpsWorks::Volume" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksVolume
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSOpsWorksVolume{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSOpsWorksVolumeWithName(name string) (AWSOpsWorksVolume,
 				if resType == "AWS::OpsWorks::Volume" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksVolume
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSOpsWorksVolume{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_DynamoDBAction AWS CloudFormation Resource (AWS::IoT::TopicRule.DynamoDBAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html
 type AWSIoTTopicRule_DynamoDBAction struct {
@@ -53,4 +57,8 @@ type AWSIoTTopicRule_DynamoDBAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_DynamoDBAction) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.DynamoDBAction"
+}
+
+func (r *AWSIoTTopicRule_DynamoDBAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

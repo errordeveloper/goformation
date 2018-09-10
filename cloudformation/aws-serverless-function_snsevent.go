@@ -1,6 +1,8 @@
 package cloudformation
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 // AWSServerlessFunction_SNSEvent AWS CloudFormation Resource (AWS::Serverless::Function.SNSEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sns

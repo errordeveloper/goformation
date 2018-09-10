@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_CustomErrorResponse AWS CloudFormation Resource (AWS::CloudFront::Distribution.CustomErrorResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
 type AWSCloudFrontDistribution_CustomErrorResponse struct {
@@ -28,4 +32,8 @@ type AWSCloudFrontDistribution_CustomErrorResponse struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_CustomErrorResponse) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.CustomErrorResponse"
+}
+
+func (r *AWSCloudFrontDistribution_CustomErrorResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

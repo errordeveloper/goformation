@@ -160,9 +160,9 @@ func (t *Template) GetAllAWSOpsWorksLayerResources() map[string]AWSOpsWorksLayer
 				if resType == "AWS::OpsWorks::Layer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksLayer
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSOpsWorksLayer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -187,9 +187,9 @@ func (t *Template) GetAWSOpsWorksLayerWithName(name string) (AWSOpsWorksLayer, e
 				if resType == "AWS::OpsWorks::Layer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksLayer
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSOpsWorksLayer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

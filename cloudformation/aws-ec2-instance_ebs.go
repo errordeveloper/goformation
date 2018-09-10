@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2Instance_Ebs AWS CloudFormation Resource (AWS::EC2::Instance.Ebs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html
 type AWSEC2Instance_Ebs struct {
@@ -38,4 +42,8 @@ type AWSEC2Instance_Ebs struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2Instance_Ebs) AWSCloudFormationType() string {
 	return "AWS::EC2::Instance.Ebs"
+}
+
+func (r *AWSEC2Instance_Ebs) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

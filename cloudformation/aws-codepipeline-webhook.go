@@ -105,9 +105,9 @@ func (t *Template) GetAllAWSCodePipelineWebhookResources() map[string]AWSCodePip
 				if resType == "AWS::CodePipeline::Webhook" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelineWebhook
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodePipelineWebhook{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -132,9 +132,9 @@ func (t *Template) GetAWSCodePipelineWebhookWithName(name string) (AWSCodePipeli
 				if resType == "AWS::CodePipeline::Webhook" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodePipelineWebhook
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodePipelineWebhook{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

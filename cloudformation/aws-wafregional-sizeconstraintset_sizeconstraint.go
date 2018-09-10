@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSWAFRegionalSizeConstraintSet_SizeConstraint AWS CloudFormation Resource (AWS::WAFRegional::SizeConstraintSet.SizeConstraint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html
 type AWSWAFRegionalSizeConstraintSet_SizeConstraint struct {
@@ -28,4 +32,8 @@ type AWSWAFRegionalSizeConstraintSet_SizeConstraint struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSWAFRegionalSizeConstraintSet_SizeConstraint) AWSCloudFormationType() string {
 	return "AWS::WAFRegional::SizeConstraintSet.SizeConstraint"
+}
+
+func (r *AWSWAFRegionalSizeConstraintSet_SizeConstraint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

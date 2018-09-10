@@ -120,9 +120,9 @@ func (t *Template) GetAllAWSNeptuneDBInstanceResources() map[string]AWSNeptuneDB
 				if resType == "AWS::Neptune::DBInstance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSNeptuneDBInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -147,9 +147,9 @@ func (t *Template) GetAWSNeptuneDBInstanceWithName(name string) (AWSNeptuneDBIns
 				if resType == "AWS::Neptune::DBInstance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSNeptuneDBInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSNeptuneDBInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

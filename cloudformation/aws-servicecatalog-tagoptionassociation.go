@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSServiceCatalogTagOptionAssociationResources() map[st
 				if resType == "AWS::ServiceCatalog::TagOptionAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogTagOptionAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceCatalogTagOptionAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSServiceCatalogTagOptionAssociationWithName(name string)
 				if resType == "AWS::ServiceCatalog::TagOptionAssociation" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceCatalogTagOptionAssociation
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceCatalogTagOptionAssociation{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

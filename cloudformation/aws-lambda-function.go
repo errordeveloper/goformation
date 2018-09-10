@@ -140,9 +140,9 @@ func (t *Template) GetAllAWSLambdaFunctionResources() map[string]AWSLambdaFuncti
 				if resType == "AWS::Lambda::Function" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaFunction
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLambdaFunction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -167,9 +167,9 @@ func (t *Template) GetAWSLambdaFunctionWithName(name string) (AWSLambdaFunction,
 				if resType == "AWS::Lambda::Function" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaFunction
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLambdaFunction{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

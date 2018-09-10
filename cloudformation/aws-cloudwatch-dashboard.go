@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSCloudWatchDashboardResources() map[string]AWSCloudWa
 				if resType == "AWS::CloudWatch::Dashboard" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloudWatchDashboard
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCloudWatchDashboard{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSCloudWatchDashboardWithName(name string) (AWSCloudWatch
 				if resType == "AWS::CloudWatch::Dashboard" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloudWatchDashboard
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCloudWatchDashboard{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

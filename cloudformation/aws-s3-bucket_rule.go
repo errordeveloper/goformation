@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_Rule AWS CloudFormation Resource (AWS::S3::Bucket.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
 type AWSS3Bucket_Rule struct {
@@ -68,4 +72,8 @@ type AWSS3Bucket_Rule struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_Rule) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.Rule"
+}
+
+func (r *AWSS3Bucket_Rule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

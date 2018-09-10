@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSLambdaAliasResources() map[string]AWSLambdaAlias {
 				if resType == "AWS::Lambda::Alias" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaAlias
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSLambdaAlias{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSLambdaAliasWithName(name string) (AWSLambdaAlias, error
 				if resType == "AWS::Lambda::Alias" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSLambdaAlias
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSLambdaAlias{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

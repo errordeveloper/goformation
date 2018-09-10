@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSEC2VolumeAttachmentResources() map[string]AWSEC2Volu
 				if resType == "AWS::EC2::VolumeAttachment" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VolumeAttachment
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2VolumeAttachment{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSEC2VolumeAttachmentWithName(name string) (AWSEC2VolumeA
 				if resType == "AWS::EC2::VolumeAttachment" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2VolumeAttachment
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2VolumeAttachment{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

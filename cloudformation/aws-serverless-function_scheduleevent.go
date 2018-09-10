@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSServerlessFunction_ScheduleEvent AWS CloudFormation Resource (AWS::Serverless::Function.ScheduleEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
 type AWSServerlessFunction_ScheduleEvent struct {
@@ -18,4 +22,8 @@ type AWSServerlessFunction_ScheduleEvent struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSServerlessFunction_ScheduleEvent) AWSCloudFormationType() string {
 	return "AWS::Serverless::Function.ScheduleEvent"
+}
+
+func (r *AWSServerlessFunction_ScheduleEvent) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

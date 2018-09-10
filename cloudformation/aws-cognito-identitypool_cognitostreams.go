@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoIdentityPool_CognitoStreams AWS CloudFormation Resource (AWS::Cognito::IdentityPool.CognitoStreams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html
 type AWSCognitoIdentityPool_CognitoStreams struct {
@@ -23,4 +27,8 @@ type AWSCognitoIdentityPool_CognitoStreams struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoIdentityPool_CognitoStreams) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.CognitoStreams"
+}
+
+func (r *AWSCognitoIdentityPool_CognitoStreams) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

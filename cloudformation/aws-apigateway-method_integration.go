@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApiGatewayMethod_Integration AWS CloudFormation Resource (AWS::ApiGateway::Method.Integration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html
 type AWSApiGatewayMethod_Integration struct {
@@ -63,4 +67,8 @@ type AWSApiGatewayMethod_Integration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApiGatewayMethod_Integration) AWSCloudFormationType() string {
 	return "AWS::ApiGateway::Method.Integration"
+}
+
+func (r *AWSApiGatewayMethod_Integration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,6 +1,8 @@
 package cloudformation
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 // AWSCodeDeployDeploymentGroup_S3Location AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.S3Location)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html

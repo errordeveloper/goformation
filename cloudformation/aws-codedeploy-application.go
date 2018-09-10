@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSCodeDeployApplicationResources() map[string]AWSCodeD
 				if resType == "AWS::CodeDeploy::Application" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeDeployApplication
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodeDeployApplication{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSCodeDeployApplicationWithName(name string) (AWSCodeDepl
 				if resType == "AWS::CodeDeploy::Application" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeDeployApplication
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodeDeployApplication{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.StepScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html
 type AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration struct {
@@ -33,4 +37,8 @@ type AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration struc
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration) AWSCloudFormationType() string {
 	return "AWS::ApplicationAutoScaling::ScalingPolicy.StepScalingPolicyConfiguration"
+}
+
+func (r *AWSApplicationAutoScalingScalingPolicy_StepScalingPolicyConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

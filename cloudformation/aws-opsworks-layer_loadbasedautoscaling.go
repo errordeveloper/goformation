@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksLayer_LoadBasedAutoScaling AWS CloudFormation Resource (AWS::OpsWorks::Layer.LoadBasedAutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html
 type AWSOpsWorksLayer_LoadBasedAutoScaling struct {
@@ -23,4 +27,8 @@ type AWSOpsWorksLayer_LoadBasedAutoScaling struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksLayer_LoadBasedAutoScaling) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Layer.LoadBasedAutoScaling"
+}
+
+func (r *AWSOpsWorksLayer_LoadBasedAutoScaling) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

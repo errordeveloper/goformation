@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAppSyncGraphQLApi_OpenIDConnectConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.OpenIDConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html
 type AWSAppSyncGraphQLApi_OpenIDConnectConfig struct {
@@ -28,4 +32,8 @@ type AWSAppSyncGraphQLApi_OpenIDConnectConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAppSyncGraphQLApi_OpenIDConnectConfig) AWSCloudFormationType() string {
 	return "AWS::AppSync::GraphQLApi.OpenIDConnectConfig"
+}
+
+func (r *AWSAppSyncGraphQLApi_OpenIDConnectConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

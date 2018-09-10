@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEventsRule_InputTransformer AWS CloudFormation Resource (AWS::Events::Rule.InputTransformer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-inputtransformer.html
 type AWSEventsRule_InputTransformer struct {
@@ -18,4 +22,8 @@ type AWSEventsRule_InputTransformer struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEventsRule_InputTransformer) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.InputTransformer"
+}
+
+func (r *AWSEventsRule_InputTransformer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

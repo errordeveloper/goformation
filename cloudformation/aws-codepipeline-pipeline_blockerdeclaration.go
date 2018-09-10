@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodePipelinePipeline_BlockerDeclaration AWS CloudFormation Resource (AWS::CodePipeline::Pipeline.BlockerDeclaration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html
 type AWSCodePipelinePipeline_BlockerDeclaration struct {
@@ -18,4 +22,8 @@ type AWSCodePipelinePipeline_BlockerDeclaration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodePipelinePipeline_BlockerDeclaration) AWSCloudFormationType() string {
 	return "AWS::CodePipeline::Pipeline.BlockerDeclaration"
+}
+
+func (r *AWSCodePipelinePipeline_BlockerDeclaration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

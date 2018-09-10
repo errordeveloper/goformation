@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSElasticLoadBalancingLoadBalancer_ConnectionSettings AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
 type AWSElasticLoadBalancingLoadBalancer_ConnectionSettings struct {
@@ -13,4 +17,8 @@ type AWSElasticLoadBalancingLoadBalancer_ConnectionSettings struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSElasticLoadBalancingLoadBalancer_ConnectionSettings) AWSCloudFormationType() string {
 	return "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
+}
+
+func (r *AWSElasticLoadBalancingLoadBalancer_ConnectionSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

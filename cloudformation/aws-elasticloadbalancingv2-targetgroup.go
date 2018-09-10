@@ -145,9 +145,9 @@ func (t *Template) GetAllAWSElasticLoadBalancingV2TargetGroupResources() map[str
 				if resType == "AWS::ElasticLoadBalancingV2::TargetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingV2TargetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElasticLoadBalancingV2TargetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -172,9 +172,9 @@ func (t *Template) GetAWSElasticLoadBalancingV2TargetGroupWithName(name string) 
 				if resType == "AWS::ElasticLoadBalancingV2::TargetGroup" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingV2TargetGroup
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElasticLoadBalancingV2TargetGroup{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

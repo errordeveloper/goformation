@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSIAMServiceLinkedRoleResources() map[string]AWSIAMSer
 				if resType == "AWS::IAM::ServiceLinkedRole" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMServiceLinkedRole
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSIAMServiceLinkedRole{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSIAMServiceLinkedRoleWithName(name string) (AWSIAMServic
 				if resType == "AWS::IAM::ServiceLinkedRole" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSIAMServiceLinkedRole
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSIAMServiceLinkedRole{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -110,9 +110,9 @@ func (t *Template) GetAllAWSEC2NetworkAclEntryResources() map[string]AWSEC2Netwo
 				if resType == "AWS::EC2::NetworkAclEntry" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NetworkAclEntry
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2NetworkAclEntry{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -137,9 +137,9 @@ func (t *Template) GetAWSEC2NetworkAclEntryWithName(name string) (AWSEC2NetworkA
 				if resType == "AWS::EC2::NetworkAclEntry" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NetworkAclEntry
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2NetworkAclEntry{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

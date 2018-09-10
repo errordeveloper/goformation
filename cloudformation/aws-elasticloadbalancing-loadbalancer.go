@@ -145,9 +145,9 @@ func (t *Template) GetAllAWSElasticLoadBalancingLoadBalancerResources() map[stri
 				if resType == "AWS::ElasticLoadBalancing::LoadBalancer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingLoadBalancer
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSElasticLoadBalancingLoadBalancer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -172,9 +172,9 @@ func (t *Template) GetAWSElasticLoadBalancingLoadBalancerWithName(name string) (
 				if resType == "AWS::ElasticLoadBalancing::LoadBalancer" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSElasticLoadBalancingLoadBalancer
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSElasticLoadBalancingLoadBalancer{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

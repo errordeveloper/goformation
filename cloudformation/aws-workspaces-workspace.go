@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSWorkSpacesWorkspaceResources() map[string]AWSWorkSpa
 				if resType == "AWS::WorkSpaces::Workspace" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWorkSpacesWorkspace
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSWorkSpacesWorkspace{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSWorkSpacesWorkspaceWithName(name string) (AWSWorkSpaces
 				if resType == "AWS::WorkSpaces::Workspace" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSWorkSpacesWorkspace
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSWorkSpacesWorkspace{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

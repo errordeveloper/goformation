@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSS3Bucket_TagFilter AWS CloudFormation Resource (AWS::S3::Bucket.TagFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html
 type AWSS3Bucket_TagFilter struct {
@@ -18,4 +22,8 @@ type AWSS3Bucket_TagFilter struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSS3Bucket_TagFilter) AWSCloudFormationType() string {
 	return "AWS::S3::Bucket.TagFilter"
+}
+
+func (r *AWSS3Bucket_TagFilter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

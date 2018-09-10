@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_S3DestinationConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html
 type AWSKinesisFirehoseDeliveryStream_S3DestinationConfiguration struct {
@@ -43,4 +47,8 @@ type AWSKinesisFirehoseDeliveryStream_S3DestinationConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_S3DestinationConfiguration) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_S3DestinationConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

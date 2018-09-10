@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEventsRule_Target AWS CloudFormation Resource (AWS::Events::Rule.Target)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
 type AWSEventsRule_Target struct {
@@ -53,4 +57,8 @@ type AWSEventsRule_Target struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEventsRule_Target) AWSCloudFormationType() string {
 	return "AWS::Events::Rule.Target"
+}
+
+func (r *AWSEventsRule_Target) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

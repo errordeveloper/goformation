@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2LaunchTemplate_Placement AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.Placement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
 type AWSEC2LaunchTemplate_Placement struct {
@@ -33,4 +37,8 @@ type AWSEC2LaunchTemplate_Placement struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2LaunchTemplate_Placement) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.Placement"
+}
+
+func (r *AWSEC2LaunchTemplate_Placement) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

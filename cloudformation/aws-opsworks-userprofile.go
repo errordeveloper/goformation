@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSOpsWorksUserProfileResources() map[string]AWSOpsWork
 				if resType == "AWS::OpsWorks::UserProfile" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksUserProfile
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSOpsWorksUserProfile{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSOpsWorksUserProfileWithName(name string) (AWSOpsWorksUs
 				if resType == "AWS::OpsWorks::UserProfile" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksUserProfile
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSOpsWorksUserProfile{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

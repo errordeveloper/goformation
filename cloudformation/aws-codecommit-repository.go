@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSCodeCommitRepositoryResources() map[string]AWSCodeCo
 				if resType == "AWS::CodeCommit::Repository" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeCommitRepository
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCodeCommitRepository{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSCodeCommitRepositoryWithName(name string) (AWSCodeCommi
 				if resType == "AWS::CodeCommit::Repository" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCodeCommitRepository
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCodeCommitRepository{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

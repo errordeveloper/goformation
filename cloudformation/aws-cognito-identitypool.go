@@ -115,9 +115,9 @@ func (t *Template) GetAllAWSCognitoIdentityPoolResources() map[string]AWSCognito
 				if resType == "AWS::Cognito::IdentityPool" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCognitoIdentityPool
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCognitoIdentityPool{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -142,9 +142,9 @@ func (t *Template) GetAWSCognitoIdentityPoolWithName(name string) (AWSCognitoIde
 				if resType == "AWS::Cognito::IdentityPool" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCognitoIdentityPool
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCognitoIdentityPool{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

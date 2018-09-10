@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECRRepository_LifecyclePolicy AWS CloudFormation Resource (AWS::ECR::Repository.LifecyclePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html
 type AWSECRRepository_LifecyclePolicy struct {
@@ -18,4 +22,8 @@ type AWSECRRepository_LifecyclePolicy struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECRRepository_LifecyclePolicy) AWSCloudFormationType() string {
 	return "AWS::ECR::Repository.LifecyclePolicy"
+}
+
+func (r *AWSECRRepository_LifecyclePolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

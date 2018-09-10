@@ -85,9 +85,9 @@ func (t *Template) GetAllAWSBatchJobQueueResources() map[string]AWSBatchJobQueue
 				if resType == "AWS::Batch::JobQueue" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSBatchJobQueue
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSBatchJobQueue{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -112,9 +112,9 @@ func (t *Template) GetAWSBatchJobQueueWithName(name string) (AWSBatchJobQueue, e
 				if resType == "AWS::Batch::JobQueue" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSBatchJobQueue
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSBatchJobQueue{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

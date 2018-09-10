@@ -210,9 +210,9 @@ func (t *Template) GetAllAWSRedshiftClusterResources() map[string]AWSRedshiftClu
 				if resType == "AWS::Redshift::Cluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRedshiftCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -237,9 +237,9 @@ func (t *Template) GetAWSRedshiftClusterWithName(name string) (AWSRedshiftCluste
 				if resType == "AWS::Redshift::Cluster" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRedshiftCluster
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRedshiftCluster{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

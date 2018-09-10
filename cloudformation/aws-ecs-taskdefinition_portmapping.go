@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSTaskDefinition_PortMapping AWS CloudFormation Resource (AWS::ECS::TaskDefinition.PortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html
 type AWSECSTaskDefinition_PortMapping struct {
@@ -23,4 +27,8 @@ type AWSECSTaskDefinition_PortMapping struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSTaskDefinition_PortMapping) AWSCloudFormationType() string {
 	return "AWS::ECS::TaskDefinition.PortMapping"
+}
+
+func (r *AWSECSTaskDefinition_PortMapping) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

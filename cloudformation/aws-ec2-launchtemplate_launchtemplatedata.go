@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEC2LaunchTemplate_LaunchTemplateData AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.LaunchTemplateData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
 type AWSEC2LaunchTemplate_LaunchTemplateData struct {
@@ -108,4 +112,8 @@ type AWSEC2LaunchTemplate_LaunchTemplateData struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEC2LaunchTemplate_LaunchTemplateData) AWSCloudFormationType() string {
 	return "AWS::EC2::LaunchTemplate.LaunchTemplateData"
+}
+
+func (r *AWSEC2LaunchTemplate_LaunchTemplateData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

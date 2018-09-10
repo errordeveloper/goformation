@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTable_Column AWS CloudFormation Resource (AWS::Glue::Table.Column)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html
 type AWSGlueTable_Column struct {
@@ -23,4 +27,8 @@ type AWSGlueTable_Column struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTable_Column) AWSCloudFormationType() string {
 	return "AWS::Glue::Table.Column"
+}
+
+func (r *AWSGlueTable_Column) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

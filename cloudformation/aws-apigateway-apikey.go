@@ -95,9 +95,9 @@ func (t *Template) GetAllAWSApiGatewayApiKeyResources() map[string]AWSApiGateway
 				if resType == "AWS::ApiGateway::ApiKey" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayApiKey
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSApiGatewayApiKey{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -122,9 +122,9 @@ func (t *Template) GetAWSApiGatewayApiKeyWithName(name string) (AWSApiGatewayApi
 				if resType == "AWS::ApiGateway::ApiKey" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSApiGatewayApiKey
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSApiGatewayApiKey{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

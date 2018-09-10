@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAutoScalingPlansScalingPlan_TargetTrackingConfiguration AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html
 type AWSAutoScalingPlansScalingPlan_TargetTrackingConfiguration struct {
@@ -43,4 +47,8 @@ type AWSAutoScalingPlansScalingPlan_TargetTrackingConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAutoScalingPlansScalingPlan_TargetTrackingConfiguration) AWSCloudFormationType() string {
 	return "AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration"
+}
+
+func (r *AWSAutoScalingPlansScalingPlan_TargetTrackingConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

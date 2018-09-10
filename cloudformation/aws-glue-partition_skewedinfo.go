@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGluePartition_SkewedInfo AWS CloudFormation Resource (AWS::Glue::Partition.SkewedInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-skewedinfo.html
 type AWSGluePartition_SkewedInfo struct {
@@ -23,4 +27,8 @@ type AWSGluePartition_SkewedInfo struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGluePartition_SkewedInfo) AWSCloudFormationType() string {
 	return "AWS::Glue::Partition.SkewedInfo"
+}
+
+func (r *AWSGluePartition_SkewedInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

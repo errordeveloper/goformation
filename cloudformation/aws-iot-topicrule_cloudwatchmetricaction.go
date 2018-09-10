@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSIoTTopicRule_CloudwatchMetricAction AWS CloudFormation Resource (AWS::IoT::TopicRule.CloudwatchMetricAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html
 type AWSIoTTopicRule_CloudwatchMetricAction struct {
@@ -38,4 +42,8 @@ type AWSIoTTopicRule_CloudwatchMetricAction struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSIoTTopicRule_CloudwatchMetricAction) AWSCloudFormationType() string {
 	return "AWS::IoT::TopicRule.CloudwatchMetricAction"
+}
+
+func (r *AWSIoTTopicRule_CloudwatchMetricAction) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

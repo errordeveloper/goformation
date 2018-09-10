@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoIdentityPool_CognitoIdentityProvider AWS CloudFormation Resource (AWS::Cognito::IdentityPool.CognitoIdentityProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html
 type AWSCognitoIdentityPool_CognitoIdentityProvider struct {
@@ -23,4 +27,8 @@ type AWSCognitoIdentityPool_CognitoIdentityProvider struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoIdentityPool_CognitoIdentityProvider) AWSCloudFormationType() string {
 	return "AWS::Cognito::IdentityPool.CognitoIdentityProvider"
+}
+
+func (r *AWSCognitoIdentityPool_CognitoIdentityProvider) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

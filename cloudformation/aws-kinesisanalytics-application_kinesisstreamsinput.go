@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisAnalyticsApplication_KinesisStreamsInput AWS CloudFormation Resource (AWS::KinesisAnalytics::Application.KinesisStreamsInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html
 type AWSKinesisAnalyticsApplication_KinesisStreamsInput struct {
@@ -18,4 +22,8 @@ type AWSKinesisAnalyticsApplication_KinesisStreamsInput struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisAnalyticsApplication_KinesisStreamsInput) AWSCloudFormationType() string {
 	return "AWS::KinesisAnalytics::Application.KinesisStreamsInput"
+}
+
+func (r *AWSKinesisAnalyticsApplication_KinesisStreamsInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

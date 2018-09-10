@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksInstance_EbsBlockDevice AWS CloudFormation Resource (AWS::OpsWorks::Instance.EbsBlockDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html
 type AWSOpsWorksInstance_EbsBlockDevice struct {
@@ -33,4 +37,8 @@ type AWSOpsWorksInstance_EbsBlockDevice struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksInstance_EbsBlockDevice) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.EbsBlockDevice"
+}
+
+func (r *AWSOpsWorksInstance_EbsBlockDevice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSCloudFormationStackResources() map[string]AWSCloudFo
 				if resType == "AWS::CloudFormation::Stack" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloudFormationStack
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSCloudFormationStack{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSCloudFormationStackWithName(name string) (AWSCloudForma
 				if resType == "AWS::CloudFormation::Stack" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSCloudFormationStack
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSCloudFormationStack{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

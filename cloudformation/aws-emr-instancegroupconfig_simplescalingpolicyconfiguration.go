@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.SimpleScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html
 type AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration struct {
@@ -23,4 +27,8 @@ type AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration) AWSCloudFormationType() string {
 	return "AWS::EMR::InstanceGroupConfig.SimpleScalingPolicyConfiguration"
+}
+
+func (r *AWSEMRInstanceGroupConfig_SimpleScalingPolicyConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

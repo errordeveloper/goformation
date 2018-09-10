@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSServiceDiscoveryInstanceResources() map[string]AWSSe
 				if resType == "AWS::ServiceDiscovery::Instance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceDiscoveryInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSServiceDiscoveryInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSServiceDiscoveryInstanceWithName(name string) (AWSServi
 				if resType == "AWS::ServiceDiscovery::Instance" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSServiceDiscoveryInstance
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSServiceDiscoveryInstance{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

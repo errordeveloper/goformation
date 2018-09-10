@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCertificateManagerCertificate_DomainValidationOption AWS CloudFormation Resource (AWS::CertificateManager::Certificate.DomainValidationOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html
 type AWSCertificateManagerCertificate_DomainValidationOption struct {
@@ -18,4 +22,8 @@ type AWSCertificateManagerCertificate_DomainValidationOption struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCertificateManagerCertificate_DomainValidationOption) AWSCloudFormationType() string {
 	return "AWS::CertificateManager::Certificate.DomainValidationOption"
+}
+
+func (r *AWSCertificateManagerCertificate_DomainValidationOption) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

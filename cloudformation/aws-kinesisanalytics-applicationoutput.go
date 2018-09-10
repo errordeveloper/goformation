@@ -75,9 +75,9 @@ func (t *Template) GetAllAWSKinesisAnalyticsApplicationOutputResources() map[str
 				if resType == "AWS::KinesisAnalytics::ApplicationOutput" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSKinesisAnalyticsApplicationOutput
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSKinesisAnalyticsApplicationOutput{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -102,9 +102,9 @@ func (t *Template) GetAWSKinesisAnalyticsApplicationOutputWithName(name string) 
 				if resType == "AWS::KinesisAnalytics::ApplicationOutput" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSKinesisAnalyticsApplicationOutput
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSKinesisAnalyticsApplicationOutput{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

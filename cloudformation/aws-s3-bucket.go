@@ -140,9 +140,9 @@ func (t *Template) GetAllAWSS3BucketResources() map[string]AWSS3Bucket {
 				if resType == "AWS::S3::Bucket" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSS3Bucket
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSS3Bucket{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -167,9 +167,9 @@ func (t *Template) GetAWSS3BucketWithName(name string) (AWSS3Bucket, error) {
 				if resType == "AWS::S3::Bucket" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSS3Bucket
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSS3Bucket{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

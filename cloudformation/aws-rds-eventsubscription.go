@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSRDSEventSubscriptionResources() map[string]AWSRDSEve
 				if resType == "AWS::RDS::EventSubscription" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSEventSubscription
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSRDSEventSubscription{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSRDSEventSubscriptionWithName(name string) (AWSRDSEventS
 				if resType == "AWS::RDS::EventSubscription" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSRDSEventSubscription
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSRDSEventSubscription{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

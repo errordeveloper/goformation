@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSDMSCertificateResources() map[string]AWSDMSCertifica
 				if resType == "AWS::DMS::Certificate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSCertificate
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSDMSCertificate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSDMSCertificateWithName(name string) (AWSDMSCertificate,
 				if resType == "AWS::DMS::Certificate" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSDMSCertificate
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSDMSCertificate{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

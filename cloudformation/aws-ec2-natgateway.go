@@ -80,9 +80,9 @@ func (t *Template) GetAllAWSEC2NatGatewayResources() map[string]AWSEC2NatGateway
 				if resType == "AWS::EC2::NatGateway" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NatGateway
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSEC2NatGateway{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -107,9 +107,9 @@ func (t *Template) GetAWSEC2NatGatewayWithName(name string) (AWSEC2NatGateway, e
 				if resType == "AWS::EC2::NatGateway" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSEC2NatGateway
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSEC2NatGateway{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

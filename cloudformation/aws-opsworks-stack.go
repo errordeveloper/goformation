@@ -190,9 +190,9 @@ func (t *Template) GetAllAWSOpsWorksStackResources() map[string]AWSOpsWorksStack
 				if resType == "AWS::OpsWorks::Stack" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksStack
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSOpsWorksStack{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -217,9 +217,9 @@ func (t *Template) GetAWSOpsWorksStackWithName(name string) (AWSOpsWorksStack, e
 				if resType == "AWS::OpsWorks::Stack" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSOpsWorksStack
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSOpsWorksStack{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

@@ -90,9 +90,9 @@ func (t *Template) GetAllAWSAmazonMQConfigurationResources() map[string]AWSAmazo
 				if resType == "AWS::AmazonMQ::Configuration" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAmazonMQConfiguration
-						if err := json.Unmarshal(b, &result); err == nil {
-							results[name] = result
+						result := &AWSAmazonMQConfiguration{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							results[name] = *result
 						}
 					}
 				}
@@ -117,9 +117,9 @@ func (t *Template) GetAWSAmazonMQConfigurationWithName(name string) (AWSAmazonMQ
 				if resType == "AWS::AmazonMQ::Configuration" {
 					// The resource is correct, unmarshal it into the results
 					if b, err := json.Marshal(resource); err == nil {
-						var result AWSAmazonMQConfiguration
-						if err := json.Unmarshal(b, &result); err == nil {
-							return result, nil
+						result := &AWSAmazonMQConfiguration{}
+						if err := result.UnmarshalJSON(b); err == nil {
+							return *result, nil
 						}
 					}
 				}

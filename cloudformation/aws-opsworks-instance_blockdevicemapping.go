@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSOpsWorksInstance_BlockDeviceMapping AWS CloudFormation Resource (AWS::OpsWorks::Instance.BlockDeviceMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html
 type AWSOpsWorksInstance_BlockDeviceMapping struct {
@@ -28,4 +32,8 @@ type AWSOpsWorksInstance_BlockDeviceMapping struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSOpsWorksInstance_BlockDeviceMapping) AWSCloudFormationType() string {
 	return "AWS::OpsWorks::Instance.BlockDeviceMapping"
+}
+
+func (r *AWSOpsWorksInstance_BlockDeviceMapping) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

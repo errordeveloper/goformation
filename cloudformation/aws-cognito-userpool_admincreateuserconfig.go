@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCognitoUserPool_AdminCreateUserConfig AWS CloudFormation Resource (AWS::Cognito::UserPool.AdminCreateUserConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
 type AWSCognitoUserPool_AdminCreateUserConfig struct {
@@ -23,4 +27,8 @@ type AWSCognitoUserPool_AdminCreateUserConfig struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCognitoUserPool_AdminCreateUserConfig) AWSCloudFormationType() string {
 	return "AWS::Cognito::UserPool.AdminCreateUserConfig"
+}
+
+func (r *AWSCognitoUserPool_AdminCreateUserConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

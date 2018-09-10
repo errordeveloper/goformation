@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCodeBuildProject_ProjectCache AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectCache)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html
 type AWSCodeBuildProject_ProjectCache struct {
@@ -18,4 +22,8 @@ type AWSCodeBuildProject_ProjectCache struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCodeBuildProject_ProjectCache) AWSCloudFormationType() string {
 	return "AWS::CodeBuild::Project.ProjectCache"
+}
+
+func (r *AWSCodeBuildProject_ProjectCache) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

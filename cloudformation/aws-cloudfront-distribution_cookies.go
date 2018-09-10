@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSCloudFrontDistribution_Cookies AWS CloudFormation Resource (AWS::CloudFront::Distribution.Cookies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html
 type AWSCloudFrontDistribution_Cookies struct {
@@ -18,4 +22,8 @@ type AWSCloudFrontDistribution_Cookies struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSCloudFrontDistribution_Cookies) AWSCloudFormationType() string {
 	return "AWS::CloudFront::Distribution.Cookies"
+}
+
+func (r *AWSCloudFrontDistribution_Cookies) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

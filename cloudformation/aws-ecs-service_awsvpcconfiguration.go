@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSECSService_AwsVpcConfiguration AWS CloudFormation Resource (AWS::ECS::Service.AwsVpcConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
 type AWSECSService_AwsVpcConfiguration struct {
@@ -23,4 +27,8 @@ type AWSECSService_AwsVpcConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSECSService_AwsVpcConfiguration) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.AwsVpcConfiguration"
+}
+
+func (r *AWSECSService_AwsVpcConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

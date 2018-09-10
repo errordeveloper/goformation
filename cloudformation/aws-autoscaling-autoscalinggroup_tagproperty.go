@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSAutoScalingAutoScalingGroup_TagProperty AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.TagProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
 type AWSAutoScalingAutoScalingGroup_TagProperty struct {
@@ -23,4 +27,8 @@ type AWSAutoScalingAutoScalingGroup_TagProperty struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSAutoScalingAutoScalingGroup_TagProperty) AWSCloudFormationType() string {
 	return "AWS::AutoScaling::AutoScalingGroup.TagProperty"
+}
+
+func (r *AWSAutoScalingAutoScalingGroup_TagProperty) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

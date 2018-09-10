@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
 type AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions struct {
@@ -23,4 +27,8 @@ type AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions) AWSCloudFormationType() string {
 	return "AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions"
+}
+
+func (r *AWSKinesisFirehoseDeliveryStream_CloudWatchLoggingOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

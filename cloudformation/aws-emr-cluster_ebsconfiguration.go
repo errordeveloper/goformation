@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSEMRCluster_EbsConfiguration AWS CloudFormation Resource (AWS::EMR::Cluster.EbsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html
 type AWSEMRCluster_EbsConfiguration struct {
@@ -18,4 +22,8 @@ type AWSEMRCluster_EbsConfiguration struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSEMRCluster_EbsConfiguration) AWSCloudFormationType() string {
 	return "AWS::EMR::Cluster.EbsConfiguration"
+}
+
+func (r *AWSEMRCluster_EbsConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

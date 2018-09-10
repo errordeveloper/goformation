@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSGlueTrigger_Condition AWS CloudFormation Resource (AWS::Glue::Trigger.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
 type AWSGlueTrigger_Condition struct {
@@ -23,4 +27,8 @@ type AWSGlueTrigger_Condition struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSGlueTrigger_Condition) AWSCloudFormationType() string {
 	return "AWS::Glue::Trigger.Condition"
+}
+
+func (r *AWSGlueTrigger_Condition) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }

@@ -1,5 +1,9 @@
 package cloudformation
 
+import (
+	"encoding/json"
+)
+
 // AWSSESReceiptFilter_IpFilter AWS CloudFormation Resource (AWS::SES::ReceiptFilter.IpFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html
 type AWSSESReceiptFilter_IpFilter struct {
@@ -18,4 +22,8 @@ type AWSSESReceiptFilter_IpFilter struct {
 // AWSCloudFormationType returns the AWS CloudFormation resource type
 func (r *AWSSESReceiptFilter_IpFilter) AWSCloudFormationType() string {
 	return "AWS::SES::ReceiptFilter.IpFilter"
+}
+
+func (r *AWSSESReceiptFilter_IpFilter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(*r)
 }
