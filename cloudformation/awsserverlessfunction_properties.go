@@ -1,5 +1,7 @@
 package cloudformation
 
+// type AWSServerlessFunction_Properties = Value
+
 import (
 	"encoding/json"
 
